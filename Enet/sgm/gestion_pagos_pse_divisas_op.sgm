@@ -1,0 +1,126 @@
+<! BBVA --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PRESENTACION gestion_pagos_pse_divisas_op -------------------------------------------------------------------------------->
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pse.OpGestionPagosPseDivisa id=gestion_pagos_pse_divisas_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=SalidaVacioOPJspFmt>
+	<refFormat name=jspFormat refId=ListaUsuariosOPJspFmt>
+	<refFormat name=jspFormat refId=jsonResponseJspFmt>
+	<refKColl refId=gestion_pagos_pse_divisas_op-data>
+	<refOM refId=InformacionUsuarios_om>
+	<refOM refId=consulta_pagos_pse_divisa_om>
+	<refOM refId=rollback_operation_creation_om>
+	<refOM refId=om_listar_bancos_ach>
+	<refOM refId=om_payments_service>
+	<refOM refId=om_operative_conditions_service>
+	
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+		<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicio>
+		
+		<estadoOP id=1 accion=inicio metodo=inicio>
+		<estadoOP id=2 accion=inicio metodo=inicio>
+		<estadoOP id=3 accion=inicio metodo=inicio >
+		<estadoOP id=4 accion=inicio metodo=inicio >
+		
+		<estadoOP id=1 accion=listarAutorizados metodo=listarAutorizados requestFmt=FiltroListaUsuarioReq >
+		<estadoOP id=2 accion=listarAutorizados metodo=listarAutorizados requestFmt=FiltroListaUsuarioReq >
+		<estadoOP id=3 accion=listarAutorizados metodo=listarAutorizados requestFmt=FiltroListaUsuarioReq >
+		<estadoOP id=4 accion=listarAutorizados metodo=listarAutorizados requestFmt=FiltroListaUsuarioReq >
+		
+		<estadoOP id=1 accion=configurarUsuario metodo=configurarUsuario requestFmt=ConfigurarUsuarioReq >
+		<estadoOP id=2 accion=configurarUsuario metodo=configurarUsuario requestFmt=ConfigurarUsuarioReq >
+		<estadoOP id=3 accion=configurarUsuario metodo=configurarUsuario requestFmt=ConfigurarUsuarioReq >
+		<estadoOP id=4 accion=configurarUsuario metodo=configurarUsuario requestFmt=ConfigurarUsuarioReq >
+		
+		<estadoOP id=1 accion=eliminarConfiguracion metodo=eliminarConfiguracion requestFmt=EliminarConfigUsuaReq >
+		<estadoOP id=2 accion=eliminarConfiguracion metodo=eliminarConfiguracion requestFmt=EliminarConfigUsuaReq >
+		<estadoOP id=3 accion=eliminarConfiguracion metodo=eliminarConfiguracion requestFmt=EliminarConfigUsuaReq >
+		<estadoOP id=4 accion=eliminarConfiguracion metodo=eliminarConfiguracion requestFmt=EliminarConfigUsuaReq >
+		
+		
+		
+		</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------------------------------------------------------------->
+<resultadoOP>
+	<salidaOP id=0 jspFmt=SalidaVacioOPJspFmt>
+	<salidaOP id=1 jspFmt=ListaUsuariosOPJspFmt>
+	<salidaOP id=2 jspFmt=jsonResponseJspFmt>
+	<salidaOP id=3 jspFmt=jsonResponseJspFmt>
+	<salidaOP id=4 jspFmt=jsonResponseJspFmt>
+</resultadoOP>
+</com.grupobbva.bc.col.web.pse.OpGestionPagosPseDivisa>
+
+	<kColl id= gestion_pagos_pse_divisas_op-data>
+	    <field id=jsonData>
+	    <field id=fechaDesde>
+	    <field id=fechaHasta>
+	    <field id=numDias>
+	    <field id=numTransa>
+	    <field id=pagina>
+		<field id=usuarioAutoIn>
+		<field id=valorTransacDesde>
+		<field id=valorTransacHasta>
+		<field id=fechaTransac>
+		<field id="tipoPago">
+		<field id=estado value="inicio">
+		<field id=mensaje value="N.A">
+		<iColl id=listaUsuariosAuto>
+			<kColl id=usuarioAuto>
+				<field id=id>
+				<field id=name>
+			</kColl>
+		</iColl>
+	</kColl>
+<! FORMATOS DE SALIDA PARA JSP --------------------->
+	<fmtDef id=SalidaVacioOPJspFmt>
+	<fJsp>
+	
+	</fJsp>
+	</fmtDef>
+
+<fmtDef id=ListaUsuariosOPJspFmt>
+	<fJsp>
+		<fString dataName=estado><nullCheck>
+		<fString dataName=mensaje><nullCheck>
+		<iCollVector dataName=listaUsuariosAuto description=listaUsuariosAuto>
+		<record dataName=usuarioAuto description= usuarioAuto>
+				<fString dataName=id description=id>
+				<fString dataName=name description=name>
+			</record>
+		</iCollVector> 
+	</fJsp>
+	</fmtDef>
+	
+	<fmtDef id=jsonResponseJspFmt>
+		<fJsp>
+			<fString dataName=jsonData><nullCheck>
+		</fJsp>
+	</fmtDef>
+
+<! FORMATOS DE ENTRADAS (FORMULARIO) ---------------------> 
+<fmtDef id=ConfigurarUsuarioReq>
+	<fHTMLReq>
+		<fString dataName=usuarioAutoIn description=usuarioAutoIn><nullCheck>  
+		<fString dataName=valorTransacDesde description=valorTransacDesde><nullCheck> 
+		<fString dataName=valorTransacHasta description=valorTransacHasta><nullCheck>
+		<fString dataName=fechaTransac description=fechaTransac><nullCheck>  
+		<fString dataName=tipoPago description=tipoPago><nullCheck>  
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=FiltroListaUsuarioReq>
+	<fHTMLReq>
+		<fString dataName=fechaDesde description=fechaDesde><nullCheck>  
+		<fString dataName=fechaHasta description=fechaHasta><nullCheck> 
+		<fString dataName=numDias description=numDias><nullCheck>
+		<fString dataName=numTransa description=numTransa><nullCheck>  
+		<fString dataName=pagina description=pagina><nullCheck>  
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EliminarConfigUsuaReq>
+	<fHTMLReq>
+		<fString dataName=numTransa description=numTransa><nullCheck>  
+	</fHTMLReq>
+</fmtDef>

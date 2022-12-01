@@ -1,0 +1,1189 @@
+<!  --- BBVA ---  >
+
+<!  CONTEXTO GLOBAL  >
+<kColl id=GlobalBbvaNetData>
+       <kColl id=PrComun>
+                <field id=nombrePr>
+                <field id=jsp>
+                <field id=jspData>
+                <field id=urlData>
+        </kColl>
+
+<!---  CONTEXTO SESION  >
+<kColl id=SesionDatosGenerales >
+   <!-- /////////////////////////SOPORTE PRESENTACION MULTIDISPOSITIVO /////////// -->
+   <field id=recepcionJSON >
+   <!-- /////////////////////////SOPORTE PRESENTACION MULTIDISPOSITIVO /////////// -->
+< /kColl >
+
+
+
+        <kColl id=datosAPP>
+                <field id=esPIBEE value=false>
+                <field id=esPrimera value=true>
+                <field id=iv-id_sesion_ast >
+                <field id=iv_ticketServic > <!-- CCSS-4884-AltaTarjetaCredito -->
+	       <field id=iv-remote-address > <!-- CCSS-4884-AltaTarjetaCredito -->
+        </kColl>
+
+        <field id=s_versionApl value="">
+        <field id=s_lit_idioma2 value="">
+        <field id=s_tipo_firma value="">
+        <field id=s_Colectivo value="">                                         <!--Estilo?-->
+        <field id=BranchId>
+        <field id=BranchName>
+        <field id=BranchAddress>
+        <field id=UserBD value=fsadm01>
+        <field id=PasswordBD value=01fsadm>
+        <field id=Aplicacion value=Colombianet>
+        <field id=customerIdPse value="">
+		<field id=showBlotter value="false">
+		<field id=cuspse >
+		<field id=pathPse  value="/SCOKDPO/kdpo_mult_web/servlet/PIBEE?codProceso=89990887&codServicio=3523">
+	    <kColl id=infoWebApps>
+     		 <field id=WebApps value=4>
+     		 <field id=eCommServices value=2>
+     		 <kColl id=eComm0>
+     		    <field id=descriptionData value="Declaraci&oacute;n y Pago Electr&oacute;nico de Impuestos Distritales SHD. DyPE">
+     		    <field id=urlData value="https://localhost:3000/bbvaecmco/portalnetco/LogonAnonimoServlet?proceso=select_web_app_pr&operacion=select_web_app_op&accion=redirectWebApp">
+     		    <field id=procRedir value="proceso=pago_dype_pr&operacion=ecomm_rpago_op&accion=verificar" >
+     		    <field id=RefBBVAeComm value=0047 >
+     		    <field id=redirecURL value="https://localhost:3000/bbvaecmco/portalnetco/LogonAnonimoServlet?proceso=select_web_app_pr&operacion=select_web_app_op&accion=redirectWebApp">
+     		 </kColl>
+     		 <kColl id=eComm1>
+	 		    <field id=descriptionData value="PSE - PROVEEDOR DE SERVICIOS ELECTRÓNICOS">
+	 		    <field id=urlData value="https://localhost:3000/bbvaecmco/portalnetco/LogonAnonimoServlet?proceso=select_web_app_pr&operacion=select_web_app_op&accion=redirectWebApp">
+	 		    <field id=procRedir value="proceso=pago_pse_pr&operacion=ecomm_rpago_pse_op&accion=verificar" >
+	 		    <field id=RefBBVAeComm value=PSE >
+     		 </kColl>
+      		 <kColl id=WebApp0>
+     		   <field id=descriptionData value="BBVA net">
+     		   <field id=urlData value="https://localhost:3000/bbvaecm/colombianet/LogonOperacionServlet">
+     		 </kColl>
+      		 <kColl id=WebApp1>
+     		    <field id=descriptionData value="BBVA Vip">
+    		     <field id=urlData value="https://localhost:3000/bbvaecmvip/colombiavip/LogonOperacionServlet">
+   			  </kColl>
+  			  <kColl id=WebApp2>
+  			       <field id=descriptionData value="BBVA net Empresas">
+  			       <field id=urlData value="https://localhost:3000/bbvaecmemp/colombiaemp/LogonOperacionServlet">
+  			   </kColl>
+  	   	 </kColl>
+    <!-- INICIO ASTA - Tx en ENET -->
+    <field id=TerminalContable value="H99B"> <!-- ASTA -->
+    <field id=Canal value="26"> <!-- ASTA -->
+    <!-- FIN ASTA - Tx en ENET -->
+</kColl>
+	<kColl id=GlobalComun>
+               <field id=UserBD value=db2inst1>
+	        <field id=PasswordBD value=db2inst1>
+	        <field id=NombreAccesoBD value="BCNBPCOC">
+	        <field id=NombreConexionBD value="jdbc:db2://10.10.20.71:5001/BCNCO100">
+	</kColl>
+
+	<field id=BDDefecto value=BDColombia>
+	<kColl id=BDColombia>
+	        <field id=UserBD value=db2inst1>
+	        <field id=PasswordBD value=db2inst1>
+	        <field id=NombreAccesoBD value="BCNBPCOC">
+	        <field id=NombreConexionBD value="jdbc:db2://10.10.20.71:5001/BCNCO100">
+	</kColl>
+	
+	<!-- INICIO ASTA - Tx en ENET -->
+	<kColl id=ATAE>
+        <field id=UserBD value=dbsataec>
+        <field id=PasswordBD value=carde1pa>
+        <field id=NombreAccesoBD value="BATAECO1">
+        <field id=NombreConexionBD value="jdbc:db2://avdwanetcshco:60016/BATAECO1">
+	</kColl>
+	<!-- INICIO ASTA - Tx en ENET -->
+	
+	<field id=BDMexico value=BDMexico>
+	<kColl id=BDMexico>
+	        <field id=UserBD value=dbstlmec>
+	        <field id=PasswordBD value=carde1pa>
+	        <field id=NombreAccesoBD value="BTLCLCO1">
+	        <field id=NombreConexionBD value="jdbc:db2://172.17.85.245:60016/BTLCLCO1">
+	</kColl>
+
+       <kColl id=GlobalComunHost>
+               <field id=UserBD value=db2inst1>
+	        <field id=PasswordBD value=db2inst1>
+	        <field id=NombreAccesoBD value="BCNBPCOC">
+	        <field id=NombreConexionBD value="jdbc:db2://10.10.20.71:5001/BCNCO100">
+        </kColl>
+
+		<field id=BdContingencia value=BdContingencia>
+		<kColl id=BdContingencia>
+	        <field id=UserBD value=fsadm01>
+                <field id=PasswordBD value=01fsadm>
+                <field id=NombreAccesoBD value="BCNCO001">
+                <field id=NombreConexionBD value="jdbc:db2://82.119.234.68:60008/BCNCO001">
+		</kColl>
+
+
+	<!  CONTEXTO SESION  >
+	<kColl id=SesionDatosGenerales>
+		<field id=entorno value="/de"> <!-- INC 158 FX 21-01-2019-->
+		<field id=id_sesion >
+		<field id=v_grupos>
+		<field id=s_ip value="" descripcion="IP del cliente remoto que esta transando">
+		<! ----CAMBIOS PIBEE ---- !>
+					<field id=s_hay_sesion value="no">
+					<field id=s_mancomunada value="SI">
+					<field id=s_serial_token value="">
+					<field id=s_poder_firma value="NO">
+					<field id=s_poder_valida value="NO">
+                                        <field id=s_usuario_CMP value="NO">
+		<! ----CAMBIOS PIBEE ---- !>
+		<! ----INI INC Extractos CMC 17/06/2019---- !>
+		<kColl id=ServicioIndra>
+				<field id=wsdl value="/de/enet/online/co/web/wsdl/IndraExtWSService.wsdl">
+				<field id=timeOut value="10000">  
+				<field id=endpoint value="http://82.250.88.205:9080/IndraExtEnterpriseApplication-war/IndraExtWSService" >
+				<field id=ip value="82.250.88.205">
+				<field id=port value="9080">
+				<field id=userBBVANetWS value="127-137-152-93-110-2-216-139-26-231-59-68-103-173-185-143" >
+				<field id=passwordBBVANetWS value="110-12-13-100-222-106-42-229-208-164-239-229-165-158-127-230">
+				<field id=estado value="activo">
+		</kColl>
+		<! ----FIN INC Extractos CMC 17/06/2019 ---- !>
+		<! ----INI RECAUDO CORPORATIVOS CMC 25/03/2020 ---- !>
+		<kColl id=servicioRecaudoCorporativo>
+			     <field id=endpoint value="http://localhost:8080/RecaudadoraWS/bbvaMaquinaRecaudadora" >
+		</kColl>
+		<!--INICIO CCSS-4884-AltaTarjetaCredito -->
+		 <!-- INI- Conector CIRi -->
+	    <kColl id=ConectorCiri >
+	        <field id=disableConectorCiri value="false">
+		    <field id=disableVerificacionssl value="false">
+		    <field id=ciriOperations value="OOO|PRP|OCV|">
+			<kColl id=Signature>
+				<field id=endpoint value="https://150.250.250.39:56010/ciri_mult_web_ciriback_01/services/Signatures" >
+			</kColl>
+			<kColl id=CypService>
+				<field id=endpoint value="http://localhost:9080/ciri_mult_web_ciriback_01/services/Cyp" >
+			</kColl>
+			<kColl id=RestClinet>
+				<!--- field id=endpoint value="http://localhost:3000/ciri_mult_web_ciriback_01" ---!>
+				<field id=endpoint value="http://10.10.20.224:8080/mock-service/ciri_mult_web_ciriback_01">
+			</kColl>
+		</kColl>
+		 <kColl id=ConectorTris >
+			<field id=trisUrl value="/SCOTRIS/tris_mult_web_trisfront_01/">
+			<field id=clickAndPay value="listadorprestamos/prestamos">
+			<field id=altaTC value="tarjetaCredito/inicio">
+			<field id=altaCC value="cuentaCorriente/inicio">
+			<field id=altaSDC value="solicitudCredito/inicio">
+		 </kColl>
+		 <!--FIN CCSS-4884-AltaTarjetaCredito -->
+		<!-- FIN- Conector CIRi -->
+		<field id=s_canal value=11 description="Canal de SSTT de la Ref. Externa">
+		<field id=s_cod_bancocsb value=182 description="Banco CSB de la Ref. Externa">
+		<field id=s_cod_bancoint value=1 description="Banco Interno de la Ref. Externa">
+		<field id=s_producto value=1058 description="Producto contratado">
+		<field id=s_subproducto value=0 description="Subproducto contratado">
+		<field id=s_cod_bancoprcsb value=182 description="Banco CSB del Producto">
+		<field id=s_cod_bancoprint value=1 description="Banco CSB Interno del producto">
+		<field id=s_idioma value=es description="Idioma de la Ref. Externa">
+		<field id=s_idioma_sw value=0 description="">
+		<field id=s_lit_idioma value=CAS description="Sufijo del Idioma de la Ref. Externa">
+		<field id=s_password description="">
+		<field id=s_cod_logon description="">
+		<field id=s_cod_password description="">
+		<field id=s_cod_cbanco description="Banco CSB del Contrato de SSTT">
+		<field id=s_cod_cofici description="Oficina del Contrato de SSTT">
+		<field id=s_cod_ccontr description="Contrapartida del Contrato de SSTT">
+		<field id=s_cod_cfolio description="Folio del Contrato de SSTT">
+		<field id=s_cod_nomconta value="" description="Nombre del usuario">
+		<field id=s_cod_nomempre value="" description="Nombre de la empresa">
+		<field id=s_cod_usuarisc value="" description="Codigo del ususario">
+		<field id=s_ivTicket value="" > <!--CCSS-4884-AltaTarjetaCredito -->
+		<field id=s_cod_empre>
+		<field id=s_cod_codocup>
+		<field id=s_cod_desocup>
+		<field id=s_cod_sexconta>
+		<field id=s_correo_op value="">
+		<field id=AplicacionColombia value="yes">
+		<field id=s_correo_con>
+		<field id=s_ult_acceso>
+		<field id=UltimoPr>
+		<field id=UltimaOP>
+		<field id=UltimoJspFile>
+		<field id=UltimaJspData>
+		<field id=UltimaJspUrl>
+		<field id=s_operacion_monetaria value = Si>
+		<field id=s_operacion_mensajes  value = Si>
+		<field id=s_Banco value=0179 description="BancoNet">
+		<field id=s_Oficina value=1000 description="OficinaNet">
+		<field id=s_CodCanal value=0005 description="Codigo de canal">
+		<field id=s_CodMedioAcceso value=0007 description="Medio de acceso">
+		<field id=s_CodServicio value=0001 description="Servicio o ni idea">
+		<field id=s_CodServicioPortal value=0001 description="Servicio o Portal">
+                <field id=s_IPCliente>                          <!-- 20051116w Peticin IDC -->
+		<field id=s_TipoIdCliente value=01 description="Tipo identificacion cliente">
+		<field id=s_IdCliente value=7777777 description="Identificacion cliente">
+		<field id=s_IdClienteExt>
+		<field id=s_cod_logonapl>
+		<field id=s_IdEstCliente value="1">
+		<field id=s_NumeroOperacion value=222222222>
+		<field id=numOPSesion value=0 description="Número de operaciones realizadas">
+		<field id=numOPRequest value=0 description="Número de operaciones solicitadas">
+		<field id=PR_en_ejecucion value="0">
+		<field id=gif value="prueba.gif">
+		<field id=s_Primera_entrada>
+		<field id=s_Datos_ok value="NOK">
+		<field id=ModulosActivosPr value="0">
+		<field id=ApliError value="NO">
+		<field id=forward value="pruebaerror">
+		<field id=url>
+		<field id=mensaje>
+		<field id=formato value="SI">
+		<kColl id=elementos_para_borrado dynamic=true>
+		</kColl>
+		<kColl id=datosAPP>
+                       <field id=isPrecarga value=false>
+                       <field id=esPIBEE value=false>
+                       <field id=esPrimera value=true>
+                       <field id=iv-id_sesion_ast >
+                                 <field id=iv_ticketServic > <!--CCSS-4884-AltaTarjetaCredito -->
+		                  <field id=iv-remote-address > <!--CCSS-4884-AltaTarjetaCredito -->
+                </kColl>
+
+                <iColl id=lstServiciosFlag>
+			<kColl id=ServicioFlag>
+				<field id=codServicio value="">
+				<field id=codLimitadorServicio value="">
+				<field id=flag value="">
+			</kColl>
+		</iColl>
+
+
+		<iColl id=MancomunadaFlag>
+			<kColl id=MancomunadaFlag>
+				<field id=codServicio value="">
+				<field id=mancomunado value="">
+			</kColl>
+		</iColl>
+
+		<field id=s_oficina>
+		<field id=s_dcontrol>
+		<field id=s_num_cuenta>
+		<field id=s_tipo>
+		<field id=s_estado>
+		<field id=s_valaso>
+		<field id=s_permiso>
+		<field id=s_saldo_puntual>
+		<field id=s_saldo_disponible>
+		<field id=s_divisa>
+		<field id=s_clave_asunto>
+		<!-- GP-11311 AutoGestion INICIO -->
+		<field id=tipo_usuario value="">
+		<field id=CuentaOrdenante>
+		<field id=codeErrorToken >
+		<field id=mensajeErrorToken >
+		<!-- GP-11311 AutoGestion FIN -->
+		
+<! ICOLL DE ICOLLES INICIO --------------------------------------- >
+
+<! ICOLL DE ICOLLES FIN----- --------------------------------------- >
+
+<!  INICIO DATOS REFERENTES A PAGINACION POSICION GLOBAL  -------------------------  >
+
+		<field id=s_pg_RegistrosPaginacion value=15>
+		<field id=s_pg_MasDatosCuentas value="n">
+		<field id=s_pg_MasDatosTarjetas value="n">
+		<field id=s_pg_MasDatosPrestamos value="n">
+		<field id=s_pg_MasDatosFondos value="n">
+		<field id=s_pg_MasDatosCupo value="n">
+		<! JAAG -->
+		<field id=s_pg_MasDatosPensiones value="n">
+
+		<field id=s_pg_IdMovimientoCuentas value=0>
+		<field id=s_pg_IdMovimientoTarjetas value=0>
+		<field id=s_pg_IdMovimientoPrestamos value=0>
+		<field id=s_pg_IdMovimientoFondos value=0>
+		<field id=s_pg_IdMovimientoCupo value=0>
+		<! JAAG -->
+		<field id=s_pg_IdMovimientoPensiones value=0>
+
+		<iColl id=s_pg_lista_posicion_global_cuentas>
+			<kColl id=s_cuenta>
+				<field id=s_banco>
+				<field id=s_oficina>
+				<field id=s_dcontrol>
+				<field id=s_num_cuenta>
+				<field id=s_tipo>
+				<field id=s_estado>
+				<field id=s_valaso>
+				<field id=s_permiso>
+				<field id=s_saldo_puntual>
+				<field id=s_saldo_disponible>
+				<field id=s_divisa>
+				<field id=s_clave_asunto>
+			</kColl>
+		</iColl>
+
+		<iColl id=s_pg_lista_posicion_global_tarjetas>
+			<kColl id=s_tarjeta>
+				<field id=s_pan1>
+				<field id=s_pan2>
+				<field id=s_pan3>
+				<field id=s_pan4>
+				<field id=s_tipo>
+				<field id=s_estado>
+				<field id=s_valaso>
+				<field id=s_permiso>
+				<field id=s_saldo_puntual>
+				<field id=s_saldo_disponible>
+				<field id=s_divisa>
+				<field id=s_clave_asunto>
+			</kColl>
+		</iColl>
+
+		<iColl id=s_pg_lista_posicion_global_prestamos>
+			<kColl id=s_prestamos>
+				<field id=s_bancop>
+				<field id=s_oficinap>
+				<field id=s_dcontrolp>
+				<field id=s_num_cuentap>
+				<field id=s_tipop>
+				<field id=s_estadop>
+				<field id=s_valasop>
+				<field id=s_permisop>
+				<field id=s_saldo_puntualp>
+				<field id=s_saldo_disponiblep>
+				<field id=s_divisap>
+				<field id=s_clave_asunto>
+			</kColl>
+		</iColl>
+
+		<iColl id=s_pg_lista_posicion_global_fondos>
+			<kColl id=s_cuenta>
+				<field id=s_banco>
+				<field id=s_oficina>
+				<field id=s_dcontrol>
+				<field id=s_num_cuenta>
+				<field id=s_tipo>
+				<field id=s_estado>
+				<field id=s_valaso>
+				<field id=s_permiso>
+				<field id=s_saldo_puntual>
+				<field id=s_saldo_disponible>
+				<field id=s_divisa>
+				<field id=s_clave_asunto>
+			</kColl>
+		</iColl>
+
+		<iColl id=s_pg_lista_posicion_global_cupo>
+			<kColl id=s_tarjeta>
+				<field id=s_pan1>
+				<field id=s_pan2>
+				<field id=s_pan3>
+				<field id=s_pan4>
+				<field id=s_tipo>
+				<field id=s_estado>
+				<field id=s_valaso>
+				<field id=s_permiso>
+				<field id=s_saldo_puntual>
+				<field id=s_saldo_disponible>
+				<field id=s_divisa>
+				<field id=s_clave_asunto>
+			</kColl>
+		</iColl>
+
+		<! JAAG -->
+		<iColl id=s_pg_lista_posicion_global_pensiones>
+			<kColl id=s_pension>
+				<field id=s_bancop>
+				<field id=s_oficinap>
+				<field id=s_dcontrolp>
+				<field id=s_num_cuentap>
+				<field id=s_tipop>
+				<field id=s_estadop>
+				<field id=s_valasop>
+				<field id=s_permisop>
+				<field id=s_saldo_puntualp>
+	            <field id=s_saldo_disponiblep>
+				<field id=s_divisap>
+				<field id=s_clave_asuntop>
+			</kColl>
+		</iColl>
+
+	<!  FIN DATOS REFERENTES A PAGINACION POSICION GLOBAL  -------------------------  >
+
+
+
+		<kColl id=s_salida_cuentas>
+		  <iColl id=s_lista_cuentas>
+		    <kColl id=s_cuenta>
+		      <field id=s_banco>
+		      <field id=s_oficina>
+		      <field id=s_dcontrol>
+		      <field id=s_num_cuenta>
+		      <field id=s_permiso>
+		      <field id=s_clave_asunto>
+		      <field id=s_tipo>
+		      <field id=s_estado>
+		      <field id=s_valaso>
+		      <field id=s_divisa>
+		      <field id=s_LimDiario value=0>
+		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+		    </kColl >
+		  </iColl >
+		</kColl >
+
+		<kColl id=s_salida_tarjetas>
+		  <iColl id=s_lista_tarjetas>
+		    <kColl id=s_tarjeta>
+		      <field id=s_pan1>
+		      <field id=s_pan2>
+		      <field id=s_pan3>
+		      <field id=s_pan4>
+		      <field id=s_permiso>
+		      <field id=s_clave_asunto>
+		      <field id=s_tipo>
+		      <field id=s_estado>
+		      <field id=s_valaso>
+		      <field id=s_divisa>
+		      <field id=s_clase>
+		      <field id=s_LimDiario value=0>
+			  		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+		    </kColl >
+		  </iColl >
+		</kColl >
+
+	<kColl id=s_salida_prestamos>
+	  <iColl id=s_lista_prestamos>
+	    <kColl id=s_prestamos>
+	      <field id=s_bancop>
+	      <field id=s_oficinap>
+	      <field id=s_dcontrolp>
+	      <field id=s_num_cuentap>
+	      <field id=s_permisop>
+	      <field id=s_clave_asunto>
+	      <field id=s_tipop>
+	      <field id=s_estadop>
+	      <field id=s_divisa>
+	      <field id=s_valasop>
+	      <field id=s_LimDiario value=0>
+		  		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+	    </kColl >
+	  </iColl >
+	</kColl >
+	<kColl id=s_salida_leasing>
+		  <iColl id=s_lista_leasing>
+		    <kColl id=s_leasing>
+		      <field id=s_bancop>
+		      <field id=s_oficinap>
+		      <field id=s_dcontrolp>
+		      <field id=s_num_cuentap>
+		      <field id=s_permisop>
+		      <field id=s_clave_asunto>
+		      <field id=s_tipop>
+		      <field id=s_estadop>
+		      <field id=s_divisa>
+		      <field id=s_valasop>
+		      <field id=s_LimDiario value=0>
+			  		      <field id=s_LimTran value=0>
+			      <field id=s_LimMes value=0>
+		    </kColl >
+		  </iColl >
+	</kColl >
+	<kColl id=s_salida_monedaextranjera>
+	  <iColl id=s_lista_monedaextranjera>
+	    <kColl id=s_monedaextranjera>
+	      <field id=s_bancop>
+	      <field id=s_oficinap>
+	      <field id=s_dcontrolp>
+	      <field id=s_num_cuentap>
+	      <field id=s_permisop>
+	      <field id=s_clave_asunto>
+	      <field id=s_tipop>
+	      <field id=s_estadop>
+	      <field id=s_divisa>
+	      <field id=s_valasop>
+	      <field id=s_LimDiario value=0>
+		  		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_fondos>
+	  <iColl id=s_lista_fondos>
+	    <kColl id=s_cuenta>
+	      <field id=s_banco>
+	      <field id=s_oficina>
+	      <field id=s_dcontrol>
+	      <field id=s_num_cuenta>
+	      <field id=s_permiso>
+	      <field id=s_clave_asunto>
+	      <field id=s_tipo>
+	      <field id=s_estado>
+	      <field id=s_valaso>
+	      <field id=s_divisa>
+	      <field id=s_LimDiario value=0>
+		  		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_cupo>
+	  <iColl id=s_lista_cupo>
+	    <kColl id=s_tarjeta>
+	      <field id=s_pan1>
+	      <field id=s_pan2>
+	      <field id=s_pan3>
+	      <field id=s_pan4>
+	      <field id=s_permiso>
+	      <field id=s_clave_asunto>
+	      <field id=s_tipo>
+	      <field id=s_estado>
+	      <field id=s_valaso>
+	      <field id=s_divisa>
+	      <field id=s_LimDiario value=0>
+		  		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<! JAAG -->
+	<kColl id=s_salida_pensiones>
+	  <iColl id=s_lista_pensiones>
+	    <kColl id=s_pension>
+	      <field id=s_bancop>
+	      <field id=s_oficinap>
+	      <field id=s_dcontrolp>
+	      <field id=s_num_cuentap>
+	      <field id=s_permisop>
+	      <field id=s_clave_asuntop>
+	      <field id=s_tipop>
+	      <field id=s_estadop>
+	      <field id=s_valasop>
+	      <field id=s_divisa>
+	      <field id=s_LimDiario value=0>
+		  		      <field id=s_LimTran value=0>
+		      <field id=s_LimMes value=0>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+<!  DATOS ASUNTOS POSICION GLOBAL  -------------------------  >
+
+    <field id=s_mensajes value=0>
+
+	<kColl id=s_salida_posicion_global_cuentas>
+	  <iColl id=s_lista_posicion_global_cuentas>
+	    <kColl id=s_cuenta>
+	      <field id=s_banco>
+	      <field id=s_oficina>
+	      <field id=s_dcontrol>
+	      <field id=s_num_cuenta>
+	      <field id=s_tipo>
+       	      <field id=s_estado>
+	      <field id=s_valaso>
+	      <field id=s_permiso>
+	      <field id=s_saldo_puntual>
+	      <field id=s_saldo_disponible>
+	      <field id=s_divisa>
+	      <field id=s_clave_asunto>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_posicion_global_tarjetas>
+	  <iColl id=s_lista_posicion_global_tarjetas>
+	    <kColl id=s_tarjeta>
+	      <field id=s_pan1>
+	      <field id=s_pan2>
+	      <field id=s_pan3>
+	      <field id=s_pan4>
+      	      <field id=s_tipo>
+      	      <field id=s_estado>
+	      <field id=s_valaso>
+      	      <field id=s_permiso>
+	      <field id=s_saldo_puntual>
+	      <field id=s_saldo_disponible>
+	      <field id=s_divisa>
+	      <field id=s_clave_asunto>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_posicion_global_prestamos>
+	  <iColl id=s_lista_posicion_global_prestamos>
+	    <kColl id=s_prestamos>
+	      <field id=s_bancop>
+	      <field id=s_oficinap>
+	      <field id=s_dcontrolp>
+	      <field id=s_num_cuentap>
+	      <field id=s_tipop>
+       	      <field id=s_estadop>
+	      <field id=s_valasop>
+	      <field id=s_permisop>
+	      <field id=s_saldo_puntualp>
+	      <field id=s_saldo_disponiblep>
+	      <field id=s_divisap>
+	      <field id=s_clave_asunto>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_posicion_global_fondos>
+	  <iColl id=s_lista_posicion_global_fondos>
+	    <kColl id=s_cuenta>
+	      <field id=s_banco>
+	      <field id=s_oficina>
+	      <field id=s_dcontrol>
+	      <field id=s_num_cuenta>
+	      <field id=s_tipo>
+       	      <field id=s_estado>
+	      <field id=s_valaso>
+	      <field id=s_permiso>
+	      <field id=s_saldo_puntual>
+	      <field id=s_saldo_disponible>
+	      <field id=s_divisa>
+	      <field id=s_clave_asunto>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_posicion_global_cupo>
+	  <iColl id=s_lista_posicion_global_cupo>
+	    <kColl id=s_tarjeta>
+	      <field id=s_pan1>
+	      <field id=s_pan2>
+	      <field id=s_pan3>
+	      <field id=s_pan4>
+      	  <field id=s_tipo>
+      	  <field id=s_estado>
+	      <field id=s_valaso>
+      	  <field id=s_permiso>
+	      <field id=s_saldo_puntual>
+	      <field id=s_saldo_disponible>
+	      <field id=s_divisa>
+	      <field id=s_clave_asunto>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+    <! JAAG -->
+	<kColl id=s_salida_posicion_global_pensiones>
+	  <iColl id=s_lista_posicion_global_pensiones>
+	    <kColl id=s_pension>
+	      <field id=s_bancop>
+	      <field id=s_oficinap>
+	      <field id=s_dcontrolp>
+	      <field id=s_num_cuentap>
+	      <field id=s_tipop>
+       	  <field id=s_estadop>
+	      <field id=s_valasop>
+	      <field id=s_permisop>
+	      <field id=s_saldo_puntualp>
+	      <field id=s_saldo_disponiblep>
+	      <field id=s_divisap>
+	      <field id=s_clave_asuntop>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_cuentas_ordenantes>
+	  <iColl id=s_lista_cuentas_ordenantes>
+	    <kColl id=s_ordenantes>
+	      <field id=s_banco>
+	      <field id=s_oficina>
+	      <field id=s_dcontrol>
+	      <field id=s_num_cuenta>
+	      <field id=s_cod_form>
+	      <field id=s_iasunto>
+	      <field id=s_iestado>
+	      <field id=s_ivalaso>
+	      <field id=s_clave_asunto>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+
+	<kColl id=s_salida_cuentas_beneficiarias>
+	  <iColl id=s_lista_cuentas_beneficiarias>
+	    <kColl id=s_beneficiarias>
+	      <field id=s_banco>
+	      <field id=s_oficina>
+	      <field id=s_dcontrol>
+	      <field id=s_num_cuenta>
+	      <field id=s_cod_form>
+	      <field id=s_iasunto>
+	      <field id=s_clave_asunto>
+	      <field id=s_num_contrato>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_funciones>
+	  <iColl id=s_lista_funciones>
+	    <kColl id=s_funcion>
+	      <field id=s_cod_funcion>
+	      <field id=s_ind_asunto>
+	      <field id=s_ind_operacion_monetaria>
+	      <field id=s_estado>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_pendientes>
+	  <iColl id=s_lista_pendientes>
+	    <kColl id=s_pendientes>
+	      <field id=s_funcion>
+	      <field id=s_secuencia>
+	      <field id=s_descripcion_funcion>
+	      <field id=s_nombre_usuario>
+	      <field id=s_importe>
+	      <field id=s_divisa>
+	      <field id=s_fecha_alta>
+	    </kColl >
+	  </iColl >
+	</kColl >
+    <!-- INICIO ASTA - Tx en ENET -->
+    <field id=s_cod_logon_aux> <!-- referencia auxiliar (8) -->    
+    <!-- FIN ASTA - Tx en ENET -->
+
+    <!-- Datos para ASTA -->
+    <field id=CodigoUsuario value="ADMINF"> <!-- ASTA -->
+    <field id=Idioma> <!-- ASTA -->
+    <field id=Idioma_mx value="E">
+    <field id=Idioma_cl value="R">
+    <field id=Idioma_pr value="E">
+    <field id=Idioma_pe value="R">
+    <field id=Idioma_ve value="R">
+    <field id=Idioma_co value="E">
+    <field id=Idioma_ar value="E">
+    <field id=NumeroSecuencia value=""> <!-- ASTA -->
+    <field id=TerminalLogico value="3977    "> <!-- ASTA -->
+
+    <kColl id=detalleUsuarioSesion> <!-- ASTA -->
+        <field id=s_indcPaginacion>
+        <field id=s_areaPaginacion>
+        <field id=s_nombreCliente>
+        <field id=s_claveUsuario>
+        <field id=s_perfilCliente>
+        <field id=s_privilegio>
+        <field id=s_tipoRequerido>
+        <field id=s_funcMaxUsu>
+        <field id=s_numeroCliente>
+        <field id=s_tipoDeContrato>
+        <field id=s_nombreUsuario>
+</kColl>
+
+    <!-- FIN ASTA - Tx en ENET -->
+</kColl>
+
+<!  DATOS COMUNES TRANSACCIONES  -------------------------  >
+<kColl id=DatosComunesTx>
+	<field id=ModoOperacion value=Consulta>
+	<field id=Timeout value=120>
+	<field id=LongitudCabeceraHost value=195>
+</kColl>
+
+<!  --- CABECERA GENERAL ---  >
+<kColl id=CabGeneral>
+	<field id=CodTransac value=" ">
+	<field id=Espacio value=" ">
+	<field id=FmtCabecera value="AA01">
+</kColl>
+
+<!  --- CABECERA AA01 ---  >
+<kColl id=CabAA01>
+	<! -- Subcabecera Aplicacion -->
+	<field id=CodTransac value=" ">
+	<field id=CodTipOper value=0>
+	<field id=CodSubtipo value=0>
+	<field id=CodVersion value=0>
+	<field id=CodBanco    value=0179>
+	<field id=CodOficina  value=1000>
+
+	<! -- Subcabecera Personalizacion -->
+	<field id=CodCanal    value=0005>
+	<field id=CodMedioAcceso value=0007>
+	<field id=CodServicio value=0001>
+	<field id=FecOper     value=19000101>
+	<field id=HoraOper     value=010101>
+	<field id=NumOper     value=1>
+	<field id=XtiClien  value=06>
+	<field id=CodClien     value="22222222">
+
+	<! -- Subcabecera Respuesta -->
+	<field id=CodRetorno value=" ">
+	<field id=CodError   value=" ">
+	<field id=DesTexto   value=" ">
+	<field id=XtiSalida  value="00">
+</kColl>
+
+
+<kColl id=CabeceraHost>
+	<refData refId=CabGeneral>
+	<refData refId=CabAA01>
+</kColl>
+
+<!  DATOS COMUNES PROCESO -------------------------  >
+<kColl id=PrComun>
+	<field id=nombrePr>
+	<field id=estadoPr>
+	<field id=nombreOperacionInvocada>
+	<field id=nombreOperacionEjecutada>
+	<field id=jsp>
+	<field id=jspData>
+	<field id=urlData>
+</kColl>
+
+<!  DATOS COMUNES OP -------------------------  >
+<kColl id=OPComun>
+	<field id=nombreOP>
+	<field id=estadoOP>
+	<field id=accion>
+    <!-- INICIO ASTA - Tx en ENET -->
+    <field id=IdPais value="co"> 
+    <!-- FIN ASTA - Tx en ENET -->
+</kColl>
+
+<!  DATOS COMUNES OM -------------------------  >
+<kColl id=OMComun>
+	<field id=ModoOperacion value="">
+	<field id=NumeroOperacion>
+	<field id=CodigoError>
+	<field id=DescripcionError>
+	<field id=NumeroSalida>
+	<field id=VidaDatos value=9223372036854775807 > <! Dejar que pervalezca el tiempo de vida definido en la transacción (Long.MAX_VALUE) >
+	<kColl id=AnulacionAutomatica>
+		<field id=IdAnulacion value="">
+		<field id=MensajeError value="">
+		<field id=CodigoErrorTx value="">
+		<field id=DescripcionErrorTx value="">
+	</kColl>
+    <!-- INICIO ASTA - Tx en ENET -->
+    <!-- Error ASTA -->
+    <kColl id=Error >
+        <field id=Codigo >
+        <iColl id=Datos >
+            <kColl id=Dato>
+                <field id=Valor >
+            </kColl>
+        </iColl >
+        <field id=Mensaje >
+    </kColl>
+    
+    <!-- Avisos ASTA -->
+    <iColl id=Avisos >
+        <kColl id=Aviso >
+            <field id=Codigo >
+            <iColl id=Datos >
+                <kColl id=Dato>
+                    <field id=Valor >
+                </kColl>
+            </iColl >
+            <field id=Mensaje >
+        </kColl>
+    </iColl>
+
+    <!-- Mensajes no solicitados ASTA -->
+    <iColl id=Mensajes >
+        <kColl id=Mensaje >
+            <field id=Texto >
+        </kColl>
+    </iColl>
+    <!-- FIN ASTA - Tx en ENET -->
+</kColl>
+
+<! -----DATOS PARA EL SERVICIO DUMMY DE COMUNICACIONES ----->
+
+<kColl id=CodigoTXEntrada>
+	<field id=Dummy>
+	<field id=IdTx>
+</kColl>
+
+<! ------------------------------  >
+
+<! ----- DEFINICION DE ARQUITECTURAS DE COMUNICACIONES ----->
+<kColl id=ArquitecturaCics>
+	<kColl id=CapaControl>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaControlCics>
+		<field id=UsarCache value=si>
+		<field id=ServicioCache value=CacheBBVACICS>
+	</kColl>
+	<kColl id=CapaFormateo>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaFormateoCics>
+		<field id=DatosCabeceraEnvio value=CabeceraHost>
+		<field id=FormatoCabeceraEnvio value=CabeceraHost>
+		<field id=DatosCabeceraRecepcion value=CabeceraHost>
+		<field id=FormatoCabeceraRecepcion value=CabeceraHost>
+		<field id=LongitudCabeceraRecepcion value=195>
+	</kColl>
+	<kColl id=CapaComunicaciones>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaComunicacionesCics>
+		<kColl id=Consulta>
+			<field id=SufijoServicioComunicaciones value="">
+			<field id=NumeroReintentos value=1>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=30>
+		</kColl>
+		<kColl id=TxSincrono>
+			<field id=SufijoServicioComunicaciones value="">
+			<field id=NumeroReintentos value=1>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=30>
+		</kColl>
+		<kColl id=Sincrono>
+			<field id=SufijoServicioComunicaciones value="Sincrono">
+			<field id=NumeroReintentos value=0>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=30>
+		</kColl>
+		<kColl id=Asincrono>
+			<field id=SufijoServicioComunicaciones value="Sincrono">
+			<field id=NumeroReintentos value=0>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=0>
+		</kColl>
+	</kColl>
+</kColl>
+
+<!-- INICIO ASTA - Tx en ENET -->
+<kColl id=ArquitecturaAsta_co>
+    <kColl id=CapaControl>
+        <field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.CapaControl>
+        <field id=UsarCache value=no>
+        <field id=ServicioCache>
+    </kColl>
+    <kColl id=CapaFormateo>
+        <field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.asta.CapaFormateoAsta>
+        <field id=DatosCabeceraEnvio value=CabeceraEnvioAsta_co>
+        <field id=FormatoCabeceraEnvio value=CabeceraEnvioAsta_co>
+        <field id=DatosCabeceraRecepcion value=CabeceraRecepcionAsta>
+        <field id=FormatoCabeceraRecepcion value=CabeceraRecepcionAsta>
+        <field id=LongitudCabeceraRecepcion value=26>
+    </kColl>
+    <kColl id=CapaComunicaciones>
+        <field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.asta.CapaComunicacionesAsta>
+        <field id=ServicioTerminales value=GeneradorTerminales>
+        <kColl id=Consulta>
+            <field id=SufijoServicioComunicaciones value="">
+            <field id=NumeroReintentos value=0>
+            <field id=TimeoutReintentos value=5>
+            <field id=Timeout value=180>
+        </kColl>
+    </kColl>
+</kColl>
+
+<kColl id=CabeceraEnvioAsta_co>
+    <field id=TerminalLogico>                              
+    <field id=TerminalContable>                            
+    <field id=CodigoUsuario>                               
+    <field id=NumeroSecuencia>                             
+    <field id=CodigoTransaccion>                           
+    <field id=TeclaFuncion value="00">                     
+    <field id=LongitudEntrada>                             
+    <field id=Commit value="1">                            
+    <field id=TipoMensaje value="1">                       
+    <field id=TipoProceso value="O">                       
+    <field id=Canal>                                       
+    <field id=Preformateo value="N">                       
+    <field id=Idioma value="@Idioma_co">                   
+</kColl>
+
+<kColl id=CabeceraRecepcionAsta>
+    <field id=RespuestaServicio> <!-- Transaction / Service Response -->
+    <field id=CodigoRespuesta> <!-- Process Control -->
+    <field id=NumeroSecuencia> <!-- Sequence Number -->
+    <field id=LongitudSalida> <!-- Output Message Length -->
+</kColl>
+
+<!-- DEFINICION ADICIONAL ASTA -->
+<kColl id=InputMap >
+    <field id=LongitudCopy>
+    <field id=TipoMensaje>
+    <field id=Mensaje>
+</kColl>
+
+<kColl id=DestinationMap >
+    <field id=Id>
+    <field id=Destino>
+    <field id=TipoDocumento>
+    <field id=Id>
+    <field id=PrimeraLinea>
+    <field id=Impreso>
+    <field id=Idioma>
+</kColl>
+
+<kColl id=OutputCopyMap >
+    <field id=TipoCopy>
+    <field id=NumeroDestino>
+    <field id=Formato>
+    <field id=Datos>
+</kColl>
+
+<kColl id=JournalMap >
+    <field id=Contenido>
+</kColl>
+
+<kColl id=NextTransactionMap >
+    <field id=IdTransaccion>
+    <field id=TipoEnvio>
+    <field id=TipoCopy>
+    <field id=Datos>
+</kColl>
+
+<kColl id=ScrollMap >
+    <field id=SiguienteTx>
+    <field id=PrimeraLinea>
+    <field id=NumeroLineas>
+    <field id=LongitudLinea>
+    <field id=Datos>
+</kColl>
+<!-- FIN ASTA - Tx en ENET -->
+<! -----DATOS PARA EL SERVICIO DE LOG ----->
+
+<kColl id = DiarioDataSesion>
+	<field id = tipo_log>
+	<field id = info_capa>
+	<field id = timestamp>
+	<field id = aplicacion>
+	<field id = id_sesion>
+	<field id = cod_logon>
+	<field id = canal>
+	<field id = cod_bancoint>
+	<field id = cod_producto>
+	<field id = cod_subproducto>
+	<field id = cod_bancoprint>
+        <field id = ip_cliente>
+	<field id = msg_error>
+</kColl>
+<kColl id = DiarioDataOperacion>
+	<field id = tipo_log>
+	<field id = info_capa>
+	<field id = timestamp>
+	<field id = aplicacion>
+	<field id = id_sesion>
+	<field id = cod_logon>
+	<field id = canal>
+	<field id = cod_bancoint>
+	<field id = cod_producto>
+	<field id = cod_subproducto>
+	<field id = cod_bancoprint>
+	<field id = proceso>
+	<field id = operacion>
+	<field id = accion>
+	<field id = estado_pr>
+	<field id = estado_op>
+	<field id = msg_error>
+</kColl>
+<kColl id = DiarioDataMulticanal>
+	<field id = tipo_log>
+	<field id = info_capa>
+	<field id = timestamp>
+	<field id = aplicacion>
+	<field id = id_sesion>
+	<field id = cod_logon>
+	<field id = canal>
+	<field id = cod_bancoint>
+	<field id = cod_producto>
+	<field id = cod_subproducto>
+	<field id = cod_bancoprint>
+	<field id = operacion>
+	<field id = contexto>
+	<field id = msg_error>
+</kColl>
+<kColl id = DiarioDataTransaccion>
+	<field id = tipo_log>
+	<field id = info_capa>
+	<field id = timestamp>
+	<field id = aplicacion>
+	<field id = id_sesion>
+	<field id = cod_logon>
+	<field id = canal>
+	<field id = cod_bancoint>
+	<field id = cod_producto>
+	<field id = cod_subproducto>
+	<field id = cod_bancoprint>
+	<field id = id_transaccion>
+	<field id = mensaje>
+	<field id = msg_error>
+</kColl>
+<kColl id = DiarioDataBBDD>
+	<field id = tipo_log>
+	<field id = info_capa>
+	<field id = timestamp>
+	<field id = aplicacion>
+	<field id = id_sesion>
+	<field id = cod_logon>
+	<field id = canal>
+	<field id = cod_bancoint>
+	<field id = cod_producto>
+	<field id = cod_subproducto>
+	<field id = cod_bancoprint>
+	<field id = sql>
+	<field id = msg_error>
+</kColl>
+<kColl id = DiarioDataExcepcion>
+        <field id = tipo_log>
+        <field id = info_capa>
+        <field id = timestamp>
+        <field id = aplicacion>
+        <field id = id_sesion>
+        <field id = cod_logon>
+        <field id = canal>
+        <field id = cod_bancoint>
+        <field id = cod_producto>
+        <field id = cod_subproducto>
+        <field id = cod_bancoprint>
+        <field id = clase>
+        <field id = tipo_error>
+        <field id = proceso>
+        <field id = operacion_presentacion>
+        <field id = operacion_multicanal>
+        <field id = servicio>
+        <field id = mensaje_programador>
+        <field id = codigoError>
+</kColl>
+
+<kColl id = DiarioDataNGExcepcion>
+        <field id = info_capa>
+        <field id = tipo_log>
+        <field id = timestamp>
+        <field id = aplicacion>
+        <field id = id_sesion>
+        <field id = emulada>
+        <field id = usu_emulador>
+        <field id = cod_logon>
+        <field id = canal>
+        <field id = cod_bancoint>
+        <field id = cod_producto>
+        <field id = cod_subproducto>
+        <field id = cod_bancoprint>
+        <field id = funcionalidad>
+        <field id = capa>
+        <field id = tipo_error>
+        <field id = subtipo_error>
+        <field id = severidad>
+        <field id = proceso>
+        <field id = operacion_presentacion>
+        <field id = operacion_multicanal>
+        <field id = servicio>
+        <field id = clase>
+        <field id = mensaje_programador>
+        <field id = codigoError>
+        <field id = fuente_error>
+        <field id = code_error>
+        <field id = descripcion_bd>
+</kColl>
+
+<kColl id=ProcesosColombiaOperacionRepetida>
+	<field id=proceso_1 value=mancomunada_pr>
+	<field id=proceso_2 value=pr_index>
+	<field id=proceso_3 value=procesoEspecial1>
+	<field id=proceso_4 value=procesoEspecial2>
+</kColl>

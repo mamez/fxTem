@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<repositorio>
+   <aplicacion nombre="Enet">
+    <directorio nombre="sgm" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_cfg"  >
+		<componente nombre="gestion_pagos_pse_divisas_pr.sgm"/>
+		<componente nombre="gestion_pagos_pse_divisas_op.sgm"/>
+		<componente nombre="consulta_pagos_pse_divisa_om.sgm"/>
+		<componente nombre="rollback_operation_creation_om.sgm"/>
+		<componente nombre="mancomunada_op_mult_rs7.sgm"/>
+		<componente nombre="om_listar_bancos_ach.sgm"/>
+		<componente nombre="om_payments_service.sgm"/>
+		<componente nombre="om_operative_conditions_service.sgm"/>
+		<componente nombre="finalizar_operaciones_negociacion_op.sgm"/>
+        <componente nombre="consulta_operaciones_negociacion_op.sgm"/>
+		<componente nombre="dsedata.sgm"/>
+		<componente nombre="txfmts.sgm"/>
+		<componente nombre="txdata.sgm"/>
+		<componente nombre="consulta_cuenta_om.sgm"/>
+		<componente nombre="comercio_exterior_bbva_pr.sgm"/>
+		<componente nombre="consulta_detalle_operaciones_negociacion_om.sgm"/>
+		<componente nombre="om_dynamic_currency_service.sgm"/>
+	</directorio>
+	<directorio nombre="properties" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_cfg"  >
+		<componente nombre="PNET_PDPSEen.properties"/>
+		<componente nombre="PNET_PDPSEes.properties"/>
+		<componente nombre="CATALOGOS.properties"/>
+		<componente nombre="PNET_COMEes.properties"/>
+		<componente nombre="PNET_COMEen.properties"/>
+		<componente nombre="PNET_OpDETAILPSEen.properties"/>
+		<componente nombre="PNET_OpDETAILPSEes.properties"/>
+	</directorio>
+	<directorio nombre="java" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_web\src"  >
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="OpGestionPagosPseDivisa.java" />
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="PrGestionPagosPseDivisa.java" />
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="OMGestionPseDivisa.java" />
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="MetodoEnum.java"/>
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="OrdenDetailDto.java"/>
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="UsuarioResponse.java"/>
+	<componente paquete="com.grupobbva.bc.col.web.pse" nombre="UsuariosPseDto.java"/>
+	<componente paquete="com.grupobbva.col.servicios" nombre="OmRollbackOpCreation.java"/>
+	<componente paquete="com.grupobbva.col.servicios" nombre="OpGestion_xhr_rs7.java"/>
+	<componente paquete="com.grupobbva.bc.col.web.mancomunadas" nombre="OpMancomunadasMultiple_rs7.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector" nombre="ClientHttpFactory.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector" nombre="HttpClient.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector" nombre="Response.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector" nombre="ResponseEntity.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector" nombre="RestConector.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.contract" nombre="DefaultMapper.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.contract" nombre="JsonMapper.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.contract" nombre="LogConector.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.contract" nombre="LogImpl.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.util" nombre="HttpClientException.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.util" nombre="HttpMethod.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.util" nombre="ResponseCode.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="OMListarBancoAch.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="OMTrisConector.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="OMPaymentService.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="MetodosPayment.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="MetodosConditions.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="OMOperativeConditions.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.om" nombre="OMDynamicCurrency.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.listBanc" nombre="BanckAch.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.listBanc" nombre="Description.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.listBanc" nombre="ListaBa1ncosAch.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="AdditionalInformation.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Amount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Bank.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ConciliateRequest.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ConciliateResponse.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Data.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="DocumentType.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Fees.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="GetPaymentsServiceResponse.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Holder.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="IdentityDocument.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ItemizeFee.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ItemizeFeeUnit.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ItemizeRate.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ItemizeTax.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ItemizeTaxUnit.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="LegalPersonType.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Link.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="NumberType.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Origin.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="PaymentAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="PaymentsServiceRequest.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="PaymentsServiceResponse.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="PaymentType.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ProductType.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Rates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Reason.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Receiver.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Reference.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="ReimbursementAccount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Status.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="Taxes.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="TotalFees.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="TotalRates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="TotalTaxes.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="AmountNegotiated.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="AmountTax.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="Data.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="FeeAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="Fees.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="ItemizeFee.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="ItemizeRate.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="ItemizeRateUnits.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="ItemizeTax.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="OperativeConditionsRequest.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="OperativeConditionsResponse.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="Rates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="Taxes.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="TotalCharged.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="TotalFees.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="TotalRates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.operativeConditions" nombre="TotalTaxes.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Advance.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Bank.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Beneficiary.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ChargeAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ComisionServiceDto.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Datum.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ItemizeRate.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ItemizeRateUnit.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ItemizeTax.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ItemizeTaxUnit.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Links.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="NegotiatedAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="NetAmountSecureOnlinePayments.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Pagination.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Rates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="ReimbursementAccount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="Taxes.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="TotalRates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="TotalTaxes.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.comisionService" nombre="TransferedTotalAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="Customer.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="Data.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="DinamicCurrencyRequest.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="DinamicCurrencyResponse.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="DocumentType.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="EquivalentDollars.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="ExchangeRate.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="Fees.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="IdentityDocument.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="ItemizeFee.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="Data.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="ItemizeFeeUnit.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="ItemizeRate.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="ItemizeRatesUnit.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="LocalAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="Operation.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="Rates.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="RespuestaGlobal.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="TotalAmount.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.dynamicCurrency" nombre="TransactionSummary.java"/>
+	<componente paquete="com.grupobbva.bc.col.web.comercioext" nombre="OpConsultaOperaciones.java"/>
+    <componente paquete="com.grupobbva.bc.col.web.comercioext" nombre="OpFinalizarOperaciones.java"/>
+	<componente paquete="com.grupobbva.bc.col.web.comercioext.clientews" nombre="RequestBankTradeService.java"/>
+	<componente paquete="com.grupobbva.col.rest.conector.dto.payment" nombre="MapPayment.java"/>
+	
+	</directorio>
+	<directorio nombre="jsp" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_jsp"  >
+		<componente nombre="gestionPagosPseDivInici.jsp"/>
+		<componente nombre="tlne_response_json.jsp"/>
+		<componente nombre="consulta_historico_operaciones.jsp"/>
+		<componente nombre="consulta_operaciones_hacia_exterior.jsp"/>
+		<componente nombre="crear_negociacion_linea_divisas.jsp"/>
+		<componente nombre="crear_negociacion_mesaDinero_divisas2.jsp"/>
+		<componente nombre="seleccion_beneficiarios_divisas_modificar.jsp"/>
+		<componente nombre="seleccion_beneficiarios_divisas.jsp"/>
+		<componente nombre="formularios_negociacion_linea_divisas.jsp"/>
+		<componente nombre="formularios_negociacion_linea_divisas_modificar.jsp"/>
+		<componente nombre="finalizar_negociacion_linea_divisas.jsp"/>
+		<componente nombre="finalizar_resultado_divisas_pse.jsp"/>
+		<componente nombre="finalizar_negociacion_divisas_redirect_pse.jsp"/>
+		<componente nombre="validaContinuar.jsp"/>
+        <componente nombre="gestion_beneficiarios_divisas.jsp"/>
+	</directorio>
+	<directorio nombre="js" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_pub\pub_webseal\js\version7"  >
+		<componente nombre="MainPseDivisas.js"/>
+		<componente nombre="negociacion_Divisas_Scripts.js"/>
+		<componente nombre="marcoDivisas.js"/>
+	</directorio>
+	<directorio nombre="css" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_pub\pub_webseal\estilos\version7"  >
+		<componente nombre="newLookGiros.css"/>
+		<componente nombre="mainPagosGirosDesdeHacia.css"/>
+		<componente nombre="lookDivisas.css"/>
+		<componente nombre="finalizarResultadoDivisas.css"/>
+	</directorio>
+	<directorio nombre="images" fuente="C:\Ambientes\NET_CASH\WorkSpacePSE\enet_co_pub\pub_webseal\images\version7"  >
+		<componente nombre="infDiv.png"/>
+		<componente nombre="itemDiv.png"/>
+		<componente nombre="pseDiv.png"/>
+	</directorio>
+   </aplicacion>
+</repositorio>
+
+
+

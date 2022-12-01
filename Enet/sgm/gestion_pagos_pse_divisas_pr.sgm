@@ -1,0 +1,21 @@
+<! BBVA ---------------------------------------------------------------------------->
+<! Operación: PRESENTACION gestion_pagos_pse_divisas_pr ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pse.PrGestionPagosPseDivisa id=gestion_pagos_pse_divisas_pr operationContext=OperationContext>s
+<! ESTADOS --------------------------------------------------------------------------->
+<navegacionPr>
+<estadoPr id=0 operacion= gestion_pagos_pse_divisas_op>
+</navegacionPr>
+
+<resultadoPr>
+<salidaPr id=0 operacion= gestion_pagos_pse_divisas_op estadoOP=0 jspFile= gestionPagosPseDivInici>
+<salidaPr id=0 operacion= gestion_pagos_pse_divisas_op estadoOP=1 jspFile= gestionPagosPseDivInici >
+<salidaPr id=0 operacion= gestion_pagos_pse_divisas_op estadoOP=2 jspFile= tlne_response_json >
+<salidaPr id=0 operacion= gestion_pagos_pse_divisas_op estadoOP=3 jspFile= tlne_response_json >
+<salidaPr id=0 operacion= gestion_pagos_pse_divisas_op estadoOP=4 jspFile= tlne_response_json >
+
+</resultadoPr>
+
+</com.grupobbva.bc.col.web.pse.PrGestionPagosPseDivisa>
+
+<! --------------------------------------------------------------------------------->

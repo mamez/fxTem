@@ -1,0 +1,1926 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operacion:  PRESENTACION consulta_operaciones_negociacion_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.comercioext.OpConsultaOperaciones id=consulta_operaciones_negociacion_op operationContext=OperationContext>
+	<refKColl refId=consulta_operaciones_negociacion_op-data>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	
+	<refOM refId=sign_on_om>
+	<refOM refId=consulta_operaciones_negociacion_om>
+   	<refOM refId=consulta_detalle_operaciones_negociacion_om>
+   	<refOM refId=consulta_tasas_operaciones_negociacion_om>
+	<refOM refId=validacion_codigo_om>
+	<refOM refId=compra_divisas_consulta_beneficiarios_om>
+	<refOM refId=alta_beneficiarios_om>
+	<refOM refId=compra_divisas_consulta_estado_cuenta_om>
+	<refOM refId=compra_divisas_consulta_avances_om>
+	<refOM refId=compra_divisas_consulta_centro_oficina_om>
+	<refOM refId=divisas_consulta_unica_operaciones_om>
+	<!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	<refOM refId=consulta_nit_om>
+	<refOM refId=validacion_baep_om>
+	<refOM refId=consulta_cuenta_om>
+    <!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+    <refOM refId=ciri_generic_rest_client_om>  <!-- MONTO GP17663 25-05-2021 CMC -->
+	<!--INI BLOTTER -->
+	<refOM refId=om_operative_conditions_service>
+	<!--FIN BLOTTER -->
+	<refOM refId=consulta_pagos_pse_divisa_om>
+	<refOM refId=om_payments_service>
+	<refOM refId=om_dynamic_currency_service>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=1 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=2 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=3 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=4 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=5 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=6 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=7 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=8 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=9 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=10 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=11 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+        <estadoOP id=14 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=15 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt> 
+		<estadoOP id=16 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>	
+		<estadoOP id=17 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=18 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>		
+		<estadoOP id=19 accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=ERROR accion=tipoGiros metodo=tipoGiros requestFmt=inicioHTMLFmt>
+		<estadoOP id=ERRORWS accion=tipoGiros metodo=tipoGiros  requestFmt=inicioHTMLFmt><!-- Incidencia fx 127 06/12/2018 -->
+		
+		<estadoOP id=0 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=1 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=2 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=3 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=4 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=5 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=6 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=7 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=8 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=9 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=10 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=11 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt> 
+		<estadoOP id=12 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt> 
+		<estadoOP id=13 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=14 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=15 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=16 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=17 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=18 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=19 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=ERROR accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=ERRORWS accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		
+		
+		
+		<estadoOP id=0 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=1 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=2 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=3 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=4 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=5 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=6 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=7 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=8 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=9 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=10 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=11 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=14 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=15 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=16 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=17 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=18 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=19 accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=ERROR accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		<estadoOP id=ERRORWS accion=girosHacia metodo=girosHacia requestFmt=filtroHTMLFmt>
+		
+		<estadoOP id=0 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=1 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=2 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=3 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=4 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=5 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=6 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=7 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=8 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=9 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=10 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=11 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=14 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=15 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=16 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=17 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=18 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=19 accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=ERROR accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=ERRORWS accion=traerGiros metodo=traerGiros requestFmt=operacionesHHTMLFmt>
+		
+		<estadoOP id=0 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=1 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=2 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=3 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=4 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=5 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=6 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=7 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=8 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=9 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=10 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=11 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=14 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=15 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=16 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=17 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=18 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=19 accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=operacionesHHTMLFmt>
+		<estadoOP id=ERROR accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		<estadoOP id=ERRORWS accion=filtrarGirosDesde metodo=filtrarGirosDesde requestFmt=filtroDHTMLFmt>
+		
+		<estadoOP id=0 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=1 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=2 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=3 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=4 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=5 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=6 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=7 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=8 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=9 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=10 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=11 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=14 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=15 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=16 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=17 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=18 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=19 accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=ERROR accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		<estadoOP id=ERRORWS accion=girosDesde metodo=girosDesde requestFmt=filtroHTMLFmt>
+		
+		<estadoOP id=0 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=1 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=2 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=3 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=4 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=5 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=6 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=7 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=8 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=9 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=10 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=11 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=14 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=15 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=16 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=17 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=18 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=19 accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=ERROR accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		<estadoOP id=ERRORWS accion=detalle metodo=detalleGiro requestFmt=detalleHTMLFmt>
+		
+		<estadoOP id=0 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=1 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=2 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=3 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=4 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=5 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=6 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=7 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=8 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=9 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=10 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=11 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=14 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=15 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=16 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=17 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=18 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=19 accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=ERROR accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		<estadoOP id=ERRORWS accion=cotizador metodo=cotizador requestFmt=cotizarHTMLFmt>
+		
+		<estadoOP id=0 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=1 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=2 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=3 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=4 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=5 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=6 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=7 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=8 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=9 accion=mostrarMas  metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=10 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=11 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=14 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=15 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=16 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=17 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=18 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=19 accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=ERROR accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		<estadoOP id=ERRORWS accion=mostrarMas metodo=mostrarMas requestFmt=masHTMLFmt>
+		
+		<estadoOP id=0 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=1 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=2 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=3 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=4 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=5 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=6 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=7 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=8 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=9 accion=mostrarAtras  metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=10 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=11 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=14 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=15 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=16 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=17 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=18 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=19 accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=ERROR accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		<estadoOP id=ERRORWS accion=mostrarAtras metodo=mostrarAtras requestFmt=masHTMLFmt>
+		
+		<estadoOP id=0 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=1 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=2 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=3 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=4 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=5 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=6 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=7 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=8 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=9 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=10 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=11 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=14 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=15 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=16 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=17 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=18 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=19 accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=ERROR accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		<estadoOP id=ERRORWS accion=negociarLinea metodo=negociarLinea requestFmt=negociarHTMLFmt>
+		
+		<!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=0 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=1 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=2 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=3 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=4 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=5 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=6 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=7 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=8 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=9 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=10 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=11 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019  -->
+		<estadoOP id=13 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=14 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=15 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=16 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=17 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=18 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=19 accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=ERROR accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<estadoOP id=ERRORWS accion=ConsultarCuentas metodo=ConsultarCuentasPorNit requestFmt=ConsultaCuentaHTMLFmt>
+		<!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		
+		<estadoOP id=0 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=1 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=2 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=3 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=4 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=5 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=6 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=7 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=8 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=9 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt2>
+		<estadoOP id=10 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=11 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<!-- <estadoOP id=12 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt><!-- INC 225B FX CMC 09/09/2019 -->		
+		<estadoOP id=13 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=14 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=15 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=16 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=17 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=18 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=19 accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=benefHTMLFmt>
+		<estadoOP id=ERROR accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=ErrorOPJspFmt>
+		<estadoOP id=ERRORWS accion=selecBeneficiarios metodo=selecBeneficiarios requestFmt=ErrorOPJspFmt><!-- Incidencia fx 98 19/10/2018 -->
+		
+		<estadoOP id=0 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=1 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=2 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=3 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=4 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=5 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=6 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=7 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=8 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=9 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=10 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=11 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=13 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=14 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=15 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=16 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=17 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=18 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=19 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=ERROR accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=ERRORWS accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		
+		
+		<estadoOP id=0 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=1 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=2 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=3 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=4 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=5 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=6 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=7 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=8 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=9 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=10 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=11 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=13 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>		<!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=14 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=15 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=16 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=17 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=18 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=19 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=ERROR accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=ERRORWS accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=DatosConsultaOPHTMLFmt>
+		
+		<estadoOP id=0 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=1 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=2 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=3 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=4 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=5 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=6 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=7 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=8 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=9 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=10 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=11 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+        <estadoOP id=13 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>		<!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=14 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=15 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=16 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=17 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=18 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=19 accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=ERROR accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		<estadoOP id=ERRORWS accion=negociarMesaDinero metodo=negociarMesaDinero requestFmt=negociarMeDiHTMLFmt>
+		
+		<estadoOP id=0 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=1 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=2 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=3 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=4 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=5 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=6 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=7 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=8 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=9 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=10 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=11 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<estadoOP id=12 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+        <estadoOP id=13 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>		<!-- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019 -->
+		<estadoOP id=14 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=15 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=16 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=17 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=18 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=19 accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=ERROR accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		<estadoOP id=ERRORWS accion=crearSimilar metodo=crearSimilar requestFmt=crearSimilarDiHTMLFmt>
+		
+		<!--INI- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019  -->
+		<estadoOP id=0 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=1 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=2 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=3 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=4 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=5 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=6 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=7 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=8 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=9 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=10 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=11 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt> 
+		<estadoOP id=12 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=13 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=14 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=15 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=16 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=17 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=18 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=19 accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=ERROR accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<estadoOP id=ERRORWS accion=validarContinuar metodo=validarContinuar requestFmt=validarContinuarHTMLFmt>
+		<!--FIN- VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019  -->
+		
+		<!--INI BLOTTER -->
+		<estadoOP id=0 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=1 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=2 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=3 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=4 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=5 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=6 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=7 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=8 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=9 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=10 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=11 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=12 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=13 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=14 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=15 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>	
+		<estadoOP id=16 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=17 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=18 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=19 accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=ERROR accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		<estadoOP id=ERRORWS accion=getblotter metodo=getblotter requestFmt=filtroBlotterPSEHTMLFmt>
+		
+		<estadoOP id=0 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=1 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=2 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=3 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=4 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=5 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=6 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=7 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=8 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=9 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=10 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=11 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=12 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=13 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=14 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=15 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>	
+		<estadoOP id=16 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=17 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=18 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=19 accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=ERROR accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		<estadoOP id=ERRORWS accion=executeblotter metodo=executeblotter requestFmt=executeblotterPSEHTMLFmt>
+		
+		<estadoOP id=0  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=1  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=2  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=3  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=4  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=5  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=6  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=7  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=8  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=9  accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=10 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=11 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=12 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=13 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=14 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=15 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>	
+		<estadoOP id=16 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=17 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=18 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=19 accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=ERROR accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<estadoOP id=ERRORWS accion=beneficiario metodo=getBeneficiario requestFmt=beneficiarioPSEHTMLFmt>
+		<!--FIN BLOTTER -->
+		<estadoOP id=0  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=1  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=2  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=3  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=4  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=5  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=6  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=7  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=8  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=9  accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=10 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=11 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=12 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=13 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=14 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=15 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>	
+		<estadoOP id=16 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=17 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=18 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=19 accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=ERROR accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+		<estadoOP id=ERRORWS accion=actualizarPse metodo=actualizarPse requestFmt=DatosActualizarPseHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERRORWS jspFmt=ErrorOPJspFmt><!-- Incidencia fx 98 19/10/2018 -->
+		<salidaOP id=0 jspFmt=noDatosJspFmt>
+		<salidaOP id=1 jspFmt=inicioJspFmt>
+		<salidaOP id=2 jspFmt=inicioJspFmt>
+		<salidaOP id=3 jspFmt=cotizacionJspFmt>
+		<salidaOP id=4 jspFmt=listadoJspFmt>
+		<salidaOP id=5 jspFmt=detalleJspFmt>
+		<salidaOP id=6 jspFmt=cuentasJspFmt>
+		<salidaOP id=7 jspFmt=negoJspFmt>
+		<salidaOP id=8 jspFmt=selecBenefJspFmt>
+		<salidaOP id=9 jspFmt=benefJspFmt>
+		<salidaOP id=10 jspFmt=negoMeDiJspFmt>
+		<salidaOP id=11 jspFmt=ListaCuentasHTMLFmt><!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<salidaOP id=12 jspFmt=salidaValidaContinuarHTMLFmt><!--VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019  -->
+		<salidaOP id=13 jspFmt=consulJspFmt>
+		<salidaOP id=14 jspFmt=consulBAEPJspFmt>
+		<salidaOP id=15 jspFmt=consulBAEPJspFmt>
+		<salidaOP id=16 jspFmt=jsonResponseJspFmt>
+		<salidaOP id=17 jspFmt=jsonResponseJspFmt>
+		<salidaOP id=18 jspFmt=jsonResponseJspFmt>
+		<salidaOP id=19 jspFmt=jsonResponseJspFmt>
+	</resultadoOP>
+	
+</com.grupobbva.bc.col.web.comercioext.OpConsultaOperaciones>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_operaciones_negociacion_op-data>
+    <field id=idcuspse>
+    <field id=jsonData> <!-Dato json blotter pse-->
+    <field id=toDate>
+    <field id=fromDate>
+	<field id=NOMBAN>
+    <field id=PAISBAN>
+	<field id=CIUDBAN>
+    <field id=COD-ERROR>
+	<field id=VALOR-ERROR-UNO>
+	<field id=indiList>
+    <field id=codError>
+	<field id=valError>
+	<field id=codePaisBene>
+	<field id=codePaisInte>
+	<field id=errorBeneficiario>
+	<field id=nombreOperacion>
+	
+	<field id=literalCodigoUnitario>
+    <field id=codigoUnitario>
+    <field id=codigoConsBanco>
+    <field id=element>
+	<field id=errorSwift value="N"><!-- INC 225B FX 12-09-2019 -->
+	<field id=pagina_actual><!-- INC 102 FX 23-10-2018 -->
+	<field id=bandera_paginacion><!-- INC 102 FX 23-10-2018 -->
+	<field id=validaDes><!-- INC 202 FX 20-03-2019 -->	
+	<field id=montoBandera><!-- INC 213 FX CMC 06/05/2019 -->
+	<field id=Error>
+	<field id=msjError>
+	<field id=descErrorMonto><!-- INC 214 FX - CMC 10-05-2019 -->
+	<field id=FECHAOPE>
+	<field id=tipoClaveOp>
+	<field id=hayMas>
+	<field id=pagina>
+	<field id=pestana>
+	<field id=registro>	
+	<field id=totalRegistros>
+	<field id=hayMas value="S">
+	<field id=tamPagina value="10">
+	
+	<field id=tipoOperacion>
+	<field id=indiceGiro>
+	<! FX INI INC 52 07/03/2018------------------------------------------------------------------------->
+	<field id=mostrarFechaOpera>
+	<! FX FIN INC 52 07/03/2018------------------------------------------------------------------------->
+	<! FX INI INC 6.1 12/06/2018------------------------------------------------------------------------->
+	<field id=mostrarConcepto>	
+	<field id=mostrarFechaOpeDetalle>
+	<field id=mostrarNumCambiario>
+	<field id=mostrarMonto>	
+	<field id=mostrarEstado>
+	<! FX FIN INC 6.1 12/06/2018------------------------------------------------------------------------->
+	<field id=monto>
+	<field id=cMonto>
+	<field id=selectMoneda>
+	<field id=selectCuentaOrden>
+	<field id=selectOpe>
+	<field id=descripNegociacion>
+	<field id=validaCta>
+	<field id=referenciaOpe>
+	<field id=avanceOpe>
+	<field id=indAvance>
+	<field id=Formulario>
+	<field id=NumeralC>
+	<field id=numOperacion>
+	<field id=oficinaGestoraOP><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+	<field id=filtro>
+	<field id=fechaDesde>
+	<field id=fechaHasta>
+	<field id=tipoFondoGiro>
+	<field id=businessId>
+	<field id=businessOp>
+	<field id=equivaPesos>
+	<field id=comision>
+	<field id=iva>
+	<field id=totalDebito>
+	<field id=rate>
+	<field id=amountEquiv>
+	<field id=contingencia>
+	<field id=isOpenModal>
+	<field id=tempor1>
+	<field id=tempor2>
+	<field id=tempor3>
+	<field id=tempor4>
+	<field id=tempor5>
+	<field id=operatePse value="NO">
+	<field id=blockButton value="false">
+	
+	<field id=tasaDivisa>
+	<field id=tasaUsdPeso>
+	<field id=tasaDivisaPeso>
+	<field id=equivPesos>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+	<field id=timerS>
+	<field id=piloto>
+<!-- FIN GP 12886 MOISES LUNA FX 09-03-2018 -->
+<!-- INI INC 85-->
+	<field id=tasaDivisaPeso2>
+	<field id=equivPesos2>
+<!-- FIN INC 85-->
+  
+	<field id=kdocumento>
+	<field id=indBenef>
+	<field id=indHorario>
+	<field id=indHorarioModif>
+	<field id=fechaHoy><!-- INC 217 FX CMC 03/07/2019 -->
+	<field id=docBenefi>
+	<field id=fechaOperacion>
+	<field id=fechaValor><!-- INC 217 FX CMC 09/07/2019 -->
+	
+	<iColl id=listaGirosTotal>
+	  <kColl id=giro>
+		<field id=nOperacion>
+		<field id=fechaOperacion>
+		<field id=fechaValor>
+		<field id=horaOperacion>
+		<field id=monto>
+		<field id=moneda>
+		<field id=nAvance>
+		<field id=tipoNegociacion>
+		<field id=tasaDivisa>
+		<field id=tasaPeso>
+		<field id=tasaUsd>
+		<field id=equivalentePesos>
+		<field id=formNumeral>
+		<field id=descTransaccion>
+		<field id=ordenante>
+		<field id=beneficiario>
+		<field id=bancoBenef>
+		<field id=pais>
+		<field id=codSwift>
+		<field id=codAbba>
+		<field id=estado>
+		<field id=idBeneficiario>
+		<field id=idOrdenante>
+		<field id=idMovimiento>
+		<field id=cuentaAbono>
+		<field id=bancoInter>
+	  </kColl >
+	</iColl>
+	
+	<iColl id=listaGiros>
+	  <kColl id=giro>
+		<field id=nOperacion>
+		<field id=fechaOperacion>
+		<field id=fechaValor>
+		<field id=horaOperacion>
+		<field id=monto>
+		<field id=moneda>
+		<field id=nAvance>
+		<field id=tipoNegociacion>
+		<field id=tasaDivisa>
+		<field id=tasaPeso>
+		<field id=tasaUsd>
+		<field id=equivalentePesos>
+		<field id=formNumeral>
+		<field id=descTransaccion>
+		<field id=ordenante>
+		<field id=beneficiario>
+		<field id=bancoBenef>
+		<field id=pais>
+		<field id=codSwift>
+		<field id=codAbba>
+		<field id=estado>
+		<field id=idBeneficiario>
+		<field id=idOrdenante>
+		<field id=idMovimiento>
+		<field id=cuentaAbono>
+		<field id=bancoInter>
+	  </kColl >
+	</iColl>
+	
+  <kColl id=detalleGiro>
+	<field id=nOperacion>
+	<field id=fechaOperacion>
+	<field id=fechaValor>
+	<field id=horaOperacion>
+	<field id=monto>
+	<field id=moneda>
+	<field id=nAvance>
+	<field id=tipoNegociacion>
+	<field id=tasaDivisa>
+	<field id=tasaPeso>
+	<field id=tasaUsd>
+	<field id=equivalentePesos>
+	<field id=formNumeral>
+	<field id=descTransaccion>
+	<field id=ordenante>
+	<field id=beneficiario>
+	<field id=bancoBenef>
+	<field id=pais>
+	<field id=codSwift>
+	<field id=codAbba>
+	<field id=estado>
+	<field id=idBeneficiario>
+	<field id=idOrdenante>
+	<field id=idMovimiento>
+	<field id=cuentaAbono>
+	<field id=bancoInter>
+	<field id=montoLetras> 
+  </kColl >
+  
+  <kColl id=cotizacion>
+		<field id=tasaDivisa>
+		<field id=tasaUsdPeso>
+		<field id=tasaDivisaPeso>
+		<field id=equivPesos>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+	<field id=timerS>
+	<field id=piloto>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+  </kColl>
+  
+	<iColl id=lista_cuentas>
+		<kColl id=cuenta>
+			<field id=banco>
+			<field id=oficina>
+			<field id=dcontrol>
+			<field id=num_cuenta>
+			<field id=permiso>
+			<field id=clave_asunto>
+			<field id=tipo>
+			<field id=estado>
+			<field id=valaso>
+			<field id=divisa>
+			<field id=LimDiario>
+			<field id=LimTran>
+			<field id=LimMes>
+		</kColl >
+	</iColl >
+  
+  <kColl id=parametria>
+  	<field id=horaInicio>
+	<field id=horaFin>
+	<field id=horaNegoIni>
+	<field id=horaNegoFin>	
+	<field id=timer>
+	<iColl id=listaMonedas>
+	  <kColl id=moneda>
+		<field id=descMoneda>
+	  </kColl >
+	</iColl>
+  </kColl>
+  
+  <! ------ BENEFICIARIOS ------>
+  
+   <iColl id=listaCuentasB>
+	  <kColl id=CuentaB >
+	   		<field id=tipobeneficiar>
+			<field id=idbeneficiario>
+			<field id=digivbeneficia>
+		   <field id=nombresbenefic>
+	   	   <field id=apellidosbenef>
+		   <field id=direccionebenef>
+		   <field id=telefonobenefi>
+		   <field id=paisbeneficiar>
+		   <field id=ciudadbenefcia>
+		   <field id=cuentabenefica>
+		   <field id=tiposabanco1>
+		   <field id=codigosabanco1>
+		   <field id=nombrebancobe>
+		   <field id=paisbancobene>
+		   <field id=ciudadbancobe>
+		   <field id=direccbancobe>
+		   <field id=nombrebancoin>
+		   <field id=cuentaintermed>
+		   <field id=tiposabanco2>
+		   <field id=codigosabanc2>
+		   <field id=paisbancointe>
+		   <field id=ciudadbancoin>
+		   <field id=direccbancoin>
+		   <field id=codigoUnitario>
+	  </kColl >
+	</iColl >
+	
+	 <!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 11-07-2019 -->
+		<iColl id=IcListaNit>
+	  	   <kColl id=KcListaNit>
+	    	<field id=ClienteAltamira>
+			<field id=TipoDocumento>
+			<field id=NumeroDocumento>
+		    <field id=DigitoVerificacion>
+	    	<field id=NombreCliente>
+		    <field id=Oficina>
+		   </kColl >
+	    </iColl >
+	    <iColl id=IcListaCuenta >
+	  	   <kColl id=KcListaCuenta>
+	    	<field id=Cuenta>
+	    	<field id=oficinaGestora><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+		   </kColl >
+	    </iColl >
+	    
+	    <field id=ClienteCons>
+	    <field id=s_ClienteCons>
+	    <field id=S_Nit_Solo>
+		<field id=Nit_Completo>
+	<!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 11-07-2019 -->
+
+	<field id=tipobeneficiar>
+	<field id=idbeneficiario>
+	<field id=digivbeneficia>
+	<field id=nombresbenefic>
+	<field id=apellidosbenef>
+	<field id=direccionebenef>
+	<field id=telefonobenefi>
+	<field id=paisbeneficiar>
+	<field id=ciudadbenefcia>
+	<field id=cuentabenefica>
+	<field id=tiposabanco1>
+	<field id=codigosabanco1>
+	<field id=nombrebancobe>
+	<field id=paisbancobene>
+	<field id=ciudadbancobe>
+	<field id=direccbancobe>
+	<field id=nombrebancoin>
+	<field id=cuentaintermed>
+	<field id=tiposabanco2>
+	<field id=codigosabanc2>
+	<field id=paisbancointe>
+	<field id=ciudadbancoin>
+	<field id=direccbancoin>
+	<field id=selectNit>  <!--FILTRO NITS/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 26-06-2019  -->
+	<field id=NitMod>  <!--NIT MOD NITS/COMERCIO EXTERIOR - CMC - 11-07-2019  -->
+	<!--INI NITS 1.2 CMC FX 20/08/2019-->
+	<field id=indNITPrinHacia value="S">  	
+	<field id=NitNombre value="">	
+	<field id=IndicadorNIT value="">
+	<!--FIN NITS 1.2 CMC FX 20/08/2019-->		
+	<!--INI VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+	<field id=Nit_Nombre>
+ 	<field id=s_Fijo_Nit >
+        <field id=s_Fijo_Nombre >
+        <field id=ValidaDisplay>
+        <field id=SALIDA_NIT> 
+	<field id=NOMBRE_CLIENTE> 
+	<field id=DIVISA_COP>
+	<field id=DIVISA_DOLAR> 
+	<field id=DIVISA_PESO> 
+	<field id=DIVISA_MONEDA> 
+	<field id=E_MONTO>
+        <field id=S_ValidaDisplay> 
+        <field id=S_SALIDA_NIT> 
+	<field id=S_NOMBRE_CLIENTE> 
+	<field id=S_DIVISA_COP>
+	<field id=S_DIVISA_DOLAR> 
+	<field id=S_DIVISA_PESO> 
+	<field id=S_DIVISA_MONEDA>
+	<field id=S_MONTO>  
+        <field id=NitUnido>	
+	<!--FIN- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+	<field id=montoMaximoCotizar>  <!-- GP17663 MONTO 25-05-2021 CMC -->
+	<field id=pseAutorizado>
+	<field id=rangoAutorizado value="SI">
+	<field id=numTrans>
+	<!-- Variable blotter -->
+	<field id=nit>
+	<field id="page">
+	<field id="blotterOperationObj">
+	<field id="showBlotterPage" value="false">
+	<field id="origen" value="menu">
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+	<fString dataName=s_idioma description=idioma><nullCheck>
+	    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=consulJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=NOMBAN><nullCheck>
+		<fString dataName=PAISBAN><nullCheck>
+		<fString dataName=CIUDBAN><nullCheck>
+		<fString dataName=COD-ERROR><nullCheck>
+		<fString dataName=VALOR-ERROR-UNO><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=consulBAEPJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=indiList><nullCheck>
+		<fString dataName=coderror><nullCheck>
+		<fString dataName=valerror><nullCheck>
+	</fJsp>
+</fmtDef>
+<fmtDef id=noDatosJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=inicioJspFmt>
+	<fJsp>
+	    <fString dataName=showBlotterPage description=showBlotterPage><nullCheck>
+		<fString dataName=indiList description=indiList><nullCheck>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=pagina description=pagina>
+		<fString dataName=pestana description=pestana>
+		<fString dataName=hayMas description=hayMas>
+		<fString dataName=indHorario description=indHorario>
+		<fString dataName=indHorarioModif description=indHorarioModif>
+		<fString dataName=fechaHoy description=fechaHoy><!-- INC 217 FX CMC 03/07/2019 -->
+		<iCollVector dataName=listaGiros description=listaGiros>
+			<record dataName=giro description=giro>
+				<fString dataName=nOperacion><nullCheck>
+				<fString dataName=fechaOperacion><nullCheck>
+				<fString dataName=fechaValor><nullCheck><!-- INC 217 FX CMC 09/07/2019 -->
+				<fString dataName=nAvance><nullCheck>
+		        <fString dataName=moneda><nullCheck>
+		        <fNumString dataName=monto decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		        <fNumString dataName=tasaPeso	decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		        <fString dataName=estado><nullCheck>
+		        <fString dataName=idBeneficiario><nullCheck>
+				<fString dataName=beneficiario><nullCheck>
+		        <fString dataName=idOrdenante><nullCheck>
+		        <fString dataName=idMovimiento><nullCheck>
+		    </record>
+		 </iCollVector>
+		 <record dataName=parametria description=parametria>
+			<fString dataName=horaInicio><nullCheck>
+			<fString dataName=horaFin><nullCheck>
+			<fString dataName=horaNegoIni><nullCheck>
+			<fString dataName=horaNegoFin><nullCheck>
+			<fString dataName=timer><nullCheck>
+	    </record>
+	   <iCollVector dataName=parametria.listaMonedas description=listaDivisas>
+			<record dataName=moneda>
+				<fString dataName=descMoneda><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+	   <iCollVector dataName=lista_cuentas description=listaCuentas>
+			<record dataName=cuenta>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dcontrol><nullCheck>
+				<fString dataName=num_cuenta><nullCheck>
+				<fString dataName=permiso><nullCheck>
+				<fString dataName=clave_asunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+				<fString dataName=estado><nullCheck>
+				<fString dataName=valaso><nullCheck>
+				<fString dataName=divisa><nullCheck>
+				<fString dataName=LimDiario><nullCheck>
+				<fString dataName=LimTran><nullCheck>
+				<fString dataName=LimMes><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+		  <record dataName=cotizacion description=cotizacion>
+	  		<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+			<fString dataName=timerS><nullCheck>
+			<fString dataName=piloto><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+			</record>
+		
+	   <fString dataName=tipoOperacion description=tipoOperacion><nullCheck>
+		<fString dataName=selectMoneda description=selectMoneda><nullCheck>
+		
+		<fString dataName=S_Nit_Solo description=S_Nit_Solo><nullCheck><!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		
+		 <!-- INI - FILTRO NITS/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 26-06-2019 -->
+		<iCollVector dataName=IcListaNit description=IcListaNit>
+	  	   <record dataName=KcListaNit>
+		     	<fString dataName=ClienteAltamira><nullCheck>
+			 	<fString dataName=TipoDocumento><nullCheck>
+			 	<fString dataName=NumeroDocumento><nullCheck>
+			    <fString dataName=DigitoVerificacion><nullCheck>
+		     	<fString dataName=NombreCliente><nullCheck>
+			    <fString dataName=Oficina><nullCheck>
+		    </record > 
+	     </iCollVector > 
+	    <!-- FIN - FILTRO NITS/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 26-06-2019 -->
+	    <!--INI NITS 1.2 CMC FX 20/08/2019-->
+	    <fString dataName=indNITPrinHacia description=indNITPrinHacia><nullCheck> 
+	    <fString dataName=NitNombre description=NitNombre><nullCheck>
+	    <!--FIN NITS 1.2 CMC FX 20/08/2019-->
+	    <fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!--GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=cotizacionJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=tipoOperacion description=tipoOperacion><nullCheck>
+		<fString dataName=monto description=monto><nullCheck>
+		<fString dataName=selectMoneda description=selectMoneda><nullCheck>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden><nullCheck>
+		<fString dataName=selectOpe description=selectOpe><nullCheck>
+		<fString dataName=descErrorMonto description=descErrorMonto><nullCheck><!-- INC 214 FX - CMC 10-05-2019 -->
+		<record dataName=cotizacion description=cotizacion>
+			<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+			<fString dataName=timerS><nullCheck>
+			<fString dataName=piloto><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+	    </record>
+	    <record dataName=parametria description=parametria>
+			<fString dataName=horaInicio><nullCheck>
+			<fString dataName=horaFin><nullCheck>
+			<fString dataName=horaNegoIni><nullCheck>
+			<fString dataName=horaNegoFin><nullCheck>
+			<fString dataName=timer><nullCheck>
+	    </record>
+		<iCollVector dataName=parametria.listaMonedas description=listaDivisas>
+			<record dataName=moneda>
+				<fString dataName=descMoneda><nullCheck>
+			</record>
+	   </iCollVector>
+	   <fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!-- GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=listadoJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=pestana description=pestana>
+		<fString dataName=hayMas description=hayMas>
+		<iCollVector dataName=listaGiros description=listaGiros>
+			<record dataName=giro description=giro>
+				<fString dataName=nOperacion><nullCheck>
+				<fString dataName=fechaOperacion><nullCheck>
+				<fString dataName=fechaValor><nullCheck><!-- INC 217 FX CMC 09/07/2019 -->
+				<fString dataName=nAvance><nullCheck>
+		        <fString dataName=moneda><nullCheck>
+		        <fNumString dataName=monto decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		        <fNumString dataName=tasaPeso	decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		        <fString dataName=estado><nullCheck>
+		        <fString dataName=idBeneficiario><nullCheck>
+				<fString dataName=beneficiario><nullCheck>
+		        <fString dataName=idOrdenante><nullCheck>
+		        <fString dataName=idMovimiento><nullCheck>
+		    </record>
+		 </iCollVector>
+		 
+		 <fString dataName=tipoOperacion description=tipoOperacion><nullCheck>
+		 <fString dataName=selectMoneda description=selectMoneda><nullCheck>
+		 <fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!-- GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>	 
+</fmtDef>
+
+<fmtDef id=detalleJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=tipoOperacion description=tipoOperacion><nullCheck>
+		<fString dataName=num_cuenta description=cuenta_usuario><nullCheck>
+		<! FX INI INC 52 07/03/2018------------------------------------------------------------------------->
+		<fString dataName=mostrarFechaOpera description=mostrarFechaOpera><nullCheck>
+		<! FX FIN INC 52 07/03/2018------------------------------------------------------------------------->
+		<! FX INI INC 33 07/03/2018------------------------------------------------------------------------->
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden><nullCheck>
+		<! FX FIN INC 33 07/03/2018------------------------------------------------------------------------->
+		
+		<! FX INI INC 6.1 12/06/2018------------------------------------------------------------------------->
+		<fString dataName=mostrarConcepto description=mostrarConcepto><nullCheck>
+		<fString dataName=mostrarFechaOpeDetalle description=mostrarFechaOpeDetalle><nullCheck>
+		<fString dataName=mostrarNumCambiario description=mostrarNumCambiario><nullCheck>
+		<fString dataName=mostrarMonto description=mostrarMonto><nullCheck>		
+		<fString dataName=mostrarEstado description=mostrarEstado><nullCheck>				
+		<! FX FIN INC 6.1 12/06/2018------------------------------------------------------------------------->
+		
+		<record dataName=detalleGiro description=detalleGiro>
+			<fString dataName=nOperacion><nullCheck>
+			<fString dataName=fechaOperacion><nullCheck>
+			<fString dataName=fechaValor><nullCheck>
+			<fString dataName=horaOperacion><nullCheck>
+			<! FX INI INC 6.1 12/06/2018------------------------------------------------------------------------->
+			<fNumString dataName=monto decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck> 			
+			<! FX FIN INC 6.1 12/06/2018------------------------------------------------------------------------->
+			<fString dataName=moneda><nullCheck>
+			<fString dataName=nAvance><nullCheck>
+			<fString dataName=tipoNegociacion><nullCheck>
+			<! FX INI INC 6.1 12/06/2018------------------------------------------------------------------------->			
+			<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<! FX FIN INC 6.1 12/06/2018------------------------------------------------------------------------->
+			<fNumString dataName=tasaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaUsd decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=equivalentePesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fString dataName=formNumeral><nullCheck>
+			<fString dataName=descTransaccion><nullCheck>
+			<fString dataName=idOrdenante><nullCheck>
+			<fString dataName=idBeneficiario><nullCheck>
+			<fString dataName=bancoBenef><nullCheck>
+			<fString dataName=pais><nullCheck>
+			<fString dataName=codSwift><nullCheck>
+			<fString dataName=codAbba><nullCheck>
+		    <fString dataName=estado><nullCheck>
+		    <fString dataName=beneficiario><nullCheck>
+		    <fString dataName=ordenante><nullCheck>
+		    <fString dataName=idMovimiento><nullCheck>
+		    <fString dataName=cuentaAbono><nullCheck>
+		    <fString dataName=bancoInter><nullCheck>
+			<fString dataName=montoLetras><nullCheck>
+	    </record>
+	     <fString dataName=s_Fijo_Nit ><nullCheck><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+   	     <fString dataName=s_Fijo_Nombre ><nullCheck><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+		 <fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!--GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=cuentasJspFmt>
+	<fJsp>
+	    <fString dataName=showBlotterPage description=showBlotterPage><nullCheck>
+		<fString dataName=indiList description=indiList><nullCheck>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=lista_cuentas description=listaCuentas>
+			<record dataName=cuenta>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dcontrol><nullCheck>
+				<fString dataName=num_cuenta><nullCheck>
+				<fString dataName=permiso><nullCheck>
+				<fString dataName=clave_asunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+				<fString dataName=estado><nullCheck>
+				<fString dataName=valaso><nullCheck>
+				<fString dataName=divisa><nullCheck>
+				<fString dataName=LimDiario><nullCheck>
+				<fString dataName=LimTran><nullCheck>
+				<fString dataName=LimMes><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+	   <!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<iCollVector dataName=IcListaNit description=IcListaNit>
+	  	   <record dataName=KcListaNit>
+		     	<fString dataName=ClienteAltamira><nullCheck>
+			 	<fString dataName=TipoDocumento><nullCheck>
+			 	<fString dataName=NumeroDocumento><nullCheck>
+			    <fString dataName=DigitoVerificacion><nullCheck>
+		     	<fString dataName=NombreCliente><nullCheck>
+			    <fString dataName=Oficina><nullCheck>
+		    </record > 
+	     </iCollVector > 
+	    <!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	    <fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!--GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=negoJspFmt>
+	<fJsp>
+		<fString dataName=indiList description=indiList><nullCheck>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=monto description=monto><nullCheck>
+		<fString dataName=cMonto description=cMonto><nullCheck>
+		<fString dataName=selectMoneda description=selectMoneda><nullCheck>
+		<fString dataName=selectOpe description=selectOpe><nullCheck>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		<fString dataName=validaCta description=validaCta>
+		<fString dataName=descErrorMonto description=descErrorMonto><nullCheck><!-- INC 214 FX - CMC 10-05-2019 -->
+		<fString dataName=msjError description=msjError>
+		<fString dataName=validaDes description=validaDes><!-- INC 202 FX 20-03-2019 -->
+		<fString dataName=montoBandera description=montoBandera><nullCheck><!-- INC 213 FX CMC 06/05/2019 -->
+		<fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+		 <record dataName=parametria description=parametria>
+			<fString dataName=horaInicio><nullCheck>
+			<fString dataName=horaFin><nullCheck>
+			<fString dataName=horaNegoIni><nullCheck>
+			<fString dataName=horaNegoFin><nullCheck>
+			<fString dataName=timer><nullCheck>
+	    </record>
+	   <iCollVector dataName=parametria.listaMonedas description=listaDivisas>
+			<record dataName=moneda>
+				<fString dataName=descMoneda><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+	   <iCollVector dataName=lista_cuentas description=listaCuentas>
+			<record dataName=cuenta>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dcontrol><nullCheck>
+				<fString dataName=num_cuenta><nullCheck>
+				<fString dataName=permiso><nullCheck>
+				<fString dataName=clave_asunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+				<fString dataName=estado><nullCheck>
+				<fString dataName=valaso><nullCheck>
+				<fString dataName=divisa><nullCheck>
+				<fString dataName=LimDiario><nullCheck>
+				<fString dataName=LimTran><nullCheck>
+				<fString dataName=LimMes><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+		  <record dataName=cotizacion description=cotizacion>
+	  		<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+			<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+			<fString dataName=timerS><nullCheck>
+			<fString dataName=piloto><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+		 </record>
+		 
+		<!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<iCollVector dataName=IcListaNit description=IcListaNit> 
+	  	   <record dataName=KcListaNit>                            
+	    	 <fString dataName=ClienteAltamira><nullCheck>                 
+			 <fString dataName=TipoDocumento><nullCheck>                      
+			 <fString dataName=NumeroDocumento><nullCheck>                     
+		     <fString dataName=DigitoVerificacion><nullCheck>                 
+	     	 <fString dataName=NombreCliente><nullCheck>                      
+		     <fString dataName=Oficina><nullCheck>                            
+		    </record >                                             
+	     </iCollVector > 
+	     <iCollVector dataName=IcListaCuenta description=IcListaCuenta>
+	  	   <record dataName=KcListaCuenta>
+	    	  <fString dataName=Cuenta><nullCheck>
+	    	  <fString dataName=oficinaGestora><nullCheck><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+		   </record >
+	    </iCollVector > 
+	      <fString dataName=s_ClienteCons><nullCheck>                                      
+	    <!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	   <fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!-- GP17663 MONTO 25-05-2021 CMC -->
+	   <fString dataName=pseAutorizado description=pseAutorizado><nullCheck>
+	   <fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+	   <fString dataName=equivaPesos description=equivaPesos><nullCheck>
+	   <fString dataName=comision description=comision><nullCheck>
+	   <fString dataName=iva description=iva><nullCheck>
+	   <fString dataName=totalDebito description=totalDebito><nullCheck>
+	   <fString dataName=rate description=rate><nullCheck>
+	   <fString dataName=numTrans description=numTrans><nullCheck>
+	   <fString dataName=contingencia description=contingencia><nullCheck>
+	   <fString dataName=isOpenModal description=isOpenModal><nullCheck>
+	   <fString dataName=tempor1 description=tempor1><nullCheck>
+	   <fString dataName=tempor2 description=tempor2><nullCheck>
+	   <fString dataName=tempor3 description=tempor3><nullCheck>
+	   <fString dataName=tempor4 description=tempor4><nullCheck>
+	   <fString dataName=tempor5 description=tempor5><nullCheck>
+	   <fString dataName=rangoAutorizado description=rangoAutorizado><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=selecBenefJspFmt>
+	<fJsp>
+		<fString dataName=errorSwift description=errorSwift><nullCheck><!-- INI 225B FX CMC 12/09/2019 -->
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		
+		<fString dataName=pagina_actual description=pagina_actual> <!-- INC 102 FX 25-10-2018 -->
+		<fString dataName=bandera_paginacion description=bandera_paginacion> <!-- INC 102 FX 25-10-2018 -->		
+		
+		<fString dataName=selectOpe description=selectOpe>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+		<fString dataName=monto description=monto>
+		<fString dataName=selectMoneda description=selectMoneda>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		<fString dataName=indBenef description=indBenef><nullCheck>	
+		<fString dataName=referenciaOpe description=referenciaOpe>
+		<fString dataName=avanceOpe description=avanceOpe>
+		<fString dataName=msjError description=msjError>
+		<fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+		<fString dataName=rate description=rate><nullCheck>
+		<fString dataName=totalDebito description=totalDebito><nullCheck>
+		<fString dataName=numTrans description=numTrans><nullCheck>
+		<fString dataName=equivaPesos description=equivaPesos><nullCheck>
+		<fString dataName=comision description=comision><nullCheck>
+		<fString dataName=iva description=iva><nullCheck>
+		
+	  	<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+			<fString dataName=timerS><nullCheck>
+			<fString dataName=piloto><nullCheck>
+<!-- INC GP 12886 MOISES LUNA FX 09-03-2018 -->
+		<fString dataName=nombreOperacion description=nombreOperacion><nullCheck>
+		
+		
+	   
+	  <iCollVector dataName=listaCuentasB description=listaCuentasB>
+	  	<record dataName=CuentaB>
+	    	<fString dataName=tipobeneficiar><nullCheck>
+			<fString dataName=idbeneficiario><nullCheck>
+			<fString dataName=digivbeneficia><nullCheck>
+		    <fString dataName=nombresbenefic><nullCheck>
+	    	<fString dataName=apellidosbenef><nullCheck>
+		    <fString dataName=direccionebenef><nullCheck>
+		    <fString dataName=telefonobenefi><nullCheck>
+		    <fString dataName=paisbeneficiar><nullCheck>
+		    <fString dataName=ciudadbenefcia><nullCheck>
+		    <fString dataName=cuentabenefica><nullCheck>
+		    <fString dataName=tiposabanco1><nullCheck>
+		    <fString dataName=codigosabanco1><nullCheck>
+		    <fString dataName=nombrebancobe><nullCheck>
+		    <fString dataName=paisbancobene><nullCheck>
+		    <fString dataName=ciudadbancobe><nullCheck>
+		    <fString dataName=direccbancobe><nullCheck>
+		    <fString dataName=nombrebancoin><nullCheck>
+		    <fString dataName=cuentaintermed><nullCheck>
+		    <fString dataName=tiposabanco2><nullCheck>
+		    <fString dataName=codigosabanc2><nullCheck>
+			<fString dataName=paisbancointe><nullCheck>
+		    <fString dataName=ciudadbancoin><nullCheck>
+		    <fString dataName=direccbancoin><nullCheck>
+		    <fString dataName=codigoUnitario><nullCheck>
+		 </record >
+	</iCollVector >
+	    
+			<fString dataName=tipobeneficiar><nullCheck>
+			<fString dataName=idbeneficiario><nullCheck>
+			<fString dataName=digivbeneficia><nullCheck>
+		    <fString dataName=nombresbenefic><nullCheck>
+	    	<fString dataName=apellidosbenef><nullCheck>
+		    <fString dataName=direccionebenef><nullCheck>
+		    <fString dataName=telefonobenefi><nullCheck>
+		    <fString dataName=paisbeneficiar><nullCheck>
+		    <fString dataName=ciudadbenefcia><nullCheck>
+		    <fString dataName=cuentabenefica><nullCheck>
+		    <fString dataName=tiposabanco1><nullCheck>
+		    <fString dataName=codigosabanco1><nullCheck>
+		    <fString dataName=nombrebancobe><nullCheck>
+		    <fString dataName=paisbancobene><nullCheck>
+		    <fString dataName=ciudadbancobe><nullCheck>
+		    <fString dataName=nombrebancoin><nullCheck>
+		    <fString dataName=cuentaintermed><nullCheck>
+		    <fString dataName=tiposabanco2><nullCheck>
+		    <fString dataName=codigosabanc2><nullCheck>
+			<fString dataName=paisbancointe><nullCheck>
+		    <fString dataName=ciudadbancoin><nullCheck>
+		    <fString dataName=codError><nullCheck>
+		    <fString dataName=codePaisBene><nullCheck>
+		    <fString dataName=codePaisInte><nullCheck>
+		    <fString dataName=codigoUnitario><nullCheck>
+		    <fString dataName=literalCodigoUnitario><nullCheck>
+			<fString dataName=errorBeneficiario><nullCheck>
+			<fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!--GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=benefJspFmt>
+	<fJsp>
+		    <fString dataName=indBenef description=indBenef><nullCheck> 
+			<fString dataName=s_idioma description=idioma><nullCheck>
+			<fString dataName=tipobeneficiar><nullCheck>
+			<fString dataName=idbeneficiario><nullCheck>
+			<fString dataName=digivbeneficia><nullCheck>
+		    <fString dataName=nombresbenefic><nullCheck>
+	    	<fString dataName=apellidosbenef><nullCheck>
+		    <fString dataName=direccionebenef><nullCheck>
+		    <fString dataName=telefonobenefi><nullCheck>
+		    <fString dataName=paisbeneficiar><nullCheck>
+		    <fString dataName=ciudadbenefcia><nullCheck>
+		    <fString dataName=cuentabenefica><nullCheck>
+		    <fString dataName=tiposabanco1><nullCheck>
+		    <fString dataName=codigosabanco1><nullCheck>
+		    <fString dataName=nombrebancobe><nullCheck>
+		    <fString dataName=paisbancobene><nullCheck>
+		    <fString dataName=ciudadbancobe><nullCheck>
+		    <fString dataName=nombrebancoin><nullCheck>
+		    <fString dataName=cuentaintermed><nullCheck>
+		    <fString dataName=tiposabanco2><nullCheck>
+		    <fString dataName=codigosabanc2><nullCheck>
+			<fString dataName=paisbancointe><nullCheck>
+		    <fString dataName=ciudadbancoin><nullCheck>
+		    <fString dataName=codError><nullCheck>
+		    <fString dataName=codePaisBene><nullCheck>
+		    <fString dataName=codePaisInte><nullCheck>
+		    <fString dataName=codigoUnitario><nullCheck>
+		    <fString dataName=literalCodigoUnitario><nullCheck>
+		    <fString dataName=nombreOperacion<nullCheck>
+		    
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=negoMeDiJspFmt>
+	<fJsp>
+		<fString dataName=indiList description=indiList><nullCheck>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=monto description=monto><nullCheck>
+		<fString dataName=selectMoneda description=selectMoneda><nullCheck>
+		<fString dataName=selectOpe description=selectOpe><nullCheck>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		<fString dataName=validaCta description=validaCta>
+		<fString dataName=indAvance description=indAvance>
+		<fString dataName=avanceOpe description=avanceOpe>
+		<fString dataName=msjError description=msjError>
+		<fString dataName=validaDes description=validaDes><!-- INC 202 FX 20-03-2019 -->
+		<fString dataName=montoBandera description=montoBandera><nullCheck><!-- INC 213 FX CMC 07/05/2019 -->
+		<fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+		<fString dataName=operatePse description=operatePse><nullCheck>
+		<fString dataName=contingencia description=contingencia><nullCheck>
+		
+	   <iCollVector dataName=parametria.listaMonedas description=listaDivisas>
+			<record dataName=moneda>
+				<fString dataName=descMoneda><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+	   <iCollVector dataName=lista_cuentas description=listaCuentas>
+			<record dataName=cuenta>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dcontrol><nullCheck>
+				<fString dataName=num_cuenta><nullCheck>
+				<fString dataName=permiso><nullCheck>
+				<fString dataName=clave_asunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+				<fString dataName=estado><nullCheck>
+				<fString dataName=valaso><nullCheck>
+				<fString dataName=divisa><nullCheck>
+				<fString dataName=LimDiario><nullCheck>
+				<fString dataName=LimTran><nullCheck>
+				<fString dataName=LimMes><nullCheck>
+			</record>
+	   </iCollVector>
+	   
+	   <!--INI INC 85 FX CMC 07-11-2018 -->
+		<fNumString dataName=tasaDivisaPeso2 decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		<fNumString dataName=equivPesos2 decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >	<nullCheck>	
+		<!--FIN INC 85 FX CMC 07-11-2018 --> 
+		<!--INI VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->	
+		<fString dataName=S_ValidaDisplay description=S_ValidaDisplay><nullCheck>
+		<fString dataName=S_SALIDA_NIT description=S_SALIDA_NIT><nullCheck>
+		<fString dataName=S_NOMBRE_CLIENTE description=S_NOMBRE_CLIENTE><nullCheck> >
+		<fString dataName=S_DIVISA_COP description=S_DIVISA_COP><nullCheck> 
+		<fString dataName=S_DIVISA_DOLAR description=S_DIVISA_DOLAR><nullCheck> 
+		<fString dataName=S_DIVISA_PESO description=S_DIVISA_PESO><nullCheck> 
+		<fString dataName=S_DIVISA_MONEDA description=S_DIVISA_MONEDA><nullCheck> 
+		<fString dataName=S_MONTO description=S_MONTO><nullCheck> 
+		<!--FIN- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+		<fString dataName=montoMaximoCotizar description=montoMaximoCotizar><nullCheck> <!--GP17663 MONTO 25-05-2021 CMC -->
+	</fJsp>
+</fmtDef>
+
+<!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+<fmtDef id=ListaCuentasHTMLFmt>
+	 <fJsp>
+	    <fString dataName=s_idioma description=idioma><nullCheck>
+		<iCollVector dataName=IcListaCuenta description=IcListaCuenta>
+	  	   <record dataName=KcListaCuenta>
+	    	  <fString dataName=Cuenta><nullCheck>
+	    	  <fString dataName=oficinaGestora><nullCheck><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+		   </record >
+	    </iCollVector >
+	    
+	 </fJsp>
+</fmtDef>
+<!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+
+<!--INI BLOTTER -->
+<fmtDef id=jsonResponseJspFmt>
+	<fJsp>
+		<fString dataName=jsonData><nullCheck>
+	</fJsp>
+</fmtDef>
+<!--FIN BLOTTER -->
+<! --------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<!-- INI - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 11-07-2019 -->
+<fmtDef id=ConsultaCuentaHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=ClienteCons description=ClienteCons>
+		<fString dataName=Nit_Completo description=Nit_Completo><nullCheck>
+	 </fHTMLReq>
+</fmtDef>
+<!-- FIN - LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 11-07-2019 -->
+
+<fmtDef id=filtroHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=filtro description=filtro>
+		<fString dataName=fechaDesde description=fechaDesde>
+		<fString dataName=fechaHasta description=fechaHasta>
+		<fString dataName=selectNit description=selectNit> <!--FILTRO NITS/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 26-06-2019 -->
+		<fString dataName=NitMod description=NitMod> <!--MOD NIT /COMERCIO EXTERIOR - 11-07-2019 -->
+		<fString dataName=IndicadorNIT description=IndicadorNIT><!--INI NITS 1.2 CMC FX 20/08/2019-->
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=consuHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=codigoConsBanco  description=codigoConsBanco>
+		<fString dataName=element description=element>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=filtroDHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=filtro description=filtro>
+		<fString dataName=fechaDesde description=fechaDesde>
+		<fString dataName=fechaHasta description=fechaHasta>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=detalleHTMLFmt>
+	 <fHTMLReq>
+	  <fString dataName=indiceGiro description=indiceGiro>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=cotizarHTMLFmt>
+	 <fHTMLReq>
+	  <fString dataName=monto description=monto>
+	  <fString dataName=selectMoneda description=selectMoneda>
+	  <fString dataName=selectOpe description=selectOpe>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=negociarHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=selectOpe description=selectOpe>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+		<fString dataName=monto description=monto>
+		<fString dataName=selectMoneda description=selectMoneda>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		<fString dataName=validaCta description=validaCta>
+		<fString dataName=avanceOpe description=avanceOpe>
+		<fString dataName=msjError description=msjError>
+		<fString dataName=ClienteCons description=ClienteCons><!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<fString dataName=codigoSucursal description=codigoSucursal><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+		<fString dataName=tipoFondoGiro description=tipoFondoGiro>
+		<fString dataName=businessId description=businessId>
+		<fString dataName=businessOp description=businessOp>
+		<fString dataName=numTrans description=numTrans>
+		<fString dataName=amountEquiv description=amountEquiv>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=benefHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=selectOpe description=selectOpe>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+		<fString dataName=monto description=monto>
+		<fString dataName=selectMoneda description=selectMoneda>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		<fString dataName=referenciaOpe description=referenciaOpe>
+		<fString dataName=avanceOpe description=avanceOpe>
+		<fString dataName=msjError description=msjError>
+		<fString dataName=oficinaGestoraOP description=oficinaGestoraOP><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+		<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fString dataName=tipoFondoGiro description=tipoFondoGiro>
+		<fString dataName=equivaPesos description=equivaPesos>
+		<fString dataName=comision description=comision>
+		<fString dataName=iva description=iva>
+		<fString dataName=totalDebito description=totalDebito>
+		<fString dataName=rate description=rate>
+		<fString dataName=numTrans description=numTrans>
+		<fString dataName=amountEquiv description=amountEquiv>
+		
+		<iCollVector dataName=listaCuentasB description=listaCuentasB>
+	  	<record dataName=CuentaB>
+	    	<fString dataName=tipobeneficiar><nullCheck>
+			<fString dataName=idbeneficiario><nullCheck>
+			<fString dataName=digivbeneficia><nullCheck>
+		    <fString dataName=nombresbenefic><nullCheck>
+	    	<fString dataName=apellidosbenef><nullCheck>
+		    <fString dataName=direccionebenef><nullCheck>
+		    <fString dataName=telefonobenefi><nullCheck>
+		    <fString dataName=paisbeneficiar><nullCheck>
+		    <fString dataName=ciudadbenefcia><nullCheck>
+		    <fString dataName=cuentabenefica><nullCheck>
+		    <fString dataName=tiposabanco1><nullCheck>
+		    <fString dataName=codigosabanco1><nullCheck>
+		    <fString dataName=nombrebancobe><nullCheck>
+		    <fString dataName=paisbancobene><nullCheck>
+		    <fString dataName=ciudadbancobe><nullCheck>
+		    <fString dataName=direccbancobe><nullCheck>
+		    <fString dataName=nombrebancoin><nullCheck>
+		    <fString dataName=cuentaintermed><nullCheck>
+		    <fString dataName=tiposabanco2><nullCheck>
+		    <fString dataName=codigosabanc2><nullCheck>
+			<fString dataName=paisbancointe><nullCheck>
+		    <fString dataName=ciudadbancoin><nullCheck>
+		    <fString dataName=direccbancoin><nullCheck>
+		 </record >
+	</iCollVector >
+	
+			<fString dataName=tipoOperacion description=tipoOperacion>
+			<fString dataName=numOperacion description=numOperacion>
+		    <fString dataName=codigoUnitario>
+			<fString dataName=tipobeneficiar>
+			<fString dataName=idbeneficiario>
+			<fString dataName=digivbeneficia>
+		    <fString dataName=nombresbenefic>
+	    	<fString dataName=apellidosbenef>
+		    <fString dataName=direccionebenef>
+		    <fString dataName=telefonobenefi>
+		    <fString dataName=paisbeneficiar>
+		    <fString dataName=ciudadbenefcia>
+		    <fString dataName=cuentabenefica>
+		    <fString dataName=tiposabanco1>
+		    <fString dataName=codigosabanco1>
+		    <fString dataName=nombrebancobe>
+		    <fString dataName=paisbancobene>
+		    <fString dataName=ciudadbancobe>
+		    <fString dataName=nombrebancoin>
+		    <fString dataName=cuentaintermed>
+		    <fString dataName=tiposabanco2>
+		    <fString dataName=codigosabanc2>
+			<fString dataName=paisbancointe>
+		    <fString dataName=ciudadbancoin>
+		    <fString dataName=codError>
+		    <fString dataName=codePaisBene>
+		    <fString dataName=codePaisInte>
+		    <fString dataName=codigoUnitario>
+		    <fString dataName=literalCodigoUnitario>
+		    
+		    <fString dataName=Nit_Nombre><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+		    <fString dataName=NitUnido><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=benefHTMLFmt2>
+	 <fHTMLReq>
+		<fString dataName=selectOpe description=selectOpe>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+		<fString dataName=monto description=monto>
+		<fString dataName=selectMoneda description=selectMoneda>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		<fString dataName=avanceOpe description=avanceOpe>
+		<fString dataName=msjError description=msjError>
+		<fString dataName=referenciaOpe description=referenciaOpe>
+		
+		<fString dataName=tipoOperacion description=tipoOperacion>
+		<fString dataName=numOperacion description=numOperacion>
+		
+		<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		
+			<fString dataName=tipobeneficiar>
+			<fString dataName=idbeneficiario>
+			<fString dataName=digivbeneficia>
+		    <fString dataName=nombresbenefic>
+	    	<fString dataName=apellidosbenef>
+		    <fString dataName=direccionebenef>
+		    <fString dataName=telefonobenefi>
+		    <fString dataName=paisbeneficiar>
+		    <fString dataName=ciudadbenefcia>
+		    <fString dataName=cuentabenefica>
+		    <fString dataName=tiposabanco1>
+		    <fString dataName=codigosabanco1>
+		    <fString dataName=nombrebancobe>
+		    <fString dataName=paisbancobene>
+		    <fString dataName=ciudadbancobe>
+		    <fString dataName=nombrebancoin>
+		    <fString dataName=cuentaintermed>
+		    <fString dataName=tiposabanco2>
+		    <fString dataName=codigosabanc2>
+			<fString dataName=paisbancointe>
+		    <fString dataName=ciudadbancoin>
+		    <fString dataName=codError>
+		    <fString dataName=codePaisBene>
+		    <fString dataName=codePaisInte>
+		    <fString dataName=codigoUnitario>
+		    <fString dataName=literalCodigoUnitario>
+			
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=benefHTMLFmt3>
+	 <fHTMLReq>
+		<fString dataName=selectOpe description=selectOpe>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+		<fString dataName=monto description=monto>
+		<fString dataName=selectMoneda description=selectMoneda>
+		<fString dataName=descripNegociacion description=descripNegociacion>
+		
+		<fString dataName=docBenefi description=docBenefi>
+		
+		<fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		<fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+		
+	 </fHTMLReq>
+</fmtDef>
+
+
+<fmtDef id=operacionesHHTMLFmt>
+	 <fHTMLReq>
+	  <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+	  <fString dataName=selectOpe description=selectOpe>
+	  <fString dataName=oficinaGestoraOP description=oficinaGestoraOP><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+	  <fString dataName=Nit_Nombre description=Nit_Nombre><!--VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+	  <fString dataName=ClienteCons description=ClienteCons>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosConsultaOPHTMLFmt>
+	<fHTMLReq>
+		    <fString dataName=kdocumento description=kdocumento>	
+			<fString dataName=docBenefi description=docBenefi>
+			<fString dataName=indBenef description=indBenef><nullCheck> 
+			<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+			<fString dataName=selectOpe description=selectOpe>
+            <fString dataName=tipoFondoGiro description=tipoFondoGiro>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=negociarMeDiHTMLFmt>
+	<fHTMLReq>
+		   <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+			<fString dataName=selectOpe description=selectOpe>
+			<fString dataName=descripNegociacion description=descripNegociacion>
+			<fString dataName=selectMoneda description=selectMoneda>
+			<fString dataName=avanceOpe description=avanceOpe>
+			<fString dataName=msjError description=msjError>
+			<fString dataName=monto description=monto>
+			
+			
+			<fString dataName=validaCta description=validaCta>
+			<fString dataName=indAvance description=indAvance>
+			<!--INI- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+			<fString dataName=ValidaDisplay description=ValidaDisplay> 
+			<fString dataName=SALIDA_NIT description=SALIDA_NIT>  
+			<fString dataName=NOMBRE_CLIENTE description=NOMBRE_CLIENTE>  
+			<fString dataName=DIVISA_COP description=DIVISA_COP> 
+			<fString dataName=DIVISA_DOLAR description=DIVISA_DOLAR>  
+			<fString dataName=DIVISA_PESO description=DIVISA_PESO>  
+			<fString dataName=DIVISA_MONEDA description=DIVISA_MONEDA> 
+			<fString dataName=E_MONTO description=E_MONTO> 
+			<fString dataName=tipoFondoGiro description=tipoFondoGiro>
+			<!--INI- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=crearSimilarDiHTMLFmt>
+	<fHTMLReq>
+		   <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+			<fString dataName=selectOpe description=selectOpe>
+			<fString dataName=descripNegociacion description=descripNegociacion>
+			<fString dataName=selectMoneda description=selectMoneda>
+			<fString dataName=avanceOpe description=avanceOpe>
+			<fString dataName=msjError description=msjError>
+			
+			<fString dataName=validaCta description=validaCta>
+			<fString dataName=indAvance description=indAvance>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=masHTMLFmt>
+	<fHTMLReq>
+		   <fString dataName=selectOpe description=selectOpe>
+	</fHTMLReq>
+</fmtDef>
+
+<!--INI- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+<fmtDef id=validarContinuarHTMLFmt>
+	<fHTMLReq>
+		   <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+		   <fString dataName=monto description=monto>
+		   <fString dataName=equivPesos description=equivPesos>
+		   <fString dataName=descripNegociacion description=descripNegociacion>
+		   <fString dataName=tipoFondoGiro description=tipoFondoGiro>
+		   <fString dataName=operatePse description=operatePse>
+		   <fString dataName=businessId description=businessId>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=salidaValidaContinuarHTMLFmt>
+	 <fJsp>
+	   <fString dataName=s_idioma description=idioma><nullCheck>
+	   <fString dataName=validaCta description=validaCta><nullCheck>
+	   <fString dataName=msjError description=msjError><nullCheck>
+	   <fString dataName=validaDes description=validaDes><nullCheck>
+	   <fString dataName=montoBandera description=montoBandera><nullCheck>
+	   <fString dataName=blockButton description=blockButton><nullCheck>
+	   <fString dataName=numTrans description=numTrans><nullCheck>
+	   <fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+	   <fString dataName=comision description=comision><nullCheck>
+	   <fString dataName=iva description=iva><nullCheck>
+	   <fString dataName=totalDebito description=totalDebito><nullCheck>
+	   <fString dataName=rate description=rate><nullCheck>
+	   <fString dataName=equivaPesos description=equivaPesos><nullCheck>
+	   <fString dataName=tempor1 description=tempor1><nullCheck>
+	   <fString dataName=tempor2 description=tempor2><nullCheck>
+	   <fString dataName=tempor3 description=tempor3><nullCheck>
+	   <fString dataName=tempor4 description=tempor4><nullCheck>
+	   <fString dataName=tempor5 description=tempor5><nullCheck>
+	 </fJsp>
+</fmtDef>
+<!--FIN- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+
+<fmtDef id=filtroPSEHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=fechaInicio description=fechaInicio>
+		<fString dataName=fechaFin description=fechaFin>
+		<fString dataName=documentoCliente description=documentoCliente>
+		<fString dataName=digito description=digito>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=filtroBlotterPSEHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=toDate description=toDate>
+		<fString dataName=fromDate description=fromDate>
+		<fString dataName=nit description=nit>
+		<fString dataName=page description=page>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=executeblotterPSEHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=nit description=nit>
+		<fString dataName=page description=page>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=beneficiarioPSEHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=numOperacion description=numOperacion>
+		<fString dataName=cuentabenefica description=cuentabenefica>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=inicioHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=origen description=origen>		
+	 </fHTMLReq>
+</fmtDef>
+<fmtDef id=DatosActualizarPseHTMLFmt>
+    <fHTMLReq>
+            <fString dataName=idcuspse description=idcuspse>
+    </fHTMLReq>
+</fmtDef>
+<! -------------------------------------------------------------------------------->

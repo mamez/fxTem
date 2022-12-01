@@ -1,0 +1,22 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL om_listar_bancos_ach ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+
+<com.grupobbva.col.rest.conector.om.OMListarBancoAch id=om_listar_bancos_ach operationContext=OperationContext>	
+	<refKColl refId=om_listar_bancos_ach-data>
+</com.grupobbva.col.rest.conector.om.OMListarBancoAch>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=om_listar_bancos_ach-data>
+		<kColl id=Entrada>
+		</kColl>
+		<kColl id=Salida>
+			<iColl id=listaBancosAch>
+				<kColl id= infoBancoAch>
+					  <field id="id">
+					  <field id="descripcion">
+				</kColl>
+			</iColl > 
+		</kColl>
+</kColl>

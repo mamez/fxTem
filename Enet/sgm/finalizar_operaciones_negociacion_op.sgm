@@ -1,0 +1,1075 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION finalizar_operaciones_negociacion_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.comercioext.OpFinalizarOperaciones id=finalizar_operaciones_negociacion_op operationContext=OperationContext>
+    <refKColl refId=finalizar_operaciones_negociacion_op-data>
+    <refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=FormulariosOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=FinalizarOPHTMLFmt>
+
+<!-- INC GP 12886 ORLANDO J. ACUNA M. FX 25-07-2018 -->	    
+	<refOM refId=consulta_tasas_operaciones_negociacion_om>
+<!-- INC GP 12886 ORLANDO J. ACUNA M. FX 25-07-2018 -->	
+    <refOM refId=compra_divisas_consulta_beneficiarios_om>
+    <refOM refId=compra_divisas_consulta_centro_oficina_om>
+    <refOM refId=compra_divisas_consulta_estado_cuenta_om>
+    <refOM refId=divisas_consulta_unica_operaciones_om>
+    <refOM refId=identificacion_operativa_om>
+    <refOM refId=alta_beneficiarios_om>
+	<refOM refId=validacion_baep_om>
+	<refOM refId=validacion_codigo_om>
+    <refOM refId=compra_divisas_consulta_avances_om><!-- INC 181 FX CMC 13/02/2019 -->
+	<refOM refId=sign_on_om><!-- CMC - FUNCION DE NEGOCIO - PRUEBA - 17/09/2019 -->
+	<refOM refId=om_listar_bancos_ach>
+	<refOM refId=om_payments_service>
+	<refOM refId=consulta_pagos_pse_divisa_om>
+    
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+    <navegacionOP>
+
+        <estadoOP id=0 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=1 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=2 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=3 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=4 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=5 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=6 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=7 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=8 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=9 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=10 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=11 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=14 accion=inicio metodo=inicio requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=ERROR accion=inicio metodo=inicio>
+        
+        <estadoOP id=0 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=1 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=2 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=3 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=4 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=5 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=6 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=7 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=8 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=9 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=10 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=11 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+		<estadoOP id=14 accion=consultaNombreBanco metodo=consultaNombreBanco requestFmt=consuHTMLFmt>
+        <estadoOP id=ERROR accion=consultaNombreBanco metodo=consultaNombreBanco>
+        
+        <estadoOP id=0 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=1 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=2 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=3 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=4 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=5 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=6 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=7 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+		<estadoOP id=8 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+		<estadoOP id=9 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+		<estadoOP id=10 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+		<estadoOP id=11 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+		<estadoOP id=14 accion=finalizar metodo=finalizar requestFmt=FinalizarIMGOPHTMLFmt>
+        <estadoOP id=ERROR accion=finalizar metodo=finalizar>
+        
+        <estadoOP id=0 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=1 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=2 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=3 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=4 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=5 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=6 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=7 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+		<estadoOP id=8 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+		<estadoOP id=9 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+		<estadoOP id=10 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+		<estadoOP id=11 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+		<estadoOP id=14 accion=verUnico metodo=verUnico requestFmt=detalleBenefOPHTMLFmt>
+        <estadoOP id=ERROR accion=verUnico metodo=verUnico>
+        
+        <estadoOP id=0 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=1 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=2 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=3 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=4 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=5 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=6 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=7 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=8 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=9 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=10 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=11 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=14 accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=ERRORWS accion=generarReferenciaOperacionH metodo=generarReferenciaOperacionH requestFmt=ErrorOPJspFmt><!-- Incidencia fx 98 19/10/2018-->
+        
+        <estadoOP id=0 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=1 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=2 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=3 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=4 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=5 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=6 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=7 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=8 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=9 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=10 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=11 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=14 accion=enviarOperacion metodo=enviarOperacion requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=ERROR accion=enviarOperacion metodo=enviarOperacion>
+        
+        <estadoOP id=0 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=1 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=2 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=3 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=4 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=5 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=6 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=7 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=8 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=9 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=10 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=11 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+		<estadoOP id=14 accion=pendienteEnvio metodo=pendienteEnvio requestFmt=FinalizarOPHTMLFmt>
+        <estadoOP id=ERROR accion=pendienteEnvio metodo=pendienteEnvio>
+        
+        <estadoOP id=0 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=1 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=2 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=3 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=4 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=5 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=6 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=7 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt2>
+		<estadoOP id=8 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+		<estadoOP id=9 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+		<estadoOP id=10 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+		<estadoOP id=11 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+		<estadoOP id=14 accion=modificarOperaciones metodo=modificarOperaciones requestFmt=modificarOPHTMLFmt>
+        <estadoOP id=ERROR accion=modificarOperaciones metodo=modificarOperaciones>
+        
+        <estadoOP id=0 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=1 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=2 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=3 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=4 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=5 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=6 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=7 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=8 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=9 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=10 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=11 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+		<estadoOP id=14 accion=modificarForms metodo=modificarForms requestFmt=FormulariosOPHTMLFmt>
+        <estadoOP id=ERROR accion=modificarForms metodo=modificarForms>
+        
+        <estadoOP id=0 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=1 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=2 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=3 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=4 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=5 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=6 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=7 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+		<estadoOP id=8 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+		<estadoOP id=9 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+		<estadoOP id=10 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+		<estadoOP id=11 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+		<estadoOP id=14 accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        <estadoOP id=ERROR accion=eliminarBenef metodo=eliminarBeneficiario requestFmt=eliminarBenefiOPHTMLFmt>
+        
+        <estadoOP id=0 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=1 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=2 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=3 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=4 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=5 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=6 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=7 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=8 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=9 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=10 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=11 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+		<estadoOP id=14 accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        <estadoOP id=ERROR accion=gestionBeneficiarios metodo=gestionBeneficiarios requestFmt=DatosConsultaOPHTMLFmt>
+        
+        <estadoOP id=0 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=1 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=2 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=3 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=4 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=5 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=6 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=7 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+		<estadoOP id=8 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+		<estadoOP id=9 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+		<estadoOP id=10 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+		<estadoOP id=11 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+		<estadoOP id=14 accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+        <estadoOP id=ERROR accion=finalizarPse metodo=finalizarPse requestFmt=DatosProcessPseHTMLFmt>
+
+		<estadoOP id=0 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=1 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=2 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=3 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=4 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=5 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=6 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+        <estadoOP id=7 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+		<estadoOP id=8 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+		<estadoOP id=9 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+		<estadoOP id=10 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+		<estadoOP id=11 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+		<estadoOP id=14 accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>		
+        <estadoOP id=ERROR accion=postPayment metodo=postPayment requestFmt=postPaymentHTMLFmt>
+    </navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+    <resultadoOP>
+        <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+        <salidaOP id=ERRORWS jspFmt=ErrorOPJspFmt><!-- Incidencia fx 98 19/10/2018-->
+        <salidaOP id=0 jspFmt=formulariosJspFmt>
+        <salidaOP id=1 jspFmt=iniFinalizarJspFmt>
+        <salidaOP id=2 jspFmt=detalleBenefJspFmt>
+        <salidaOP id=3 jspFmt=finalizarJspFmt>
+        
+        <salidaOP id=4 jspFmt=selecBenefJspFmt>
+        <salidaOP id=5 jspFmt=formulariosJspFmt>
+        <salidaOP id=6 jspFmt=finalizarJspFmt>
+        
+        <salidaOP id=7 jspFmt=benefJspFmt>
+        <salidaOP id=8 jspFmt=consulBAEPJspFmt>
+        
+        <salidaOP id=8 jspFmt=jsonResponseJspFmt>
+        <salidaOP id=11 jspFmt=finalizarPseJspFmt>
+		<salidaOP id=14 jspFmt=redirectPseJspFmt>
+        
+    </resultadoOP>
+    
+</com.grupobbva.bc.col.web.comercioext.OpFinalizarOperaciones>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=finalizar_operaciones_negociacion_op-data>
+	<field id=errorSwift value="N"><!-- INC 225B FX 12-09-2019 -->
+	<field id=indiList>
+    <field id=codError>
+	<field id=valError>
+	<field id=codePaisBene>
+	<field id=codePaisInte>
+	<field id=errorBeneficiario>
+	<field id=nombreOperacion>
+	<field id=tipoFondoGiro>
+	<field id=nitNombre>
+	<field id=rate>
+	<field id=totalDebito>
+	<field id=numTrans>
+	<field id=origin>
+	<field id=equivaPesos>
+	<field id=comision>
+	<field id=iva>
+	<field id=linkPse>
+	<field id=codpseCus>
+	<field id=fechaActual>
+	<field id=descripcionoperPSE>
+	
+	<field id=literalCodigoUnitario>
+    <field id=codigoUnitario>
+    <field id=codigoConsBanco>
+    <field id=element>
+	<field id=nitConsulta>
+	<field id=pagina_actual><!-- INC 102 FX 26-10-2018 -->
+	<field id=bandera_paginacion><!-- INC 102 FX 26-10-2018 -->
+	<field id=num_cuenta><!--FX IN 316 PERDIDA SESION ZMR 12-12-2019-->
+    <field id=Error>
+    <field id=msjError>
+    <field id=firma>
+    <field id=PasswordOpe>
+    <field id=Resultado>
+    <field id=token>
+    <field id=PDGroup>
+    <field id=Country>
+    <field id=Bank>
+    <field id=MaxErrors>
+    <field id=ClaveOperacion>
+    <field id=kdocumento>
+	<field id=indilist>
+    <field id=coderror>
+	<field id=valerror>
+    
+    <field id=ppagina><!-- INC 102 FX 6-11-2018 -->    
+    <field id=refExtranjero>
+    <field id=numOperacion>
+    <field id=selectMoneda>
+    <field id=selectCuentaOrden>
+    <field id=selectOpe>
+    <field id=tipoOperacion>
+    <field id=descripNegociacion>
+    <field id=docBenefi>
+    <field id=referenciaOpe>
+    <field id=monto>    
+    <field id=avanceOpe>
+    <field id=indBenef>
+    <field id=validaCta>
+    <field id=bancoSelect>
+    <field id=selectBank>
+    
+    <field id=tasaDivisa>
+    <field id=tasaUsdPeso>
+    <field id=tasaDivisaPeso>
+    <field id=equivPesos>
+  
+    <field id=docBeneficiario>
+    <field id=NumeralC>
+    <field id=descNumeral>
+    <field id=Formulario>    
+
+    <!-- INI Alcance Divisas CMC Archivos 29/01/2018 ---->
+    <!-- field id=bas64Declaracion  ----->
+    <!-- field id=bas64Factura      ----->
+    <!-- field id=extDeclaracion    ----->
+    <!-- field id=extFactura        ----->
+    <!-- field id=sizeDeclaracion   ----->
+    <!-- field id=sizeFactura       ----->
+        <field id=file1>
+        <field id=file2>
+        <field id=file3>
+        <field id=file4>
+        <field id=file5>
+        <field id=file6>
+        <field id=file7>
+        <field id=file8>
+        <field id=file9>
+        <field id=file10>
+        <field id=trazaExtAndSize>
+    <!-- FIN Alcance Divisas CMC Archivos 29/01/2018 ---->
+    <iColl id=lista_cuentas>
+        <kColl id=cuenta>
+            <field id=banco>
+            <field id=oficina>
+            <field id=dcontrol>
+            <field id=num_cuenta>
+            <field id=permiso>
+            <field id=clave_asunto>
+            <field id=tipo>
+            <field id=estado>
+            <field id=valaso>
+            <field id=divisa>
+            <field id=LimDiario>
+            <field id=LimTran>
+            <field id=LimMes>
+        </kColl >
+    </iColl >
+    
+    <iColl id=listaCuentasB>
+      <kColl id=CuentaB >
+               <field id=tipobeneficiar>
+            <field id=idbeneficiario>
+            <field id=digivbeneficia>
+           <field id=nombresbenefic>
+              <field id=apellidosbenef>
+           <field id=direccionebenef>
+           <field id=telefonobenefi>
+           <field id=paisbeneficiar>
+           <field id=ciudadbenefcia>
+           <field id=cuentabenefica>
+           <field id=tiposabanco1>
+           <field id=codigosabanco1>
+           <field id=nombrebancobe>
+           <field id=paisbancobene>
+           <field id=ciudadbancobe>
+           <field id=direccbancobe>
+           <field id=nombrebancoin>
+           <field id=cuentaintermed>
+           <field id=tiposabanco2>
+           <field id=codigosabanc2>
+           <field id=paisbancointe>
+           <field id=ciudadbancoin>
+           <field id=direccbancoin>
+           <field id=codigoUnitario>
+      </kColl >
+    </iColl >
+    
+        <iColl id=listaCuentasC>
+      <kColl id=CuentaB >
+               <field id=tipobeneficiar>
+            <field id=idbeneficiario>
+            <field id=digivbeneficia>
+           <field id=nombresbenefic>
+              <field id=apellidosbenef>
+           <field id=direccionebenef>
+           <field id=telefonobenefi>
+           <field id=paisbeneficiar>
+           <field id=ciudadbenefcia>
+           <field id=cuentabenefica>
+           <field id=tiposabanco1>
+           <field id=codigosabanco1>
+           <field id=nombrebancobe>
+           <field id=paisbancobene>
+           <field id=ciudadbancobe>
+           <field id=direccbancobe>
+           <field id=nombrebancoin>
+           <field id=cuentaintermed>
+           <field id=tiposabanco2>
+           <field id=codigosabanc2>
+           <field id=paisbancointe>
+           <field id=ciudadbancoin>
+           <field id=direccbancoin>
+           <field id=codigoUnitario>
+      </kColl >
+    </iColl >
+    
+    <field id=tipobeneficiar>
+    <field id=idbeneficiario>
+    <field id=digivbeneficia>
+    <field id=nombresbenefic>
+    <field id=apellidosbenef>
+    <field id=direccionebenef>
+    <field id=telefonobenefi>
+    <field id=paisbeneficiar>
+    <field id=ciudadbenefcia>
+    <field id=cuentabenefica>
+    <field id=tiposabanco1>
+    <field id=codigosabanco1>
+    <field id=nombrebancobe>
+    <field id=paisbancobene>
+    <field id=ciudadbancobe>
+    <field id=direccbancobe>
+    <field id=nombrebancoin>
+    <field id=cuentaintermed>
+    <field id=tiposabanco2>
+    <field id=codigosabanc2>
+    <field id=paisbancointe>
+    <field id=ciudadbancoin>
+    <field id=direccbancoin>
+    
+    <field id=dataFull>
+    
+    <iColl id=listaGirosTotal>
+      <kColl id=giro>
+        <field id=nOperacion>
+        <field id=fechaOperacion>
+        <field id=fechaValor>
+        <field id=horaOperacion>
+        <field id=monto>
+        <field id=moneda>
+        <field id=nAvance>
+        <field id=tipoNegociacion>
+        <field id=tasaDivisa>
+        <field id=tasaPeso>
+        <field id=tasaUsd>
+        <field id=equivalentePesos>
+        <field id=formNumeral>
+        <field id=descTransaccion>
+        <field id=ordenante>
+        <field id=beneficiario>
+        <field id=bancoBenef>
+        <field id=pais>
+        <field id=codSwift>
+        <field id=codAbba>
+        <field id=estado>
+        <field id=idBeneficiario>
+        <field id=idOrdenante>
+        <field id=idMovimiento>
+        <field id=cuentaAbono>
+        <field id=bancoInter>
+      </kColl >
+    </iColl>
+    <field id=s_Fijo_Nit ><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+    <field id=s_Fijo_Nombre ><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+    <field id=E_Fijo_Nit ><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+    <field id=E_Fijo_Nombre ><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+    
+    <iColl id=listaBancoAch>
+      <kColl id=banco>
+        <field id=idBanco>
+        <field id=name>
+      </kColl>  
+    </iColl>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=finalizarPseJspFmt>
+    <fJsp>
+        <fString dataName=selectMoneda description=selectMoneda><nullCheck>
+		<fString dataName=descripNegociacion description=descripNegociacion><nullCheck>
+		<fString dataName=codpseCus description=codpseCus><nullCheck>
+		<fString dataName=codigoConsBanco description=codigoConsBanco><nullCheck>
+		<fString dataName=avanceOpe description=avanceOpe><nullCheck>
+		<fString dataName=descripcionoperPSE description=descripcionoperPSE><nullCheck>
+		<fString dataName=numTrans description=numTrans><nullCheck>	
+		<fString dataName=nitConsulta description=nitConsulta><nullCheck>
+		<fString dataName=nitNombre description=nitNombre><nullCheck>
+		<fString dataName=fechaActual description=fechaActual><nullCheck>
+		<fString dataName=tipoOperacion description=tipoOperacion><nullCheck>
+	    <fString dataName=tipoOperacion description=tipoOperacion><nullCheck>
+	    <fString dataName=equivaPesos description=equivaPesos><nullCheck>
+	    <fString dataName=comision description=comision><nullCheck>
+	    <fString dataName=iva description=iva><nullCheck>
+	    <fString dataName=totalDebito description=totalDebito><nullCheck>
+		<fString dataName=nombresbenefic description=nombresbenefic><nullCheck>
+		<fString dataName=nombrebancobe description=nombrebancobe><nullCheck>
+		<fString dataName=codigosabanco1 description=codigosabanco1><nullCheck>
+		<fString dataName=cuentabenefica description=cuentabenefica><nullCheck>
+		<fString dataName=tiposabanco1 description=tiposabanco1><nullCheck>
+		<fString dataName=cuentaintermed description=cuentaintermed><nullCheck>
+		<fString dataName=monto description=monto><nullCheck>
+		<fString dataName=descNumeral description=descNumeral><nullCheck>
+		<fString dataName=NumeralC description=NumeralC><nullCheck>
+		<fString dataName=Resultado description=Resultado><nullCheck>
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=redirectPseJspFmt>
+    <fJsp>
+    	<fString dataName=linkPse description=linkPse><nullCheck>
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+    <fJsp>
+    <fString dataName=s_idioma description=idioma><nullCheck>
+        <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+        <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+        <fString dataName=Error description=mensaje>
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=formulariosJspFmt>
+    <fJsp>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=msjError description=msjError>
+        <fString dataName=s_idioma description=idioma><nullCheck>
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+		<fString dataName=rate description=rate><nullCheck>
+		<fString dataName=totalDebito description=totalDebito><nullCheck>
+		<fString dataName=numTrans description=numTrans><nullCheck>
+		<fString dataName=equivaPesos description=equivaPesos><nullCheck>
+		<fString dataName=comision description=comision><nullCheck>
+		<fString dataName=iva description=iva><nullCheck>
+         
+        <iCollVector dataName=lista_cuentas description=listaCuentas>
+            <record dataName=cuenta>
+                <fString dataName=banco><nullCheck>
+                <fString dataName=oficina><nullCheck>
+                <fString dataName=dcontrol><nullCheck>
+                <fString dataName=num_cuenta><nullCheck>
+                <fString dataName=permiso><nullCheck>
+                <fString dataName=clave_asunto><nullCheck>
+                <fString dataName=tipo><nullCheck>
+                <fString dataName=estado><nullCheck>
+                <fString dataName=valaso><nullCheck>
+                <fString dataName=divisa><nullCheck>
+                <fString dataName=LimDiario><nullCheck>
+                <fString dataName=LimTran><nullCheck>
+                <fString dataName=LimMes><nullCheck>
+            </record>
+       </iCollVector>
+       
+       <fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=finalizarJspFmt>
+    <fJsp>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=msjError description=msjError>
+        <fString dataName=s_idioma description=idioma><nullCheck>
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        
+        <fString dataName=Formulario description=Formulario>
+        <fString dataName=NumeralC description=NumeralC>
+        <fString dataName=descNumeral description=descNumeral>
+        <fString dataName=s_mancomunada description=mancomunada>
+        
+        <fString dataName=s_Fijo_Nit description=s_Fijo_Nit><nullCheck><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+        <fString dataName=s_Fijo_Nombre description=s_Fijo_Nombre><nullCheck><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=iniFinalizarJspFmt>
+    <fJsp>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=msjError description=msjError>
+        <fString dataName=s_idioma description=idioma><nullCheck>
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        
+        <fString dataName=Formulario description=Formulario>
+        <fString dataName=NumeralC description=NumeralC>
+        <fString dataName=descNumeral description=descNumeral>
+        <fString dataName=s_mancomunada description=mancomunada>
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+		<fString dataName=rate description=rate><nullCheck>
+		<fString dataName=totalDebito description=totalDebito><nullCheck>
+		<fString dataName=numTrans description=numTrans><nullCheck>
+        
+        <fNumString dataName=firma decPlaces=0 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=no  >
+        
+        <fString dataName=s_Fijo_Nit description=s_Fijo_Nit><nullCheck><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+        <fString dataName=s_Fijo_Nombre description=s_Fijo_Nombre><nullCheck><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+         
+        <iCollVector dataName=listaBancoAch description=listaBancoAch>
+          <record dataName=banco>
+            <fString dataName=idBanco><nullCheck>
+            <fString dataName=name><nullCheck>
+		  </record>
+       </iCollVector>
+       <fString dataName=iva description=iva>
+       <fString dataName=totalDebito description=totalDebito>
+       <fString dataName=rate description=rate>
+       <fString dataName=numTrans description=numTrans>
+       <fString dataName=origin description=origin>
+       <fString dataName=equivaPesos description=equivaPesos>
+       <fString dataName=comision description=comision>
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=detalleBenefJspFmt>
+    <fJsp>
+    		<fString dataName=s_idioma description=idioma><nullCheck>
+            <fString dataName=tipobeneficiar><nullCheck>
+            <fString dataName=idbeneficiario><nullCheck>
+            <fString dataName=digivbeneficia><nullCheck>
+            <fString dataName=nombresbenefic><nullCheck>
+            <fString dataName=apellidosbenef><nullCheck>
+            <fString dataName=direccionebenef><nullCheck>
+            <fString dataName=telefonobenefi><nullCheck>
+            <fString dataName=paisbeneficiar><nullCheck>
+            <fString dataName=ciudadbenefcia><nullCheck>
+            <fString dataName=cuentabenefica><nullCheck>
+            <fString dataName=tiposabanco1><nullCheck>
+            <fString dataName=codigosabanco1><nullCheck>
+            <fString dataName=nombrebancobe><nullCheck>
+            <fString dataName=paisbancobene><nullCheck>
+            <fString dataName=ciudadbancobe><nullCheck>
+            <fString dataName=nombrebancoin><nullCheck>
+            <fString dataName=cuentaintermed><nullCheck>
+            <fString dataName=tiposabanco2><nullCheck>
+            <fString dataName=codigosabanc2><nullCheck>
+            <fString dataName=paisbancointe><nullCheck>
+            <fString dataName=ciudadbancoin><nullCheck>
+           	<fString dataName=codError><nullCheck>
+		    <fString dataName=codePaisBene><nullCheck>
+		    <fString dataName=codePaisInte><nullCheck>
+		    <fString dataName=codigoUnitario><nullCheck>
+		    <fString dataName=literalCodigoUnitario><nullCheck>
+    
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=selecBenefJspFmt>
+    <fJsp>
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro><nullCheck>
+    	<fString dataName=errorSwift description=errorSwift><nullCheck><!-- INI 225B FX CMC 17/09/2019 -->
+    	<fString dataName=pagina_actual description=pagina_actual> <!-- INC 102 FX 26-10-2018 -->
+		<fString dataName=bandera_paginacion description=bandera_paginacion> <!-- INC 102 FX 26-10-2018 -->	
+    
+        <fString dataName=s_idioma description=idioma><nullCheck>
+        <fString dataName=s_cod_nomconta description=usuario>
+        
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=monto description=monto>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=indBenef description=indBenef><nullCheck>    
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        <fString dataName=avanceOpe description=avanceOpe>
+        <fString dataName=msjError description=msjError>
+        <fString dataName=validaCta description=validaCta>
+        
+        <fString dataName=tipoOperacion description=tipoOperacion>
+        <fString dataName=numOperacion description=numOperacion>
+        
+          <fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        
+       
+      <iCollVector dataName=listaCuentasB description=listaCuentasB>
+          <record dataName=CuentaB>
+            <fString dataName=tipobeneficiar><nullCheck>
+            <fString dataName=idbeneficiario><nullCheck>
+            <fString dataName=digivbeneficia><nullCheck>
+            <fString dataName=nombresbenefic><nullCheck>
+            <fString dataName=apellidosbenef><nullCheck>
+            <fString dataName=direccionebenef><nullCheck>
+            <fString dataName=telefonobenefi><nullCheck>
+            <fString dataName=paisbeneficiar><nullCheck>
+            <fString dataName=ciudadbenefcia><nullCheck>
+            <fString dataName=cuentabenefica><nullCheck>
+            <fString dataName=tiposabanco1><nullCheck>
+            <fString dataName=codigosabanco1><nullCheck>
+            <fString dataName=nombrebancobe><nullCheck>
+            <fString dataName=paisbancobene><nullCheck>
+            <fString dataName=ciudadbancobe><nullCheck>
+            <fString dataName=direccbancobe><nullCheck>
+            <fString dataName=nombrebancoin><nullCheck>
+            <fString dataName=cuentaintermed><nullCheck>
+            <fString dataName=tiposabanco2><nullCheck>
+            <fString dataName=codigosabanc2><nullCheck>
+            <fString dataName=paisbancointe><nullCheck>
+            <fString dataName=ciudadbancoin><nullCheck>
+            <fString dataName=direccbancoin><nullCheck>
+            <fString dataName=codigoUnitario><nullCheck>
+         </record >
+    </iCollVector >
+        
+            <fString dataName=tipobeneficiar><nullCheck>
+            <fString dataName=idbeneficiario><nullCheck>
+            <fString dataName=digivbeneficia><nullCheck>
+            <fString dataName=nombresbenefic><nullCheck>
+            <fString dataName=apellidosbenef><nullCheck>
+            <fString dataName=direccionebenef><nullCheck>
+            <fString dataName=telefonobenefi><nullCheck>
+            <fString dataName=paisbeneficiar><nullCheck>
+            <fString dataName=ciudadbenefcia><nullCheck>
+            <fString dataName=cuentabenefica><nullCheck>
+            <fString dataName=tiposabanco1><nullCheck>
+            <fString dataName=codigosabanco1><nullCheck>
+            <fString dataName=nombrebancobe><nullCheck>
+            <fString dataName=paisbancobene><nullCheck>
+            <fString dataName=ciudadbancobe><nullCheck>
+            <fString dataName=nombrebancoin><nullCheck>
+            <fString dataName=cuentaintermed><nullCheck>
+            <fString dataName=tiposabanco2><nullCheck>
+            <fString dataName=codigosabanc2><nullCheck>
+            <fString dataName=paisbancointe><nullCheck>
+            <fString dataName=ciudadbancoin><nullCheck>
+           	<fString dataName=codError><nullCheck>
+		    <fString dataName=codePaisBene><nullCheck>
+		    <fString dataName=codePaisInte><nullCheck>
+		    <fString dataName=codigoUnitario><nullCheck>
+		    <fString dataName=literalCodigoUnitario><nullCheck>
+		    <fString dataName=errorBeneficiario><nullCheck>
+        
+        <iCollVector dataName=lista_cuentas description=listaCuentas>
+            <record dataName=cuenta>
+                <fString dataName=banco><nullCheck>
+                <fString dataName=oficina><nullCheck>
+                <fString dataName=dcontrol><nullCheck>
+                <fString dataName=num_cuenta><nullCheck>
+                <fString dataName=permiso><nullCheck>
+                <fString dataName=clave_asunto><nullCheck>
+                <fString dataName=tipo><nullCheck>
+                <fString dataName=estado><nullCheck>
+                <fString dataName=valaso><nullCheck>
+                <fString dataName=divisa><nullCheck>
+                <fString dataName=LimDiario><nullCheck>
+                <fString dataName=LimTran><nullCheck>
+                <fString dataName=LimMes><nullCheck>
+            </record>
+       </iCollVector>
+        
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=consulBAEPJspFmt>
+	<fJsp>
+		<fString dataName=s_idioma description=idioma><nullCheck>
+		<fString dataName=indilist><nullCheck>
+		<fString dataName=coderror><nullCheck>
+		<fString dataName=valerror><nullCheck>		 
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=benefJspFmt>
+    <fJsp>
+            <fString dataName=indBenef description=indBenef><nullCheck> 
+			<fString dataName=s_idioma description=idioma><nullCheck>
+            <fString dataName=tipobeneficiar><nullCheck>
+            <fString dataName=idbeneficiario><nullCheck>
+            <fString dataName=digivbeneficia><nullCheck>
+            <fString dataName=nombresbenefic><nullCheck>
+            <fString dataName=apellidosbenef><nullCheck>
+            <fString dataName=direccionebenef><nullCheck>
+            <fString dataName=telefonobenefi><nullCheck>
+            <fString dataName=paisbeneficiar><nullCheck>
+            <fString dataName=ciudadbenefcia><nullCheck>
+            <fString dataName=cuentabenefica><nullCheck>
+            <fString dataName=tiposabanco1><nullCheck>
+            <fString dataName=codigosabanco1><nullCheck>
+            <fString dataName=nombrebancobe><nullCheck>
+            <fString dataName=paisbancobene><nullCheck>
+            <fString dataName=ciudadbancobe><nullCheck>
+            <fString dataName=nombrebancoin><nullCheck>
+            <fString dataName=cuentaintermed><nullCheck>
+            <fString dataName=tiposabanco2><nullCheck>
+            <fString dataName=codigosabanc2><nullCheck>
+            <fString dataName=paisbancointe><nullCheck>
+            <fString dataName=ciudadbancoin><nullCheck>
+            <fString dataName=codError><nullCheck>
+		    <fString dataName=codePaisBene><nullCheck>
+		    <fString dataName=codePaisInte><nullCheck>
+		    <fString dataName=codigoUnitario><nullCheck>
+		    <fString dataName=literalCodigoUnitario><nullCheck>
+			<fString dataName=nombreOperacion><nullCheck>
+            
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=jsonResponseJspFmt>
+		<fJsp>
+			<fString dataName=jsonData><nullCheck>
+		</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<! -------------------------------------------------------------------------------->
+
+<fmtDef id=FormulariosOPHTMLFmt>
+    <fHTMLReq>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        <fString dataName=dataFull description=dataFull>
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro>
+		<fString dataName=nitNombre description=nitNombre>
+		<fString dataName=rate description=rate>
+		<fString dataName=totalDebito description=totalDebito>
+		<fString dataName=numTrans description=numTrans>
+		<fString dataName=equivaPesos description=equivaPesos>
+		<fString dataName=comision description=comision>
+		<fString dataName=iva description=iva>
+        
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        
+        <fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro>
+        
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=consuHTMLFmt>
+	 <fHTMLReq>
+		<fString dataName=codigoConsBanco  description=codigoConsBanco>
+		<fString dataName=element description=element>
+	 </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=FinalizarIMGOPHTMLFmt>
+    <fHTMLReq>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        
+        <fString dataName=Formulario description=Formulario>
+        <fString dataName=NumeralC description=NumeralC>
+        <fString dataName=descNumeral description=descNumeral>
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro>
+		<fString dataName=rate description=rate>
+		<fString dataName=totalDebito description=totalDebito>
+		<fString dataName=numTrans description=numTrans>
+		<fString dataName=equivaPesos description=equivaPesos>
+		<fString dataName=comision description=comision>
+		<fString dataName=iva description=iva>
+        
+        <!-- INI Alcance Divisas CMC Archivos 29/01/2018 ---->
+        <!-- fString dataName=bas64Declaracion description=bas64Declaracion --->
+        <!-- fString dataName=bas64Factura description=bas64Factura         --->
+        <!-- fString dataName=extDeclaracion description=extDeclaracion     --->
+        <!-- fString dataName=extFactura description=extFactura             --->
+        <!-- fString dataName=sizeDeclaracion description=sizeDeclaracion   --->
+        <!-- fString dataName=sizeFactura description=sizeFactura           --->
+        <fString dataName=file1  description=file1>
+        <fString dataName=file2  description=file2>
+        <fString dataName=file3  description=file3>
+        <fString dataName=file4  description=file4>
+        <fString dataName=file5  description=file5>
+        <fString dataName=file6  description=file6>
+        <fString dataName=file7  description=file7>
+        <fString dataName=file8  description=file8>
+        <fString dataName=file9  description=file9>
+        <fString dataName=file10 description=file10>
+        <fString dataName=trazaExtAndSize description=trazaExtAndSize>
+        <!-- FIN Alcance Divisas CMC Archivos 29/01/2018 ---->
+        <fString dataName=msjError description=msjError>   
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro>                 
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=FinalizarOPHTMLFmt>
+    <fHTMLReq>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        
+        <fString dataName=Formulario description=Formulario>
+        <fString dataName=NumeralC description=NumeralC>
+        <fString dataName=descNumeral description=descNumeral>
+        
+        <fString dataName=ClaveOperacion description=ClaveOperacion>
+        <fString dataName=token description=token>
+        <fString dataName=msjError description=msjError>
+        
+        <fString dataName=E_Fijo_Nit description=E_Fijo_Nit><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+        <fString dataName=E_Fijo_Nombre description=E_Fijo_Nombre><!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=detalleBenefOPHTMLFmt>
+    <fHTMLReq>
+        <fString dataName=docBenefi description=docBenefi>
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=modificarOPHTMLFmt>
+    <fHTMLReq>
+        <fString dataName=numOperacion description=numOperacion>
+        <fString dataName=tipoOperacion description=tipoOperacion>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=refExtranjero description=refExtranjero>
+        <fString dataName=ppagina description=ppagina> <!-- INC 102 FX 6-11-2018 -->
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+        <fString dataName=tipoFondoGiro description=tipoFondoGiro>
+        <fString dataName=operationObj description=operationObj>
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=eliminarBenefiOPHTMLFmt>
+    <fHTMLReq>
+        <fString dataName=numOperacion description=numOperacion>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=indBenef description=indBenef><nullCheck> 
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        
+        <fString dataName=tipoOperacion description=tipoOperacion>
+        <fString dataName=numOperacion description=numOperacion>
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosConsultaOPHTMLFmt>
+    <fHTMLReq>
+            <fString dataName=docBenefi description=docBenefi>
+            <fString dataName=indBenef description=indBenef><nullCheck> 
+            <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+            <fString dataName=selectOpe description=selectOpe>
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=modificarOPHTMLFmt2>
+     <fHTMLReq>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=monto description=monto>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=avanceOpe description=avanceOpe>
+        <fString dataName=msjError description=msjError>
+        
+        <fString dataName=tipoOperacion description=tipoOperacion>
+        <fString dataName=numOperacion description=numOperacion>
+        
+        <fNumString dataName=tasaDivisa decPlaces=4 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaDivisaPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=tasaUsdPeso decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        <fNumString dataName=equivPesos decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes >
+        
+            <fString dataName=tipobeneficiar>
+            <fString dataName=idbeneficiario>
+            <fString dataName=digivbeneficia>
+            <fString dataName=nombresbenefic>
+            <fString dataName=apellidosbenef>
+            <fString dataName=direccionebenef>
+            <fString dataName=telefonobenefi>
+            <fString dataName=paisbeneficiar>
+            <fString dataName=ciudadbenefcia>
+            <fString dataName=cuentabenefica>
+            <fString dataName=tiposabanco1>
+            <fString dataName=codigosabanco1>
+            <fString dataName=nombrebancobe>
+            <fString dataName=paisbancobene>
+            <fString dataName=ciudadbancobe>
+            <fString dataName=nombrebancoin>
+            <fString dataName=cuentaintermed>
+            <fString dataName=tiposabanco2>
+            <fString dataName=codigosabanc2>
+            <fString dataName=paisbancointe>
+            <fString dataName=ciudadbancoin>
+            <fString dataName=codigoUnitario>
+            
+     </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosProcessPseHTMLFmt>
+    <fHTMLReq>
+            <fString dataName=operationObj description=operationObj>
+    </fHTMLReq>
+</fmtDef>
+
+<fmtDef id=postPaymentHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=selectCuentaOrden description=selectCuentaOrden>
+        <fString dataName=selectOpe description=selectOpe>
+        <fString dataName=docBenefi description=docBenefi>
+        <fString dataName=selectMoneda description=selectMoneda>
+        <fString dataName=descripNegociacion description=descripNegociacion>
+        <fString dataName=referenciaOpe description=referenciaOpe>
+        <fString dataName=monto description=monto>
+        <fString dataName=avanceOpe description=avanceOpe>
+        <fString dataName=Formulario description=Formulario>
+        <fString dataName=NumeralC description=NumeralC>
+        <fString dataName=descNumeral description=descNumeral>        
+        <fString dataName=ClaveOperacion description=ClaveOperacion>
+        <fString dataName=token description=token>
+        <fString dataName=msjError description=msjError>
+        <fString dataName=E_Fijo_Nit description=E_Fijo_Nit>
+        <fString dataName=E_Fijo_Nombre description=E_Fijo_Nombre>
+		<fString dataName=selectBank description=selectBank>
+		<fString dataName=rate description=rate>
+		<fString dataName=totalDebito description=totalDebito>
+		<fString dataName=numTrans description=numTrans>
+		<fString dataName=origin description=origin>
+		<fString dataName=equivaPesos description=equivaPesos>
+		<fString dataName=comision description=comision>
+		<fString dataName=iva description=iva>
+	</fHTMLReq>
+</fmtDef>

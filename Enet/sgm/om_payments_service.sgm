@@ -1,0 +1,41 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL om_payments_service ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.col.rest.conector.om.OMPaymentService id=om_payments_service operationContext=OperationContext>	
+	<refKColl refId=om_payments_service-data>
+</com.grupobbva.col.rest.conector.om.OMPaymentService>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=om_payments_service-data>
+	<kColl id=Entrada>
+		<field id=metodo value="listar">
+		
+		<kColl id=getPaymenById>
+		     <field id="id">
+		</kColl>
+		
+		<kColl id=postPaymentConciliate>
+		    <field id="id"> 
+		    <kColl id=status>
+			    <field id="id">
+			    <field id="reasonId">
+			 </kColl>
+			 <iColl id=references>
+				<kColl id=reference>
+					 <field id="id">
+					 <field id="value">
+				</kColl>
+		     </iColl>
+		</kColl>
+		
+		<kColl id=postPayment>
+		 	<field id="paymentObject">
+		</kColl>
+
+	</kColl>
+	
+	<kColl id=Salida>
+	    <field id="paymentObject">
+   </kColl> 
+</kColl>

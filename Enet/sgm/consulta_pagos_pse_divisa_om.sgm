@@ -1,0 +1,114 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_pagos_pse_divisa_om  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pse.OMGestionPseDivisa id=consulta_pagos_pse_divisa_om operationContext=OperationContext>	
+	<refKColl refId=consulta_pagos_pse_divisa_om-data>
+</com.grupobbva.bc.col.web.pse.OMGestionPseDivisa>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_pagos_pse_divisa_om-data>
+	<kColl id=Entrada>
+		<kColl id=filtroConsulta>
+			<field id="fechaDesde">
+			<field id="fechaHasta">
+			<field id="documentoCliente">
+			<field id="digito">
+			<field id="banckTrade">
+		</kColl>
+	    <field id=metodo value="listar">
+		<kColl id=configurarUsuario>
+			<field id="usuario">
+			<field id="valorDesde">
+			<field id="valorHasta">
+			<field id="fechaTrans">
+			<field id="tipoPago">
+			
+		</kColl>
+		<kColl id=eliminarUsuario>
+			 <field id="numTransaccion">
+		</kColl>
+	    <kColl id=listarUsuario>
+			 <field id="fechaDesde">
+			 <field id="fechahasta">
+			 <field id="numTransaccion">
+			 <field id="pagina">
+			
+		</kColl>
+		<kColl id=actualizarTransacci>
+			 <field id="numTransaccion">
+			 <field id="valorUtilizado">
+			 <field id="banckTrade">
+		</kColl>
+		<kColl id=actualizarReintento>
+			 <field id="numTransaccion">
+			 <field id="reintento">
+			 <field id="bankTrade">
+		</kColl>
+		<kColl id=autorizar>
+		    <field id="idOrden">
+		</kColl>
+	</kColl >
+      
+	<kColl id=Salida>
+	     <kColl id=autorizar>
+		    <field id="status">
+		</kColl>
+		<kColl id=configurarUsuario>
+	    	 <field id="status">
+	    	 <field id="numTransaccion">
+	    </kColl> 
+		<kColl id=eliminarUsuario>
+	    	 <field id="status">
+	    	 <field id="idOrden">
+	    </kColl>
+	    <kColl id=actualizarTransacci>
+			  <field id="status">
+		</kColl>
+	    <kColl id=listarUsuario>
+	    	 <field id="status">
+			  <field id="pagina">
+		<iColl id=usuarios>
+	    	<kColl id=usuario>
+			  <field id="referencia">
+			  <field id="usuarioAut">
+			  <field id="valorDesde">
+			  <field id="valorHasta">
+			  <field id="fechaTrans">
+			  <field id="hora">
+			  <field id="estado">
+			  <field id="numTransaccion">
+			  <field id="valorUtilizado">
+			  <field id="fechaEjecu">
+			  <field id="tipoPago">
+			  <field id="ipUsuarioAudi">
+			  <field id="usuarioAudi">
+			  <field id="transaciEject">
+			  <field id="banckTrade">
+			</kColl >
+		</iColl > 
+	    </kColl>
+	    
+	  <kColl id=listarUsuarioOrden>
+		 <iColl id=usuarios>
+	    	<kColl id=usuario>
+			  <field id="referencia">
+			  <field id="usuarioAut">
+			  <field id="valorDesde">
+			  <field id="valorHasta">
+			  <field id="fechaTrans">
+			  <field id="hora">
+			  <field id="estado">
+			  <field id="numTransaccion">
+			  <field id="valorUtilizado">
+			  <field id="fechaEjecu">
+			  <field id="tipoPago">
+			  <field id="ipUsuarioAudi">
+			  <field id="usuarioAudi">
+			  <field id="transaciEject">
+			  <field id="banckTrade">
+			</kColl >
+		 </iColl > 
+	    </kColl>
+	    
+  	</kColl >
+ </kColl> 	

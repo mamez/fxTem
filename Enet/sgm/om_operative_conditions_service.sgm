@@ -1,0 +1,35 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL om_operative_conditions_service ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.col.rest.conector.om.OMOperativeConditions id=om_operative_conditions_service operationContext=OperationContext>	
+	<refKColl refId=om_operative_conditions_service-data>
+</com.grupobbva.col.rest.conector.om.OMOperativeConditions>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=om_operative_conditions_service-data>
+	<kColl id=Entrada>
+	 	<field id=metodo value="listar">
+	 	<kColl id=postOperativeCondit>
+				<field id="operationType">
+				<field id="businessId">
+				<kColl id=amountNegotiated>
+					<field id="amount">
+					<field id="currency">
+				</kColl>
+				<field id="operationNumber">
+		</kColl>
+		<kColl id=comisionService>
+			<field id="nit" value="NA">
+			<field id="page" value="1">
+			<field id="fromDate" value="NA">
+			<field id="toDate" value="NA">
+		</kColl>
+	</kColl>
+	
+	<kColl id=Salida>
+	    <field id="operativeConditionsObject">
+	    <field id="comisionServiceObject">
+   </kColl> 
+   
+</kColl>

@@ -1,0 +1,21 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL om_dynamic_currency_service ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.col.rest.conector.om.OMDynamicCurrency id=om_dynamic_currency_service operationContext=OperationContext>	
+	<refKColl refId=om_dynamic_currency_service-data>
+</com.grupobbva.col.rest.conector.om.OMDynamicCurrency>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=om_dynamic_currency_service-data>
+	<kColl id=Entrada>
+		<kColl id=postDynamic>
+		 	<field id="dynamicObject">
+		</kColl>
+
+	</kColl>
+	
+	<kColl id=Salida>
+	    <field id="dynamicObject">
+   </kColl> 
+</kColl>

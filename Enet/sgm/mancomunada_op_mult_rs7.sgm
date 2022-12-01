@@ -1,0 +1,154 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION mancomunada_op_mult_rs7  ------------------------------------->
+<com.grupobbva.bc.col.web.mancomunadas.OpMancomunadasMultiple_rs7 id=mancomunada_op_mult_rs7 operationContext=OperationContext>
+
+    <refFormat name=jspFormat refId=DatosOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=DatosEntradaOPHTMLFmt>
+	<refKColl refId=mancomunada_op_mult_rs7-data>
+	<refOM refId=retorno_pserv_om_rs7>
+	<!-- INI Inc Pago de facturas creado en V5 CMC 23 05 2018 -->
+	<refOM refId=retorno_pserv_om>
+	<!-- FIN Inc Pago de facturas creado en V5 CMC 23 05 2018 -->
+	<refOM refId=retorno_avancetarje_om>
+	<refOM refId=retorno_avancetarjeter_om>
+	<refOM refId=retorno_pagotarje_om>
+	<refOM refId=retorno_pagotarje_otros_om>
+	<refOM refId=retorno_pagotcter_om>
+	<refOM refId=pago_prestamos_propios_realizar_cl_om>
+	<refOM refId=pago_prestamos_propios_realizar_cv_om>
+	<refOM refId=pago_prestamos_propios_realizar_om>
+	<refOM refId=pago_prestamos_terceros_realizar_om>
+	<refOM refId=prestamos_disposicion_credito_liquido_om>
+	<refOM refId=prestamos_disposicion_credito_liquido1_om>
+	<refOM refId=prestamos_disposicion_credito_liquido2_om>
+	<refOM refId=prestamos_disposicion_credito_virtual_om>
+	<refOM refId=prestamos_disposicion_credito_virtual1_om>
+	<refOM refId=prestamos_disposicion_credito_virtual2_om>
+	<refOM refId=fondo_plazo_sucr_om>
+	<refOM refId=fondo_plazo_reem_om>
+	<refOM refId=fondo_plazo_reem1_om>
+	<refOM refId=retorno_trasbd_om>
+	<refOM refId=retorno_tras_om>
+	<refOM refId=retorno_trasfe_om>
+	<refOM refId=retorno_trasbbvafam_om>
+	<refOM refId=retorno_trasfn_om>
+	<refOM refId=sign_on_om>
+	<refOM refId=preinscrip_factura_pagatiempo_om>
+	<refOM refId=gestion_actualizacion_pago_max_puntuales_om>
+	<refOM refId=retorno_cdts_om>
+	<refOM refId=bloq_chequeras_om>
+	<refOM refId=envio_fichero_om>
+	<! Inicio GP11152 - VyG 08/04/2014 --->
+	<refOM refId=transferir_om>
+	<refOM refId=inscribir_om>
+	<refOM refId=inscribirm_om>
+	<refOM refId=borrar_om>
+	<! FIN GP11152 - VyG 08/04/2014 --->
+	<refOM refId=lib_retorno_tras_om>
+	<refOM refId=correos_adquirencia_om>
+	<refOM refId=cuprot_pagos_om>
+	<refOM refId=cuprot_disposiciones_om>
+	<refOM refId=cambio_plazo_movtc_conf_om>
+	<refOM refId=pago_om>
+	<refOM refId=divisas_consulta_unica_operaciones_om>
+	<!-- AUTOGESTION -->
+	<refOM refId=autogestion_serv_alta_om>
+	<refOM refId=autogestion_asocxserv_alta_om>
+	<refOM refId=autogestion_prod_baja_om>
+	<refOM refId=autogestion_serv_baja_om>
+	<refOM refId=autogestion_asocxserv_baja_om>
+	<refOM refId=autogestion_prod_alta_om>
+	
+	<!-- INI Gestion Pagos PSE 13/02/2019 -->
+	<refOM refId=gest_pgs_pse_crea_pago_om>
+	<!-- FIN Gestion Pagos PSE 13/02/2019 -->
+
+    <!-- CMC Camilo Rojas Balanta 28-12-2018 -->
+	<!-- GP16295 - OFERTAS -->
+	<refOM refId=ofertas_alta_om>
+	<!-- GP16295 - OFERTAS -->
+	
+	<!-- GP-16543 FREEMIUM-->
+	<refOM refId=freemium_contratar_om>
+
+	<refOM refId=autogestion_serv_alta_listador_om>
+	
+	<!-- GP-16543 FREEMIUM -->
+
+	<!-- RECAUDO CORPORATIVO INI -->
+     <refOM refId=recaudo_corporativo_om>
+	<!-- RECAUDO CORPORATIVO FIN -->
+	
+	<!-- ROLLBACK FX INI -->
+     <refOM refId=rollback_operation_creation_om>
+	<!-- ROLLBACK FX  FIN -->
+	
+	<!-- GESTION USUARIO  DIVISAS PSE -->
+	 <refOM refId=consulta_pagos_pse_divisa_om>
+	<!-- GESTION USUARIO  DIVISAS PSE FIN -->
+
+	<! ----------------------------------------------------------------------------------->
+	<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=jsonMultienvio metodo=jsonMultienvio requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=1 accion=jsonMultienvio metodo=jsonMultienvio requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=jsonMultienvio metodo=jsonMultienvio requestFmt=DatosEntradaOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=DatosOPJspFmt>
+		<salidaOP id=1 jspFmt=DatosOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.mancomunadas.OpMancomunadasMultiple_rs7>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=mancomunada_op_mult_rs7-data>
+
+	<field id=id_orden>
+	<field id=REGOK>
+	<field id=REGNK>
+	<field id=Error>
+	
+	<iColl id=ordenes>
+		<kColl id=orden>
+			<field id=factura>
+			<field id=importePago>
+			<field id=fechaOperacion>
+			<field id=idOrden>
+			<field id=descripcion>
+			<field id=indLanzador>
+			<field id=error>
+		</kColl>
+	</iColl>
+</kColl>
+
+<! FORMATOS  DE ENTRADA--------------------------------------------------------------->
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=id_orden>
+	</fHTMLReq>
+</fmtDef>
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=DatosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=REGOK description=REGOK><nullCheck>
+		<fString dataName=REGNK description=REGNK><nullCheck>
+		<fString dataName=s_ip description=ip><nullCheck>
+		<fString dataName=Error><nullCheck>
+		<iCollVector dataName=ordenes>
+			<fJsp>
+				<fString dataName=idOrden><nullCheck>
+				<fString dataName=indLanzador><nullCheck>
+				<fString dataName=fechaOperacion><nullCheck>
+				<fString dataName=descripcion><nullCheck>
+				<fString dataName=factura><nullCheck>
+				<fNumString dataName=importePago decPlaces=2><nullCheck>
+				<fString dataName=error><nullCheck>
+			</fJsp>
+		</iCollVector>
+	</fJsp>
+</fmtDef>

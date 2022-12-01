@@ -1,0 +1,46 @@
+<! BBVA  --------------------------------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_detalle_operaciones_negociacion_om  ------------------------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_detalle_operaciones_negociacion_om operationContext=OperationContext>
+ <refKColl refId=consulta_detalle_operaciones_negociacion_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------->
+<kColl id=consulta_detalle_operaciones_negociacion_om-data>
+ <field id=IdTx value=TxFNDOPNET>
+ 
+  <kColl id=entrada>
+	<field id=NCUENTA>
+	<field id=IDIOMA><!-- SegmentadorTasa-OsneiderAcevedo-GrupoCMC-07-03-2020 -->
+  </kColl >
+
+  <kColl id=salida>
+	<field id=HINI>
+	<field id=HFIN>
+	<field id=HNINI>
+	<field id=HNFIN>	
+	<field id=TIMER>
+	<iColl id=listaMonedas>
+	  <kColl id=moneda>
+		<field id=DESMON>
+		<field id=DESCRIPCION_MON><!--SegmentadorTasa-OsneiderAcevedo-GrupoCMC-07-03-2020 -->
+	  </kColl >
+	</iColl>
+	<field id=HABIPSE>
+  </kColl >
+  
+</kColl>
+<! --------------------------------------------------------------------------------------------------------->
+
+<! COPIADOR ------------------------------------------------------------------------------------------------>
+<kColl id=consulta_detalle_operaciones_negociacion_om-copiar>
+ <kColl id=a-TxFNDOPNET>
+  <field id=entrada value=TxFNDOPNETEntrada>
+ </kColl>
+ <kColl id=desde-TxFNDOPNET>
+  <field id=salida value=TxFNDOPNETSalida-01>
+ </kColl>
+</kColl>
+<! --------------------------------------------------------------------------------------------------------->

@@ -1,0 +1,396 @@
+/*
+
+*		persnalizados 
+*/
+
+/***********************************************************************************************************************/
+div .textLeft {
+	font-size: 14px;
+	font-family: "BBVA Coronita Book", "Helvetica Neue", Arial, Helvetica,
+		sans-serif;
+	color: #666;
+	text-align: left;
+	line-height: 1.2;
+	padding: 0px 0px 0px 6px;
+}
+
+div .textCheck {
+	font-size: 16px;
+	color: #121212;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+}
+
+div .textCheckAzul {
+	font-size: 16px;
+	color: #1973B8;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+	font-weight: bold;
+	padding-left: 4px;
+}
+
+button.buttonGiro {
+	width: 110px;
+	display: inline-block;
+	outline: 0;
+	white-space: inherit;
+	background: #aeaeae;
+	border-radius: 1px;
+	color: #fff;
+	border: 1px solid #aeaeae;
+	height: 31px;
+	padding: 0px 0px 0px 0px;
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+button.grandeGrid2 {
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    height: 30px;
+    line-height: 6px;
+    margin: 5px 0 5px 10px;
+    vertical-align: baseline;
+}
+
+button.grandeGrid2 {
+    background: #777;
+    background: linear-gradient(to bottom, #999 0, #777 100%) !important;
+    color: #fff;
+    border: 1px solid #666 !important;
+}
+
+p.textSubtitulo {
+    font-size: 14px !important;
+    font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    color: black;
+    width: 100%;
+    max-width: 920px;
+    display: flex;
+    align-items: baseline;
+}
+
+button.buttonGiroAzul {
+	width: 110px;
+	display: inline-block;
+	outline: 0;
+	white-space: inherit;
+	background: #0065ae;
+	border-radius: 1px;
+	color: #fff;
+	border: 1px solid #0065ae;
+	height: 31px;
+	padding: 0px 0px 0px 0px;
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.divAzul {
+	background-color: #d4edfc;
+	padding: 15px 22px 14px 30px;
+	color: black;
+}
+.divAzull_4 {
+	background-color: #d4edfc;
+    padding: 15px 22px 14px 30px;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.divAzull3 {
+	background-color: #d4edfc;
+	padding: 15px 22px 14px 30px;
+	color: black;
+	margin-top: 9%
+}
+
+p.tituloNotaDiv {
+    font-size: 20px !important;
+    font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin-bottom: 2px;
+}
+
+h1.boldH1 {
+	font-weight: bold;
+	padding: 0px 0px 0px 20px;
+}
+
+p.subtituloPrincipal_2 {
+	font-size: 15px !important;
+	color: #333;
+	margin-bottom: 20px;
+	padding-top: 7px;
+}
+
+p.subtituloPrincipalGiro {
+	font-size: 16px;
+	color: #121212;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+	padding: 0px 0px 12px 20px;
+}
+
+div .textLeftGiro {
+	font-size: 14px;
+	font-family: "BBVA Coronita Book", "Helvetica Neue", Arial, Helvetica,
+		sans-serif;
+	color: #666;
+	text-align: left;
+	line-height: 1.2;
+	padding: 8px 0px 0px 26px;
+}
+
+img.imgInf {
+	padding: 0px 12px 2px 0px;
+	width: 32px;
+}
+
+img.imgItem {
+	height: 8px;
+	padding: 0px 8px 1px 16px;
+}
+
+.textSubtitulo b {
+	font-size: 14px;
+	display: contents;
+}
+
+.dividirImg {
+    display: flex;
+    align-items: flex-start;
+}
+
+h1.sbold {
+	font-weight: bold;
+}
+
+.pseItem {
+	width: 36px;
+	padding: 4px;
+}
+
+b.text10B {
+	font-size: 10px;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+p.text10 {
+	font-size: 10px;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+	line-height: 1.2;
+}
+
+p.text12B {
+	font-size: 12px;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+	font-weight: bold;
+	padding-top: 3px;
+}
+
+p.text12 {
+    font-size: 12px;
+    font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    color: rgb(255 255 255 / 78%);
+}
+
+.msnAyudaDiv:before {
+	border: 14px solid transparent;
+	border-left-color: #004481;
+	bottom: -13px;
+	content: " ";
+	display: block;
+	height: 0px;
+	left: 0px;
+	position: absolute;
+	width: 0;
+}
+
+.msnAyudaDiv {
+	width: 302px;
+	top: -8px;
+	float: right;
+	margin-right: -160px;
+	margin-top: -50px;
+	text-align: left;
+	display: block;
+	background-color: rgb(0, 68, 129);
+	border: 0px;
+	color: white;
+}
+
+div.divGris {
+	background-color: #eeeeee;
+	height: 145PX;
+	border-radius: 3PX;
+}
+
+p.margin0 {
+	margin-bottom: 0px;
+	color: black;
+}
+
+.divAzul2 {
+	background-color: #d4edfc;
+	padding: 0px 0px 0px 25px;
+	color: black;
+}
+
+.divAzul2Titulo {
+	background-color: #d4edfc;
+	padding: 16px 0px 0px 25px;
+	color: black;
+}
+
+#colorurl {
+	color: black;
+	padding-left: 5px;
+}
+
+#colorurl2 {
+	color: #333;
+	padding-left: 5px;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.664);
+	z-index: 99999;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.modalDialog>div {
+	width: 850px;
+	height: 500px;
+	position: relative;
+	margin: 8% auto;
+	padding: 5px 20px 13px 20px;
+	background: rgb(255, 255, 255);
+}
+
+.closee2 {
+	line-height: 25px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	margin-left: 99%;
+	color: #0a0a8d;
+}
+
+h1.centertext2 {
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	padding: 20px 0px 0px 0%;
+}
+
+p.centertext3 {
+	font-size: 14px;
+	color: #939292;
+	font-family: 'BBVA Coronita Book', 'Helvetica Neue', Arial, Helvetica,
+		sans-serif;
+	padding: 0px 0px 0px 0px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+svg.icon.icon-info {
+	width: 100px;
+	height: 100px;
+	align-items: center;
+	display: flex;
+	max-width: 400px;
+	justify-content: center;
+	margin: auto;
+	color: #0065ae;
+}
+
+button.buttonGiroAzull3 {
+	outline: 0;
+	white-space: inherit;
+	background: #0065ae;
+	color: #fff;
+	border: 1px solid #0065ae;
+	padding: 0px 0px 0px 0px;
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+	width: 110px;
+	height: 37px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+a.centeraa3 {
+	font-size: 14px;
+	color: #167fa7;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+svg.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}
+
+.ocultarInfo {
+	display: none;
+}
+
+b.GMF_init {
+    color: white !important;
+}
+
+.tituloNegri {
+	font-weight: bold;
+}
+
+.alineaDerecha2 {
+	display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 16px;
+}
+.lineaGray{
+	background: #e0e4e1;
+	border-bottom: 2px solid #e0e4e1;
+	margin: 0;
+	padding: 12px;
+}

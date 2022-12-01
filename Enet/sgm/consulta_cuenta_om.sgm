@@ -1,0 +1,54 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operacion:  MULTICANAL consulta_cuenta_om.sgm  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=consulta_cuenta_om operationContext=OperationContext>
+	<refKColl refId=consulta_cuenta_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_cuenta_om-data>
+	<field id=IdTx value=TxFNNIPNET>
+	<kColl id=Entrada>
+	 	<field id="E_Referencia" >
+        <field id="E_Usuario" >
+     	<field id="E_TipoDocumento" > <!--opcional-->
+     	<field id="E_NumeroDocumento" > <!--opcional-->
+     	<field id="E_DigitoVerificacion" > <!--opcional-->
+     	<field id="E_ClienteCons" > <!--opcional-->
+     	<field id="E_Servicio" >
+     	<field id="E_Pagina" >  <!--opcional-->
+     	<field id="E_NumRegistros" > <!--opcional-->
+     	<field id="E_TipoOperacion" > <!--opcional-->
+	</kColl >
+
+	<kColl id=Salida>
+		<iColl id="S_IcListaCuenta" >
+       		<kColl id="S_KcListaCuenta">
+       			<field id="S_Cuenta" >
+				<field id="SS0_CENTROC" ><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+       		</kColl >
+		</iColl >
+	   <field id="S_ListarMas" >
+	   <field id="S_CodigoError" >
+	   <field id="S_DescripcionErr1" >
+	   <field id="S_DescripcionErr2" >
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=consulta_cuenta_om-copiar>
+	<kColl id=a-TxFNNIPNET>
+		<field id=Entrada value=TxFNNIPNETEntrada>
+	</kColl>
+	<kColl id=desde-TxFNNIPNET>
+		<field id=Salida value=TxFNNIPNETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

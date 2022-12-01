@@ -1,0 +1,21 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operacion:  MULTICANAL rollback_operation_creation_om  - ------------------------>
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.col.servicios.OmRollbackOpCreation id=rollback_operation_creation_om operationContext=OperationContext>
+	
+	<refKColl refId=rollback_operation_creation_om-data>
+	
+</com.grupobbva.col.servicios.OmRollbackOpCreation>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=rollback_operation_creation_om-data>
+    <kColl id=Entrada>
+      <field id="idOrden">
+      <field id="referencia">
+      <field id="claseOrden">
+      <field id="accion" value="rollback">
+    </kColl>
+    <kColl id=Salida>
+       <field id="status">
+    </kColl>
+</kColl>

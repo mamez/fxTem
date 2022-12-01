@@ -1,0 +1,98 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! PROCESO: comercio_exterior_bbva_pr-------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.comercioext.PrComercioExterior id=comercio_exterior_bbva_pr operationContext=OperationContext>
+<refKColl refId=comercio_exterior_bbva_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=1 operacion=consulta_operaciones_negociacion_op>
+		<estadoPr id=0 operacion=consulta_operaciones_negociacion_op>
+		<estadoPr id=3 operacion=consulta_operaciones_negociacion_op>
+		<estadoPr id=4 operacion=consulta_operaciones_negociacion_op>
+		
+		<estadoPr id=1 operacion=finalizar_operaciones_negociacion_op>
+		<estadoPr id=0 operacion=finalizar_operaciones_negociacion_op>
+		<estadoPr id=3 operacion=finalizar_operaciones_negociacion_op>
+		<estadoPr id=4 operacion=finalizar_operaciones_negociacion_op>
+		
+		<estadoPr id=0 operacion=negociacion_mesa_dinero_op>
+		<estadoPr id=0 operacion=negociacion_linea_h_op>
+		
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=ERRORWS jspFile=errorWS>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=0 jspFile=consulta_historico_operaciones>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=1 jspFile=consulta_operaciones_hacia_exterior>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=2 jspFile=consulta_operaciones_desde_exterior>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=3 jspFile=cotizador_tasas_divisas>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=4 jspFile=listado_operaciones_divisas>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=5 jspFile=consulta_detalle_operacion>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=6 jspFile=seleccion_cuenta_divisas>
+		
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=7 jspFile=crear_negociacion_linea_divisas>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=8 jspFile=seleccion_beneficiarios_divisas>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=9 jspFile=gestion_beneficiarios_divisas>
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=10 jspFile=crear_negociacion_mesaDinero_divisas2><!--VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=11 jspFile=Lista_Cuentas_divisas> <!-- L. DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=12 jspFile=validaContinuar> <!--VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019-->
+		
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=ERRORWS jspFile=errorWS>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=0 jspFile=formularios_negociacion_linea_divisas>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=1 jspFile=finalizar_negociacion_linea_divisas>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=2 jspFile=detalle_beneficiario_negociacion_divisas>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=3 jspFile=resumen_negociacion_divisas>
+		
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=4 jspFile=seleccion_beneficiarios_divisas_modificar>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=5 jspFile=formularios_negociacion_linea_divisas_modificar>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=6 jspFile=finalizar_negociacion_linea_divisas>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=7 jspFile=gestion_beneficiarios_divisas_modificar>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=11 jspFile=finalizar_resultado_divisas_pse>
+		<salidaPr id=0 operacion=finalizar_operaciones_negociacion_op estadoOP=14 jspFile=finalizar_negociacion_divisas_redirect_pse>
+		
+		<salidaPr id=0 operacion=negociacion_mesa_dinero_op estadoOP=1 jspFile=negociacion_mesa_dinero>
+		
+		<salidaPr id=0 operacion=negociacion_linea_h_op estadoOP=1 jspFile=negociacion_linea>
+		
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=16 jspFile=tlne_response_json >
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=18 jspFile=tlne_response_json >
+		<salidaPr id=0 operacion=consulta_operaciones_negociacion_op estadoOP=19 jspFile=tlne_response_json >
+		
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.comercioext.PrComercioExterior>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=comercio_exterior_bbva_pr-data>
+	<field id=num_cuenta>
+	<field id=PeticionWebService>
+	<field id=NumOperWebService>
+	<field id=referenciaOpe>
+	<field id=Num_Nit> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	<field id=NumCliente> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	<field id=AuxCuenta> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	<field id=Nit_Solo> <!-- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019 -->
+	<field id=Nit_Mod> <!-- NITS MODIFICAR OPERACIONES  - CMC - 11-07-2019 -->	
+	<field id=Fijo_Nit> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+	<field id=Fijo_Nombre> <!-- VARIOS NIT F2 - OSNEIDER A. CMC - 16-09-2019 -->
+	
+	<field id=monto><!-- INI incidencia 225B FX CMC 11/09/2019 -->
+	<field id=avanceOpe>
+	<field id=tasaDivisa>
+	<field id=tasaDivisaPeso>
+	<field id=tasaUsdPeso>
+	<field id=equivPesos>
+	<field id=selectCuentaOrden>
+	<field id=selectOpe>
+	<field id=selectMoneda>
+	<field id=descripNegociacion>
+	<field id=errorCodigo value="N"><!-- FIN incidencia 225B FX CMC 11/09/2019 -->
+	<field id=codigoSucursal><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
+	<field id=usuariosPseDto>
+	<field id=operationObj><!-- Objeto de orden pse-->
+</kColl>
+
