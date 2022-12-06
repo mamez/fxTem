@@ -129,6 +129,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 	private Map<String, Object> responseAjax;
 	private static final DecimalFormat FORMAT = new DecimalFormat("###,###.##");
 	private static final String DINAMIC_PRICING_DATE_FORMAT= "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+	private static final String ERROR= "ERROR";
 			
 	private OpControl controlOM;//CMC - FUNCION DE NEGOCIO FNGU - PRUEBA - 19/09/2019
 	//	/ Variables Ws ///
@@ -282,7 +283,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			paginar(1);
 			
 		}catch(Exception e){
-			setEstado("ERROR");	
+			setEstado(ERROR);	
 			Trace.trace(Trace.Debug, "", "### Falla en traerGiros() Global *** Lanzando la transaccion" + e);
 		}
 		validarHora();
@@ -412,7 +413,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
             //FIN-VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019
 			
 		} catch (Exception e) {
-			setEstado("ERROR");		
+			setEstado(ERROR);		
 			Trace.trace(Trace.Debug, "", "### ERROR - - - Fin girosHacia()" + e.getMessage());
 			e.printStackTrace();
 //INI CMC - FUNCION DE NEGOCIO - PRUEBA - 19/09/2019
@@ -444,7 +445,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
             setValueAt("Fijo_Nombre","");
            //FIN - VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019
 		} catch (Exception e) {
-			setEstado("ERROR");	
+			setEstado(ERROR);	
 			Trace.trace(Trace.Debug, "", "### ERROR - - - Fin girosDesde()" + e.getMessage());
 			e.printStackTrace();
 		}
@@ -518,7 +519,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			Trace.trace(Trace.Debug, "", " Fin filtrarGirosDesde()");
 			
 		} catch (Exception e) {
-			setEstado("ERROR");	
+			setEstado(ERROR);	
 			Trace.trace(Trace.Debug, "", "### ERROR - Fin filtrarGirosDesde()" + e.getMessage());
 			e.printStackTrace();
 //INI CMC - FUNCION DE NEGOCIO - PRUEBA - 19/09/2019
@@ -674,7 +675,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			
 			//FIN- LISTA DE NIT/COMERCIO EXTERIOR - OSNEIDER ACEVEDO - CMC - 14-05-2019
 		} catch (Exception e) {
-			setEstado("ERROR");
+			setEstado(ERROR);
 			Trace.trace(Trace.Debug, "", "### ERROR - Fin negociarLinea() -- " + e);
 //INI CMC - FUNCION DE NEGOCIO - PRUEBA - 19/09/2019
 		} finally {
@@ -1217,7 +1218,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			String infopesos=String.valueOf(getValueAt(EQUIV_PESO_2));
 			validaAutorizaciones(infopesos);			
 		}catch (Exception e) {
-			setEstado("ERROR");
+			setEstado(ERROR);
 			Trace.trace(Trace.Debug, "", "### ERROR - Fin negociarMesaDinero() - " + e);
 //INI CMC - FUNCION DE NEGOCIO - PRUEBA - 19/09/2019
 		} finally {
@@ -1730,7 +1731,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			Trace.trace(Trace.Debug, "", "### ERROR en eliminarBeneficiario()" + e);
 			setValueAt("msjError", "Error al intentar eliminar el beneficiario");
 			e.printStackTrace();
-			this.setEstado("ERROR");
+			this.setEstado(ERROR);
 			return;
 		}
 		
@@ -1831,7 +1832,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			// FIN Incidencia 102 FX 19/11/2018
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.setEstado("ERROR");
+			this.setEstado(ERROR);
 			Trace.trace(Trace.Debug, "", "### consultaBeneficiarios() - Falla en el metodo " + e);
 			return;
 //INI CMC - FUNCION DE NEGOCIO - PRUEBA - 19/09/2019
@@ -2060,7 +2061,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			ResponseBankTradeService response = WrapperBanktradeService.execute(peticion);
 			if(response.getCodError() != null){
 				if(!response.getCodError().equals("")){					
-					this.setEstado("ERROR");//Incidencia FX 98 CMC 19/10/2018
+					this.setEstado(ERROR);//Incidencia FX 98 CMC 19/10/2018
 					String mensaje = ERROR_WS_BANKTRADE.concat(response.getSequence()+" "+response.getCodError());
 					Trace.trace(Trace.Debug, "", "### aceptarInicial() PASO_1 - error de web service: " + mensaje);
 					setValueAt("msjError", mensaje);
@@ -2130,7 +2131,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 			if(response.getCodError() != null){
 				if(!response.getCodError().equals("")){
 					//INI incidencia FX 98 CMC 19/10/2018
-					this.setEstado("ERROR");
+					this.setEstado(ERROR);
 					String mensaje = ERROR_WS_BANKTRADE.concat(response.getSequence()+" "+response.getCodError());
 					setValueAt("msjError", mensaje);
 					Trace.trace(Trace.Debug, "", "### updatePaso2TMP() PASO_TMP - error de web service: " + mensaje);
@@ -2344,7 +2345,7 @@ public class OpConsultaOperaciones extends OpGestion_xhr_rs7 {
 		//FIN-VARIOS NIT F2 - OSNEIDER A. CMC - 02-10-2019
 		Trace.trace(Trace.Debug, "", " Fin detalleGiro()");
 		}catch (Exception e) {
-			setEstado("ERROR");
+			setEstado(ERROR);
 			Trace.trace(Trace.Debug, "", "### ERROR - Fin detalleGiro() - " + e);
 		}
 	}
@@ -4123,15 +4124,21 @@ public void validarContinuar() throws DSEObjectNotFoundException {
   				SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
   				String actualDate = simpleDateFormat.format(new Date());
 				responseAjax.put("fecha_actual", actualDate);
+				if(comisionServiceDto.getData().size() == 0 || comisionServiceDto.getData() == null  ) {
+					responseAjax.put(VALUE_STATUS, "NO_DATA");
+				}
   				responseAjax.put("data", comisionServiceDto);
   			} catch (BbvaException e) {
+  				responseAjax.put(VALUE_STATUS, "ERROR");
 		  		  Trace.trace(Trace.VTF, "", "Error al ejecutar om: " + e.getMessage());
 
   			} catch (DSEObjectNotFoundException e) {
+  				responseAjax.put(VALUE_STATUS, "ERROR");
 		  		  Trace.trace(Trace.VTF, "", "Error al obtener la propiedad: " + e.getMessage());
 
   			} catch (DSEInvalidArgumentException e) {
-		  		  Trace.trace(Trace.VTF, "", "Error al settear los valores: " + e.getMessage());
+  				responseAjax.put(VALUE_STATUS, "ERROR");
+  				Trace.trace(Trace.VTF, "", "Error al settear los valores: " + e.getMessage());
 
   			}finally {
   				try {

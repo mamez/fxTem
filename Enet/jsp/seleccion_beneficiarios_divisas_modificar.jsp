@@ -248,7 +248,8 @@
 		 //Cambiar link para realizar el metodo de carga de nuevos beneficiarios			 
 			 var selectOpeB = $("#selectOpe").val();
 			 var numOperacionB = $("#numOperacion").val();
-	 		 window.location.href="OperacionCBTFServlet?proceso=comercio_exterior_bbva_pr&operacion=finalizar_operaciones_negociacion_op&accion=modificarOperaciones&tipoOperacion=T&selectOpe="+ selectOpeB +"&numOperacion=" + numOperacionB + "&refExtranjero=NA"+"&ppagina="+"<%=(String)datos.get("pagina_actual")%>"; //INC 102 FX  CMC 9/11/2018
+			 var tipoFondoGiro = $("#tipoFondoGiro").val();
+	 		 window.location.href="OperacionCBTFServlet?proceso=comercio_exterior_bbva_pr&operacion=finalizar_operaciones_negociacion_op&accion=modificarOperaciones&tipoOperacion=T&selectOpe="+ selectOpeB +"&numOperacion=" + numOperacionB + "&refExtranjero=NA"+"&ppagina="+"<%=(String)datos.get("pagina_actual")%> " + "&tipoFondoGiro=" + tipoFondoGiro; //INC 102 FX  CMC 9/11/2018
 	 	 	ajustar();
 		 }
 		 function verAtras(){

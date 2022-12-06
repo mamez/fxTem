@@ -94,5 +94,6 @@
 	<field id=codigoSucursal><!-- INC CMC OFICINA GESTORA 27/09/2019 -->
 	<field id=usuariosPseDto>
 	<field id=operationObj><!-- Objeto de orden pse-->
+	<field id=operationObjAlt><!-- Objeto de orden pse2-->
 </kColl>
 

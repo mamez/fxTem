@@ -11,6 +11,7 @@ import com.grupobbva.col.rest.conector.util.ResponseCode;
 import com.grupobbva.ii.sf.base.BbvaException;
 import com.ibm.dse.base.DSEInvalidArgumentException;
 import com.ibm.dse.base.DSEObjectNotFoundException;
+import com.ibm.dse.base.Trace;
 
 public class OMDynamicCurrency extends  OMTrisConector {
 	public OMDynamicCurrency() {
@@ -36,6 +37,7 @@ public class OMDynamicCurrency extends  OMTrisConector {
 	}
 	
 	private void postDynamic() {
+		Trace.trace(Trace.Debug, "", " Inicio postDynamic()");
 		String URL;
 		try {
 			URL = (String) getValueAt("ConectorCiri.RestClinet.endpoint");
@@ -50,14 +52,11 @@ public class OMDynamicCurrency extends  OMTrisConector {
 			}
 			
 		} catch (DSEObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Trace.trace(Trace.VTF, "", "Error al leer propiedad : " + e.getMessage());
 		} catch (HttpClientException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Trace.trace(Trace.VTF, "", "Error al realizar consumo rest : " + e.getMessage());
 		} catch (DSEInvalidArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Trace.trace(Trace.VTF, "", "Error al conectar propiedad : " + e.getMessage());
 		}
 		
 		

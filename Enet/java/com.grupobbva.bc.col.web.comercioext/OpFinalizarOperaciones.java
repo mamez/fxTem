@@ -1538,15 +1538,28 @@ private String tipoCuentaFirmas(String cuenta){
 		
 		String selectOpe = getValueAt("selectOpe").toString();
 		String indBenef = "";
+		
+		if(getValueAt("indBenef")!=null){
+			indBenef = (String)getValueAt("indBenef");
+			Trace.trace(Trace.Debug, "", "selecBeneficiarios() - indBenef " + indBenef);
+		}
 
 		try {
 			// INI INC NIT 11-07-2019
 			String resultadoAvance1 = (String) getValueAt(AVANCE_OPE);
 			String tipoFondoGiro = (String) getValueAt(TIPO_FONDO_GIRO);
 			String nitMod="";
-			if(tipoFondoGiro != null && tipoFondoGiro.equalsIgnoreCase(FONDO_PSE)) {
+			if(tipoFondoGiro != null && (tipoFondoGiro.equalsIgnoreCase(FONDO_PSE) || tipoFondoGiro.equalsIgnoreCase("PSE"))) {
+				if(getValueAt(OPERATION_OBJ)!=null) {
+					setValueAt(OPERATION_OBJ, getValueAt(OPERATION_OBJ));
+					setValueAt("operationObjAlt", getValueAt(OPERATION_OBJ));
+				}else {
+					setValueAt(OPERATION_OBJ, getValueAt("operationObjAlt"));
+				}
+				
 				Datum comisionService = getObjectValue(OPERATION_OBJ, Datum.class);
-				setValueAt(OPERATION_OBJ, getValueAt(OPERATION_OBJ));
+				//setValueAt(OPERATION_OBJ, getValueAt(OPERATION_OBJ));
+				
 				setValueAt(TIPO_FONDO_GIRO, "PSE");
 				for(Beneficiary in : comisionService.getBeneficiaries()) {
 					if(in.getFullName().equalsIgnoreCase("BBVA")) {
@@ -1584,10 +1597,7 @@ private String tipoCuentaFirmas(String cuenta){
 				return;
 			}
 			
-			if(getValueAt("indBenef")!=null){
-				indBenef = (String)getValueAt("indBenef");
-				Trace.trace(Trace.Debug, "", "selecBeneficiarios() - indBenef " + indBenef);
-			}
+			
 			
 			try{
 				if(indBenef.equals("A")){
@@ -2535,6 +2545,8 @@ private String tipoCuentaFirmas(String cuenta){
 		Trace.trace(Trace.Debug, "", "### GB monto " + getValueAt("monto"));
 		setValueAt("descripNegociacion", getValueAt("descripNegociacion"));
 		Trace.trace(Trace.Debug, "", "### GB descripNegociacion " + getValueAt("descripNegociacion"));
+		setValueAt(TIPO_FONDO_GIRO, "PSE");
+		Trace.trace(Trace.Debug, "", "### tipoFondoGiro " + getValueAt(TIPO_FONDO_GIRO));
 		
 		setValueAt("codError", "");
 		setValueAt("codePaisBene","");
