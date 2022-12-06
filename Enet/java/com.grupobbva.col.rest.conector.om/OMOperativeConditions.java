@@ -94,24 +94,28 @@ public class OMOperativeConditions extends OMTrisConector {
 		String toDate=(String)getValueAt("Entrada.comisionService.toDate");
 		String endPoint = URL + "/services/V1/ComisionService/operations?pageSize=10";
 		               
-		StringBuilder urlBuild =new StringBuilder(endPoint)
-				.append("&paginationKey=").append(page);
-		if(!nit.equalsIgnoreCase("NA")) {
-			urlBuild.append("&customerId=").append(nit);
-		}
-	    
-		if(!fromDate.equalsIgnoreCase("NA")) {
-			urlBuild.append("&fromOperationDate=").append(fromDate)
-			.append("&toOperationDate=").append(toDate);
-		}
-			
-		RestConector conector = getRestConector();
-		ResponseEntity<ComisionServiceDto> response = conector.getForEntity(urlBuild.toString(), ComisionServiceDto.class);
+		try {
+			StringBuilder urlBuild =new StringBuilder(endPoint)
+					.append("&paginationKey=").append(page);
+			if(!nit.equalsIgnoreCase("NA")) {
+				urlBuild.append("&customerId=").append(nit);
+			}
+		    
+			if(!fromDate.equalsIgnoreCase("NA")) {
+				urlBuild.append("&fromOperationDate=").append(fromDate)
+				.append("&toOperationDate=").append(toDate);
+			}
+				
+			RestConector conector = getRestConector();
+			ResponseEntity<ComisionServiceDto> response = conector.getForEntity(urlBuild.toString(), ComisionServiceDto.class);
 
-		if (response.getResponseCode() == ResponseCode.OK) {
-			ComisionServiceDto comisionService = response.getEntity();
-			setValueAt("Salida.comisionServiceObject", comisionService);
-		}else if(response.getResponseCode() == ResponseCode.NO_CONTENT || response.getResponseCode() == ResponseCode.SERVER_ERROR || response.getResponseCode() == ResponseCode.CONFICT ) {
+			if (response.getResponseCode() == ResponseCode.OK) {
+				ComisionServiceDto comisionService = response.getEntity();
+				setValueAt("Salida.comisionServiceObject", comisionService);
+			}else if(response.getResponseCode() == ResponseCode.NO_CONTENT || response.getResponseCode() == ResponseCode.SERVER_ERROR || response.getResponseCode() == ResponseCode.CONFICT ) {
+				setValueAt("Salida.comisionServiceObject", new ComisionServiceDto());
+			}
+		}catch (Exception e) {
 			setValueAt("Salida.comisionServiceObject", new ComisionServiceDto());
 		}
 

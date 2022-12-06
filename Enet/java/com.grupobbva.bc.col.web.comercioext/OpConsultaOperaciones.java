@@ -4113,10 +4113,10 @@ public void validarContinuar() throws DSEObjectNotFoundException {
   				if(!nit.equals("NA")) {
   					oM.setValueAt("Entrada.comisionService.nit", nit);
   				}
-  				if(!fromDate.equalsIgnoreCase("NA")) {
+  				//if(!fromDate.equalsIgnoreCase("NA")) {
   					oM.setValueAt("Entrada.comisionService.toDate", toDate);
   					oM.setValueAt("Entrada.comisionService.fromDate", fromDate);
-  				}
+  				//}
   				oM.execute();
   				comisionServiceDto = (ComisionServiceDto) oM.getValueAt("Salida.comisionServiceObject");
   				responseAjax.put(VALUE_STATUS, "OK");
