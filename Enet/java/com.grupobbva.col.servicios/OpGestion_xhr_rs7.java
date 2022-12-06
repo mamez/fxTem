@@ -120,6 +120,10 @@ public class OpGestion_xhr_rs7 extends OpGestion1_rs7 {
 				double valorDouble=0;
 				valorDouble= (Double) getValueAt(literal);
 				return String.valueOf(valorDouble);
+			}else if(value instanceof Long){
+				long valorLong=0;
+				valorLong= (Long) getValueAt(literal);
+				return String.valueOf(valorLong);
 			}else {
 				return (String) getValueAt(literal);
 			}
