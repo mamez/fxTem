@@ -92,7 +92,7 @@ function changeTextPSECtaDev(pseBBVA){
 		document.getElementById("textCtaPSE").style.display = "none";
 	}
 }
-//GP17667 FIN
+//GP17667 FIN	
 // A $( document ).ready() block.
 
 function getCommissionOperative(a, b, c, d, e, f, g, businessId, businessOp, numTrans, amountEquiv){
@@ -175,7 +175,15 @@ function getBlotter(page=1, fromDate='NA', toDate='NA', nit='NA'){
 		data : query,
 		success : function(result, resultStatus) {
 			getBlotterResponse(result,page);
-		}
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+        $('#filtrarBloter').hide();
+		$("#tablaVerM").hide();
+		$( "tbody#mas tr.registro" ).each( function(){
+				  	$(this).remove() 
+				});
+		renderPage();
+      }
 	};
 	$.ajax(peticion);
 }
@@ -195,9 +203,10 @@ function getBlotterResponse(response, page){
 			$("#tablaVerM").hide();
 		}
 		if(page==1){
-			$( "#tblBlotter tbody tr.registro" ).each( function(){
-  				this.parentNode.removeChild(this); 
-			});
+			$( "tbody#mas tr.registro" ).each( function(){
+				  	$(this).remove() 
+				});
+						
 		}
 		let dataArray=responseObj.data.data;
 		dataArray.forEach((resp) =>{
@@ -262,6 +271,13 @@ function getBlotterResponse(response, page){
     	});   
 		renderPage(); 
 		$('#filtrarBloter').hide();   
+	}else{
+		$('#filtrarBloter').hide();
+		$("#tablaVerM").hide();
+		$( "tbody#mas tr.registro" ).each( function(){
+				  	$(this).remove() 
+				});
+		renderPage(); 
 	}
 }
 

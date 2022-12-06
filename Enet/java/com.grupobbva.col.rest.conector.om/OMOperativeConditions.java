@@ -86,6 +86,7 @@ public class OMOperativeConditions extends OMTrisConector {
 	}
 	
 	private void getComisionServe() throws DSEObjectNotFoundException, HttpClientException, DSEInvalidArgumentException {
+		Trace.trace(Trace.VTF, "", "inicio getComisionServe (): " );
 		String URL = (String) getValueAt("ConectorCiri.RestClinet.endpoint");
 		String nit=(String)getValueAt("Entrada.comisionService.nit");
 		String page=(String)getValueAt("Entrada.comisionService.page");
@@ -105,13 +106,12 @@ public class OMOperativeConditions extends OMTrisConector {
 		}
 			
 		RestConector conector = getRestConector();
-
 		ResponseEntity<ComisionServiceDto> response = conector.getForEntity(urlBuild.toString(), ComisionServiceDto.class);
 
 		if (response.getResponseCode() == ResponseCode.OK) {
 			ComisionServiceDto comisionService = response.getEntity();
 			setValueAt("Salida.comisionServiceObject", comisionService);
-		}else if(response.getResponseCode() == ResponseCode.NO_CONTENT) {
+		}else if(response.getResponseCode() == ResponseCode.NO_CONTENT || response.getResponseCode() == ResponseCode.SERVER_ERROR || response.getResponseCode() == ResponseCode.CONFICT ) {
 			setValueAt("Salida.comisionServiceObject", new ComisionServiceDto());
 		}
 
